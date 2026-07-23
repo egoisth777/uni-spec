@@ -54,7 +54,7 @@ It asserts that `website/` is absent and that both `standard/` and `.arca/` rema
 
 ### Inventory and disposition
 
-Every tracked file present under `website/` was inspected before deletion. The site was a standalone Next.js/Fumadocs application, and its package metadata, README, build scripts, generated-document sync, route tree, and Cloudflare worker all described and implemented an OpenSpec documentation website. No file was directly required by `standard/` or `.arca/`; all entries are confirmed inherited website residue and were purged:
+Every tracked file present under `website/` was inspected before deletion (32 files total). The site was a standalone Next.js/Fumadocs application, and its package metadata, README, build scripts, generated-document sync, route tree, and Cloudflare worker all described and implemented an OpenSpec documentation website. No file was directly required by `standard/` or `.arca/`; all entries are confirmed inherited website residue and were purged:
 The observed directory entries were `website/`, `app/`, `app/(home)/`, `app/api/`, `app/api/search/`, `app/docs/`, `app/docs/[[...slug]]/`, `app/llms-full.txt/`, `app/llms.mdx/`, `app/llms.mdx/docs/`, `app/llms.mdx/docs/[[...slug]]/`, `app/llms.txt/`, `app/og/`, `app/og/docs/`, `app/og/docs/[...slug]/`, `cloudflare/`, `cloudflare/router/`, `components/`, `lib/`, and `scripts/`; these were containers for the classified files and were purged with them.
 
 | Entry | Evidence and decision |

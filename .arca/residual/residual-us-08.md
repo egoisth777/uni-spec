@@ -6,7 +6,7 @@ goal-requirement-ref: "US-08"
 frozen-goal-bundle-revision: "HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0; SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"
 implementation-revision: "t-007-website-purge implementation commit (local)"
 concrete-evidence-refs:
-  - "website/ (pre-mutation inventory: 31 tracked files, all classified as standalone OpenSpec website residue)"
+  - "website/ (pre-mutation inventory: 32 tracked files, all classified as standalone OpenSpec website residue)"
   - ".arca/ticket/t-007-website-purge.md#pt-007-execution-record"
   - "test/website-purge.test.ts#repository-audit-pt-007"
   - ".arca/issue/i-001-purge-sanitization/spec.md (R-001)"
