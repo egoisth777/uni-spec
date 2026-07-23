@@ -104,3 +104,5 @@
 - 2026-07-23 - Phase P4 - ready - current phase is P4 with status ready; no first-ticket test authoring has started
 - 2026-07-23 - Phase P4 - correction - changed invalid current status `ready` to template-conformant `running`; first ticket P4 remains not started
 - 2026-07-23 - Phase P2 - correction - refreshed residual-us-01 through residual-us-07 frozen goal bundle revision to HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0 and SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0; preserved their satisfied evidence and revalidated referenced standard artifacts
+- 2026-07-23 - Phase P4/P5 - t-007 - wrote `repository-audit PT-007` first; red run proved the intended `website/` residue failure after dependencies/build setup, then inspected all 31 tracked website files and found only standalone OpenSpec website evidence; no direct standard/.arca dependency was found
+- 2026-07-23 - Phase P4/P5 - t-007 - poke holes: checked nested routes, package/lockfile/build configuration, generated-doc sync, Cloudflare routing, and retained-tree reachability; ambiguous dependencies none, so every website entry was purged and PT-007 passed
