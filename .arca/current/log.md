@@ -1,0 +1,106 @@
+<!-- Instruction: Append transitions as a single line at the end of the file. Existing lines are never edited. -->
+- 2026-07-22 - Phase P0 - idle - .arca scaffold created from wishwillow schema; goal bundle drafted, awaiting review
+- 2026-07-22 - Phase P2 - running - working-tree goal bundle frozen against repository HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0 on 2026-07-22; comparing US-01..US-07 with documented proof
+- 2026-07-22 - Phase P2 - complete - residual-us-01 through residual-us-07 each satisfied with specification, design, and test-list proof; no implementation tickets warranted
+- 2026-07-22 - Phase P3 - idle - all seven residuals satisfied; zero tickets created; workflow resting with no waiting question
+- 2026-07-23 - Phase P2 - correction - removed circular goal evidence refs from residual-us-01 through residual-us-06; concrete evidence now records negative inspection outside .arca/goal, with US-01..US-06 missing and US-07 satisfied by scoped negative inspection
+- 2026-07-23 - Phase P2 - assumption - assumed `standard/` will be the dedicated product root because it separates the normative standard from `.arca` working records and inherited OpenSpec implementation
+- 2026-07-23 - Phase P2 - complete - no pending issues or P1 goal edits; exact implementation and frozen revisions recorded as repository HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0
+- 2026-07-23 - Phase P3 - complete - created six ordered approved vertical tickets for residual-us-01 through residual-us-06 under `.arca/ticket/`, with dependencies and planned Vitest document-conformance targets
+- 2026-07-23 - Phase P3 - idle - approved on creation, user stop honored, P4/P5 not started
+- 2026-07-23 - Phase P3 - correction - fixed deterministic naming/conversion ticket holes after review; final state idle, P4/P5 not started
+- 2026-07-23 - Phase P4 - running - t-001-five-file-package P4 test authoring started; tests-first red run will precede standard product docs
+- 2026-07-23 - Phase P4 - correction - adversarial test review found a non-standard matcher; replaced with direct fs.Stats assertions before execution
+- 2026-07-23 - Phase P4 - red - `corepack pnpm exec vitest run test/uni-spec/five-file-package.test.ts` failed as expected with four ENOENT failures because the standard product root and both fixtures do not yet exist
+- 2026-07-23 - Phase P4 - adversarial review - test coverage checks missing/extra entries, regular-file versus symlink/subdirectory kinds, distinct aspect content, merged or duplicate aspect risk, and broken or traversing front-door routes
+- 2026-07-23 - Phase P4 - green - `corepack pnpm exec vitest run test/uni-spec/five-file-package.test.ts` passed after the standard docs and fixtures were written
+- 2026-07-23 - Phase P5 - running - t-001 product slice is present; running full suite and reviewing docs-only scope before closure
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 101 test files, 1857 passed, 22 skipped
+- 2026-07-23 - Phase P5 - review - docs-only boundary confirmed: standard docs, shape-only fixtures, and inspection test only; no CLI/API/runtime/package/dependency/product implementation added
+- 2026-07-23 - Phase P4 - running - t-001 is done; next approved ticket is t-002-issue-naming
+- 2026-07-23 - Phase P4 - running - t-002-issue-naming test authoring started; red run will precede naming standard and fixtures
+- 2026-07-23 - Phase P4 - red - `corepack pnpm exec vitest run test/uni-spec/issue-naming.test.ts` failed as expected with five failures: missing naming section, three absent scenario fixtures, and missing docs-only naming boundary
+- 2026-07-23 - Phase P5 - green - `corepack pnpm exec vitest run test/uni-spec/issue-naming.test.ts` passed: 9 tests
+- 2026-07-23 - Phase P5 - red - `corepack pnpm test` found one regression in `five-file-package.test.ts`: the new front-door fragment link was treated as a literal path by the existing link check
+- 2026-07-23 - Phase P5 - green - `corepack pnpm exec vitest run test/uni-spec/issue-naming.test.ts` passed again after routing fix: 9 tests
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 102 test files, 1866 tests, 22 skipped
+- 2026-07-23 - Phase P5 - adversarial review - t-002 test probes mixed case, punctuation and maximal replacement runs, one/zero/many tokens, `000`, malformed `i-<digits>-` sibling reservation, first-title routing, and later title mutation freeze
+- 2026-07-23 - Phase P5 - complete - t-002 done and residual-us-02 satisfied by naming standard, C4/C5/invalid fixtures, and conformance evidence; next approved ticket is t-003-index-metadata
+- 2026-07-23 - Phase P5 - green - final `corepack pnpm test` after fixture wording review: 102 test files, 1866 tests passed, 22 skipped
+- 2026-07-23 - Phase P4 - running - t-002 closed; next queue t-003-index-metadata, t-004-aspect-contracts, t-005-lint-contract, t-006-conversion-procedure
+- 2026-07-23 - Phase P4 - running - t-003-index-metadata test authoring started; red run will precede metadata standard and fixtures
+- 2026-07-23 - Phase P4 - red - `corepack pnpm exec vitest run test/uni-spec/index-metadata.test.ts` failed as expected with four failures because metadata artifacts and front-door routing were absent
+- 2026-07-23 - Phase P5 - green - `corepack pnpm exec vitest run test/uni-spec/index-metadata.test.ts` passed: 4 tests
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 103 test files, 1870 tests passed, 22 skipped
+- 2026-07-23 - Phase P5 - complete - t-003 done and residual-us-03 satisfied by index metadata standard, template, valid/invalid fixtures, and conformance evidence; next approved ticket is t-004-aspect-contracts
+- 2026-07-23 - Phase P4 - running - t-003 closed; next queue t-004-aspect-contracts, t-005-lint-contract, t-006-conversion-procedure
+- 2026-07-23 - Phase P4 - running - t-004-aspect-contracts test authoring started; red run precedes companion standard and examples
+- 2026-07-23 - Phase P4 - red - `corepack pnpm exec vitest run test/uni-spec/aspect-contracts.test.ts` failed as expected with missing canonical templates and conforming issue artifacts
+- 2026-07-23 - Phase P5 - running - t-004 aspect contracts, templates, complete example, adversarial fixtures, and state evidence written; verification remains
+- 2026-07-23 - Phase P5 - green - `corepack pnpm exec vitest run test/uni-spec/aspect-contracts.test.ts` passed: 4 tests
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 104 test files, 1874 tests passed, 22 skipped
+- 2026-07-23 - Phase P5 - review - t-004 docs-only boundary confirmed; residual-us-04 satisfied by standard, templates, complete/adversarial fixtures, and conformance proof
+- 2026-07-23 - Phase P5 - complete - t-004-aspect-contracts done; next approved ticket is t-005-lint-contract
+- 2026-07-23 - Phase P4 - running - t-004 closed; next queue t-005-lint-contract and t-006-conversion-procedure
+- 2026-07-23 - Phase P5 - correction - strengthened t-004 adversarial fixture assertions to validate each malformed aspect against its specific expected finding; specific test passed again with 4 tests
+- 2026-07-23 - Phase P5 - green - final `corepack pnpm test` after absence and fixture assertion strengthening passed: 104 test files, 1874 tests passed, 22 skipped
+- 2026-07-23 - Phase P4 - running - t-005-lint-contract test authoring started; red run precedes declarative lint standard, observed-folder examples, and expected finding traces
+- 2026-07-23 - Phase P4 - red - `corepack pnpm vitest run test/uni-spec/lint-contract.test.ts` failed as expected with eight ENOENT failures because lint standard and finding artifacts were absent
+- 2026-07-23 - Phase P4 - adversarial review - test covers all LINT-01..LINT-07 IDs, exact six finding fields, issue/goal-relative paths, null-or-locatable lines, all-rules continuation after parser failure, symlink entry-kind evidence, external/query/traversal links, and zero-finding PASS semantics
+- 2026-07-23 - Phase P5 - green - `corepack pnpm vitest run test/uni-spec/lint-contract.test.ts` passed: 8 tests
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 105 test files, 1882 tests passed, 22 skipped
+- 2026-07-23 - Phase P5 - review - docs-only boundary confirmed; standard, documentary fixtures, expected traces, and working test add no linter, CLI, API, runtime, package, dependency, or orchestration code
+- 2026-07-23 - Phase P5 - complete - t-005-lint-contract done and residual-us-06 satisfied; next approved ticket is t-006-conversion-procedure
+- 2026-07-23 - Phase P4 - running - t-005 closed; next queue t-006-conversion-procedure
+- 2026-07-23 - Phase P5 - green - final `corepack pnpm test` after LINT-04 exact absence wording review passed: 105 test files, 1882 tests passed, 22 skipped
+- 2026-07-23 - Phase P4 - running - t-006-conversion-procedure tests-first authoring started; red run precedes standard and fixtures
+- 2026-07-23 - Phase P4 - red - `corepack pnpm exec vitest run test/uni-spec/conversion-procedure.test.ts` failed as expected with 9 ENOENT failures because conversion standard, traces, and outputs were absent
+- 2026-07-23 - Phase P4 - adversarial review - test covers C0-C6 traces, supplied-input/document encounter order, exact one/multiple/no-source origins, title and requestless fallbacks, naming freeze, source routing, dispositions, pending status, no-data declarations, no invented checks, complete post-write lint, and red-hole observations
+- 2026-07-23 - Phase P5 - green - `corepack pnpm exec vitest run test/uni-spec/conversion-procedure.test.ts` passed: 9 tests
+- 2026-07-23 - Phase P5 - green - `corepack pnpm test` passed: 106 test files, 1891 tests passed, 22 skipped
+- 2026-07-23 - Phase P5 - review - docs-only boundary confirmed; conversion standard, C0-C6 traces, filled five-file comparisons, and inspection test add no converter, CLI/API/runtime, linter, package, dependency, orchestration, apply/archive action, or implementation code
+- 2026-07-23 - Phase P5 - complete - t-006-conversion-procedure done and residual-us-05 satisfied; advancing to final gap recheck
+- 2026-07-23 - Phase P2 - running - final gap recheck active; all residuals and goal contracts are being reviewed before any idle transition
+- 2026-07-23 - Phase P5 - adversarial review - red-hole checks explicitly poke source reorder, title gaps, multi-reference encoding, disposition partials, broken input, no verification, and post-lint failure
+- 2026-07-23 - Phase P2 - running - final gap recheck continues after t-006 adversarial review; no idle transition yet
+- 2026-07-23 - Phase P2 - red - final-review targeted metadata regression exposed the CRLF hole: `corepack pnpm exec vitest run test/uni-spec/index-metadata.test.ts` failed the new CRLF delimiter case while byte-1/BOM/whitespace guards remained active
+- 2026-07-23 - Phase P2 - green - repaired US-02..US-04 aspect/template marker rejection, verification declaration grammar, CRLF frontmatter parsing, unbounded three-plus-digit IDs, and title encounter-order wording; affected tests passed 22/22 and `corepack pnpm test` passed 106 files, 1896 tests, 22 skipped (current remains P2 running final recheck)
+- 2026-07-23 - Phase P2 - green - final recheck after strengthened title-order oracle: `corepack pnpm test` passed 106 files, 1896 tests, 22 skipped; current remains P2 running and ticket/residual claims unchanged
+- 2026-07-23 - Phase P2 - red - strengthened independent L1-L5 derived observations and explicit US-07 goal-bundle detector; `corepack pnpm exec vitest run test/uni-spec/lint-contract.test.ts` failed 7 of 9 tests on the intentionally unrepaired L0/L5 roots, markers, metadata lines, and trace remediations
+- 2026-07-23 - Phase P2 - green - repaired independent L1-L5 fixture/trace oracles, nested L0 issue root, separate L5 issue/goal roots, exact L2 lines 4/6, deterministic L3 remediation, target-root `.` path rule, canonical LINT-05 markers, and US-07 scope detector; targeted lint passed 9/9 and `corepack pnpm test` passed 106 files, 1897 tests, 22 skipped (current remains P2 running)
+- 2026-07-23 - Phase P2 - green - final lint proof after explicit five-path US-07 opening and issue-root entry-kind derivation: targeted 9/9 and `corepack pnpm test` passed 106 files, 1897 tests, 22 skipped; current remains P2 running
+- 2026-07-23 - Phase P2 - red - strengthened PT-006 source/output proof; `corepack pnpm exec vitest run test/uni-spec/conversion-procedure.test.ts` failed 5/5 as expected because independent `source.md` fixtures, renamed issue outputs, and consolidated `conversion-lint-observations.md` are not yet present (no syntax or product implementation changes)
+- 2026-07-23 - Phase P2 - green/review - strengthened PT-006 targeted conversion passed 5/5; all uni-spec tests passed 40/40; `corepack pnpm test` passed 106 files, 1893 tests, 22 skipped on rerun (current remains P2 running; residual, ticket, freeze, and current claims unchanged)
+- 2026-07-23 - Phase P2 - red - format recheck regressions intentionally failed before repair: targeted aspect/metadata run exposed frozen zero-verification wording, direct routes, Routes delimiter/header, exact headings, empty verification refs, uncovered ID spacing, delimiter count, and escaped-pipe parsing gaps
+- 2026-07-23 - Phase P2 - green/review - repaired format contracts and docs/templates; targeted aspect+metadata passed 12/12 and `corepack pnpm test` passed 106 files, 1893 tests, 22 skipped (current remains P2 running; residual, ticket, freeze, and current claims unchanged)
+- 2026-07-23 - Phase P2 - green/review - added US-07 vocabulary, mandatory-form, clause-splitting, and negation regressions; repaired scoped detector while preserving exactly five frozen goal reads and inherited-workspace exclusion; targeted lint passed 10/10 and `corepack pnpm test` passed 106 files, 1894 tests, 22 skipped (current remains P2 running)
+- 2026-07-23 - Phase P2 - red - strengthened PT-006 exact ordered request rows, term meanings, proposal/check request associations, duplicate no-ID origins, and frozen C6 literals; targeted conversion failed 3/5 before fixture/output repair (current remains P2 running)
+- 2026-07-23 - Phase P2 - green/review - repaired cumulative C1/C6 source facts, duplicate no-ID origin serialization, exact Term/Meaning and request/association tables, frozen C6 verification literals, and source-grounded routing; targeted PT-006 passed 5/5, all uni-spec passed 41/41, and `corepack pnpm test` passed 106 files, 1894 tests, 22 skipped (current remains P2 running)
+- 2026-07-23 - Phase P2 - red - added seven final format regressions and confirmed targeted aspect/metadata failures before repair: normative Routes collective wording, dot-segment routes, exact Summary absence, explicit design contract, obsolete no-verification text beside tables, contiguous Markdown table rows, and reference-style local links
+- 2026-07-23 - Phase P2 - green/review - repaired final format wording/parsers for collective companion routes, dot-segment normalization, exact Summary absence, explicit design contract, obsolete verification rejection, contiguous tables, and reference-style link safety; targeted aspect+metadata passed 12/12 and `corepack pnpm test` passed 106 files, 1894 tests, 22 skipped (current remains P2 running)
+- 2026-07-23 - Phase P2 - green - PT-001..PT-006 runnable test mappings recorded with exact Vitest function names; all six uni-spec files and full suite passed (current remains P2 running)
+- 2026-07-23 - Phase P2 - final gap recheck - US01-US07 all satisfied with concrete product and test proof; six tickets are done and no residual is missing or partial
+- 2026-07-23 - Phase P2 - final bundle verification - frozen goal HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0 and ordered filename-NUL-content SHA-256 90fa9b74436fe3d7ab42c95f1f035f4b3d9bdccbcb24c3cc4277a794bcb3f48b verified; no frozen goal files edited during the build
+- 2026-07-23 - Phase P3 - skipped - no missing or partial residual remained after the final P2 recheck
+- 2026-07-23 - Phase P5 - final suite - `corepack pnpm test` result: 106 files, 1894 passed, 22 skipped
+- 2026-07-23 - Phase Idle - idle - final proof complete; no waiting question
+- 2026-07-22 - Phase Idle - record-fix - corrected t-006 cumulative C1 origin facts and C3 output path to the delivered, resolving evidence; build state remains idle
+- 2026-07-23 - Phase Idle - log-correction - the preceding record-fix line date 2026-07-22 is a recording typo; the t-006 record fix occurred on 2026-07-23 and build state remains idle
+- 2026-07-23 - Phase Idle - sanitation audit - main branch only; primary worktree only; no extra branch or linked worktree; explicit user removal of `test/uni-spec/`, `node_modules/`, `dist/`, `.orca/`, and `CLAUDE.md`; `standard/`, `.arca` authority/scaffolding, preexisting tracked tests, `.gitignore`, and `AGENTS.md` preserved
+- 2026-07-23 - Phase Idle - sanitation audit - last green before deletion: `106 files, 1894 passed, 22 skipped`; residual-us-01 through residual-us-07 and t-001 through t-006 evidence reconciled to surviving docs, templates, examples, traces, and findings; P4/P5 executable targets are historical and not runnable
+- 2026-07-23 - Phase Idle - idle - sanitized docs-only state recorded; no waiting question
+- 2026-07-23 - Phase P1 - integrated - i-001 R-001..R-005 accepted as goal US-08..US-12; bidirectional issue/goal mapping recorded and issue status integrated
+- 2026-07-23 - Phase P1 - check - issue, goal, residual, and ticket references were shape-checked after integration; no goal template tokens remain
+- 2026-07-23 - Phase P2 - frozen - goal bundle frozen at HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0 with ordered filename-NUL-content SHA-256 d675e6f2310ef80b548ebc56fcc1a2efb4caf5bc53feaa22b7614c043e90a6f7
+- 2026-07-23 - Phase P2 - audit - website/ and openspec/ are present OpenSpec residue candidates; adjacent identity, tooling, docs, source, tests, schemas, and release paths are also present
+- 2026-07-23 - Phase P2 - residuals - created exactly one residual for each US-08..US-12; US-08..US-11 partial and US-12 missing because purge and final proof are not complete
+- 2026-07-23 - Phase P2 - assumption - retained baseline is .arca/, standard/, AGENTS.md, and only directly evidenced support; root AGENTS.md is empty and test/AGENTS.md/shared configs remain explicit ticket decisions
+- 2026-07-23 - Phase P3 - approved - created one ordered vertical ticket per residual: t-007 website, t-008 openspec, t-009 adjacent residue, t-010 minimal retention, t-011 sanitization proof
+- 2026-07-23 - Phase P3 - check - every new ticket has one residual, behavior/design/test refs, dependencies, P4 mapping, and all six P5 coverage lanes; no P4/P5 execution started
+- 2026-07-23 - Phase P3 - ready - current state set to ready for t-007 P4; repository remains pre-purge
+- 2026-07-23 - Phase P2 - correction - after final US-07 wording adjustment, refreshed frozen goal bundle SHA-256 to 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0 in current and all new residual records
+- 2026-07-23 - Phase P1 - correction - made the complete disposition set explicit: all five issue asks accepted; none rejected, duplicate, deferred, or undecided
+- 2026-07-23 - Phase P3 - final-check - revalidated issue/goal maps, five residuals, five one-to-one approved tickets, frozen hash, and nine local Markdown links; ready for t-007 P4
+- 2026-07-23 - Phase P4 - ready - current phase is P4 with status ready; no first-ticket test authoring has started
+- 2026-07-23 - Phase P4 - correction - changed invalid current status `ready` to template-conformant `running`; first ticket P4 remains not started
+- 2026-07-23 - Phase P2 - correction - refreshed residual-us-01 through residual-us-07 frozen goal bundle revision to HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0 and SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0; preserved their satisfied evidence and revalidated referenced standard artifacts

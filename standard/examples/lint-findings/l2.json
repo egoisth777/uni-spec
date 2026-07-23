@@ -1,0 +1,12 @@
+{
+  "state": "L2",
+  "target": "lint-l2-metadata/i-009-metadata",
+  "entryKinds": {"index.md":"regular-file","ubi-lang.md":"regular-file","spec.md":"regular-file","design.md":"regular-file","test-plan.md":"regular-file"},
+  "evaluatedRules": ["LINT-01","LINT-02","LINT-03","LINT-04","LINT-05","LINT-06","LINT-07"],
+  "findings": [
+    {"ruleId":"LINT-03","path":"index.md","line":4,"observed":"non-scalar status value: mapping {value: pending}","expected":"status is exactly one scalar enum value: pending, integrated, or rejected","remediation":"Replace the mapping with one scalar status value."},
+    {"ruleId":"LINT-03","path":"index.md","line":6,"observed":"duplicate YAML key status","expected":"strict YAML with no duplicate keys","remediation":"Remove the duplicate status key and retain one source-grounded scalar value."}
+  ],
+  "result": "FAIL",
+  "notes": ["Parser/key/scalar metadata findings are retained.","LINT-01, LINT-02, and LINT-04 through LINT-07 continue after metadata failure."]
+}

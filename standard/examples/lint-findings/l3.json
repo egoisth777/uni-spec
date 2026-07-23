@@ -1,0 +1,13 @@
+{
+  "state": "L3",
+  "target": "lint-l3-content/i-010-content",
+  "entryKinds": {"index.md":"regular-file","ubi-lang.md":"regular-file","spec.md":"regular-file","design.md":"regular-file","test-plan.md":"regular-file"},
+  "evaluatedRules": ["LINT-01","LINT-02","LINT-03","LINT-04","LINT-05","LINT-06","LINT-07"],
+  "findings": [
+    {"ruleId":"LINT-04","path":"design.md","line":2,"observed":"table columns are Request IDs only; Proposal is missing","expected":"exact columns Request IDs and Proposal","remediation":"Restore the exact design table columns and provide non-empty required cells."},
+    {"ruleId":"LINT-04","path":"spec.md","line":4,"observed":"Rationale cell is empty","expected":"every source-request row has a non-empty Rationale","remediation":"Set disposition `undecided` and write exactly `No source disposition or rationale provided.`."},
+    {"ruleId":"LINT-06","path":"test-plan.md","line":4,"observed":"local destination spec.md?view=raw","expected":"local links have no query or fragment and resolve to one companion file","remediation":"Remove the query and use the plain relative destination spec.md."}
+  ],
+  "result": "FAIL",
+  "notes": ["LINT-04 content findings and LINT-06 link finding are independent; all seven rules continue."]
+}

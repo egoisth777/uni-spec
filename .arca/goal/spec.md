@@ -1,0 +1,31 @@
+# `uni-spec` specification
+
+## Purpose
+
+`uni-spec` defines a uniform, persistent issue-folder standard plus written procedures for conversion and linting. It specifies documents and inspection evidence only. It does not specify commands, APIs, executable runtime behavior, source or package requirements, dependencies, orchestration, apply or archive workflows, or implementation plans.
+
+## Source requests
+
+Each row is a stable source request. Disposition is one of `accepted`, `rejected`, `duplicate`, `deferred`, or `undecided`; the rationale records why that disposition is source-grounded.
+
+| Request ID | Source ask | Disposition | Rationale |
+| :--- | :--- | :--- | :--- |
+| `US-01` | Define one issue folder with exactly five distinct regular files: `index.md`, `ubi-lang.md`, `spec.md`, `design.md`, and `test-plan.md`. | `accepted` | A fixed shape is the smallest uniform persistent standard and keeps each aspect distinct. |
+| `US-02` | Require folder names `i-<nnn>-<slug>`, where `<nnn>` is the smallest positive integer (numeric value greater than zero; `000` is invalid) not used by any direct-child directory in the target folder's parent whose name begins with candidate pattern `i-<digits>-`, including otherwise malformed candidates such as `i-001-old`, and is rendered with at least three digits; derive `<slug>` from the first non-empty supplied title in source encounter order (after trimming and collapsing whitespace) using lowercase ASCII-alphanumeric `[a-z0-9]+` components, replacing non-ASCII-alphanumeric runs with `-`, trimming, taking the first four tokens, using `untitled-issue` for zero tokens, and appending `issue` to one token, then freeze both identity parts after creation. | `accepted` | Deterministic naming and frozen identity provide stable issue routing while malformed sibling candidates still reserve numbers. |
+| `US-03` | Require `index.md` to begin at byte 1 with a strict YAML frontmatter block closed by `---`, containing exactly scalar keys `issue-id`, `origin`, and `status`; `issue-id` equals the full directory name, `origin` is non-empty, and `status` is `pending`, `integrated`, or `rejected`. | `accepted` | Identity, provenance, and lifecycle state must be parseable and unambiguous. |
+| `US-04` | Require each file's aspect contract, non-empty required content or its exact absence declaration, no blank template tokens, and issue-local Markdown links that resolve under the link rules. Verification must use source-provided checks only; uncovered accepted or undecided request IDs use the exact listed no-source-verification statement, while no such IDs use the exact no-verification-required statement. | `accepted` | Complete, distinct content and navigable routes make a folder inspectable without inferred fields; explicit verification gaps prevent invented coverage. |
+| `US-05` | Declaratively specify deterministic, source-grounded conversion from one or many legacy documents, tracker records, inline inputs, or broken folders: encounter sources in input order then documents in document order; select the first supplied title whose trimmed/collapsed value is non-empty, or use the first non-empty sentence of the first source ask, otherwise `Untitled issue`; assign `R-001`, `R-002`, and so on to asks in encounter order; preserve an explicit allowed disposition and non-empty rationale together, otherwise use disposition `undecided` with exact rationale `No source disposition or rationale provided.`; never invent verification checks or evidence. | `accepted` | A written, source-grounded conversion procedure keeps title selection, request mapping, dispositions, and verification gaps deterministic without making conversion runtime behavior. |
+| `US-06` | Declaratively specify a complete lint contract for malformed and parsing-broken folders, including findings, continued evaluation, and a zero-finding pass rule. | `accepted` | Deterministic diagnostics are the guardrail for both ordinary and broken input. |
+| `US-07` | Keep the standard docs-only: it defines no software implementation, command, API, executable runtime, source or package requirement, dependency, orchestration, apply or archive operation, or implementation plan. | `accepted` | The requested deliverable is a lightweight persistent standard, not a product or workflow engine. |
+
+## Integrated issue requirements
+
+These accepted requirements are the forward authority for `R-001` through `R-005` in `.arca/issue/i-001-purge-sanitization/spec.md`; the issue is the reverse source record.
+
+| Request ID | Source ask | Disposition | Rationale | Reverse issue ref |
+| :--- | :--- | :--- | :--- | :--- |
+| `US-08` | Audit `website/` as an explicit purge candidate, record whether it is inherited OpenSpec material or required uni-spec content, and remove it only when evidence confirms residue. | `accepted` | The source explicitly names `website/`; an evidence gate prevents deleting required content. | `R-001` |
+| `US-09` | Audit `openspec/` and its `work/`, `specs/`, `explorations/`, `initiatives/`, `changes/`, and `config.yaml` as explicit purge candidates, removing them only when no uni-spec requirement reaches them. | `accepted` | The source explicitly names the upstream workflow tree and requires a dependency check before removal. | `R-002` |
+| `US-10` | Inventory and classify other inherited residue, including upstream identity, assets, executable tooling, build/release configuration, integrations, documentation, source, tests, and schemas, before changing any path. | `accepted` | The source requires an exhaustive audit beyond the two named directories so residue cannot remain hidden in adjacent paths. | `R-003` |
+| `US-11` | Apply a minimal-retention criterion preserving `.arca/`, `standard/`, `AGENTS.md`, and only directly evidenced supporting files; never delete required content solely because it resembles upstream structure. | `accepted` | The source requires a minimal, evidence-led purge that preserves uni-spec authority and working records. | `R-004` |
+| `US-12` | After the purge, prove upstream identity and deleted-path absence, retained-link integrity, and passing checks for the retained standard and working artifacts. | `accepted` | The source requires both negative absence proof and positive preservation proof. | `R-005` |

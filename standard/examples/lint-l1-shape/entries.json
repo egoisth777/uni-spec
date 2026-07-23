@@ -1,0 +1,13 @@
+{
+  "target": "i-008-shape",
+  "entries": {
+    "index.md": "regular-file",
+    "ubi-lang.md": "regular-file",
+    "spec.md": "regular-file",
+    "design.md": "regular-file",
+    "test-plan.md": "regular-file",
+    "extra.md": "regular-file",
+    "legacy-link": "symlink"
+  },
+  "observation": "The symlink is documentary entry.kind evidence for non-portable Windows filesystems."
+}

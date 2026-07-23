@@ -1,0 +1,12 @@
+{
+  "state": "L1",
+  "target": "lint-l1-shape/i-008-shape",
+  "entryKinds": {"index.md":"regular-file","ubi-lang.md":"regular-file","spec.md":"regular-file","design.md":"regular-file","test-plan.md":"regular-file","extra.md":"regular-file","legacy-link":"symlink"},
+  "evaluatedRules": ["LINT-01","LINT-02","LINT-03","LINT-04","LINT-05","LINT-06","LINT-07"],
+  "findings": [
+    {"ruleId":"LINT-01","path":"extra.md","line":null,"observed":"entry extra.md (entry.kind: regular-file)","expected":"exactly the five named regular files and no extra entries","remediation":"Remove extra.md from the issue folder."},
+    {"ruleId":"LINT-01","path":"legacy-link","line":null,"observed":"entry legacy-link (entry.kind: symlink)","expected":"all five named entries are regular files and no symlink exists","remediation":"Remove the symlink and restore a regular companion file only if it is required."}
+  ],
+  "result": "FAIL",
+  "notes": ["Symlink is documentary observed entry.kind evidence for non-portable Windows filesystems.","LINT-02 through LINT-07 continue after both shape findings."]
+}

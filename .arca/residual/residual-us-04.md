@@ -1,0 +1,16 @@
+residual-id: "residual-us-04"
+goal-requirement-ref: ".arca/goal/spec.md#source-requests"
+frozen-goal-bundle-revision: "HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0; ordered goal index, ubi, spec, design, test-list filename-NUL-content SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"
+implementation-revision: "sanitized docs-only standard/ deliverable against repository HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0"
+concrete-evidence-refs:
+  - "standard/issue-format.md#companion-aspect-contracts"
+  - "standard/issue-format.md#local-link-contract"
+  - "standard/templates/issue/ubi-lang.md"
+  - "standard/templates/issue/spec.md"
+  - "standard/templates/issue/design.md"
+  - "standard/templates/issue/test-plan.md"
+  - "standard/examples/fully-conforming/i-004-cross-aspect/index.md"
+classification-rationale: "US-04 is satisfied: the companion contracts define required headings, exact table columns, non-empty source-grounded content or exact absence declarations, and four safe local routes; all four templates, a fully conforming cross-aspect issue, and adversarial fixtures provide direct inspection proof."
+status: "satisfied"
+required-test-refs:
+  - ".arca/goal/test-list.md#verification — T-004"
