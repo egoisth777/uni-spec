@@ -14,7 +14,7 @@ dependencies:
   - "t-012-cli-runtime-recovery"
   - "t-013-package-build-closure"
   - "t-014-direct-support-closure"
-status: "running"
+status: "done"
 ---
 
 # Ticket: t-015-purge-preservation
@@ -48,3 +48,10 @@ Run the preservation gate after the selected runtime/package/support slices: pro
 | `PT-015-H4` | `.arca/issue/i-002-selective-cli-recovery/spec.md#R-004` | Rewrite or truncate `current/log.md`. | `Durability/Recovery` | Append-only proof fails. | `recovery-maintainer` |
 | `PT-015-H5` | `.arca/goal/test-list.md#verification` | Remove a retained governance artifact. | `Output/Filesystem` | Preservation audit fails. | `recovery-maintainer` |
 | `PT-015-H6` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` | Combine absence and retained-tree checks. | `Cross-Feature` | Ticket closes only with complete proof. | `recovery-maintainer` |
+
+## P5 Closure Evidence
+
+- PT-015 is `test/t-015-purge-preservation.test.mjs`; its first run was intentionally red (6/6) before the preservation evidence existed, then passed 6/6 after the inventory/proof record was published.
+- `.arca/io/t-015-purge-preservation.json` records the exact retained roots, baseline/current trees, changed and added paths since planning, forbidden roots, all six recovered provenance commits, frozen goal bytes/hash, retained authority routes, append-only log state, and explicit CLI/temp-fixture exceptions.
+- The proof confirms repository-root `website/` and `openspec/` absence without treating intentional OpenSpec command identity or isolated temporary project fixtures as residue; standard front-door routes, AGENTS routing, all 17 residual records, and all 16 ticket records remain reachable.
+- Green verification covered frozen install/build/strict typecheck, PT-012 through PT-015, package tests, side-effect-safe CLI commands, diff/secrets checks, and cleanup of generated/temp artifacts.
