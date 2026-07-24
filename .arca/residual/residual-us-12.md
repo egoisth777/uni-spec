@@ -10,7 +10,7 @@ concrete-evidence-refs:
   - "test/sanitization-proof.test.ts (PT-011)"
   - "standard/ and .arca/ retained-link/issue-shape inspection"
   - ".arca/current/log.md final P4/P5 and final P2 records"
-classification-rationale: "satisfied: forbidden upstream identity and deleted candidates were absent, non-fixture retained Markdown links resolved, required issue artifacts and five conversion outputs conformed, applicable checks were green, and the machine-readable proof record was published."
+classification-rationale: "satisfied: forbidden upstream identity and deleted candidates were absent, all 120 ordinary local retained links plus 2 external links resolved, only 22 explicitly enumerated invalid-fixture links were excluded, required issue artifacts and five conversion outputs conformed, applicable checks were green, and the corrected machine-readable proof record was published."
 status: "satisfied"
 required-test-refs:
   - "T-012"
