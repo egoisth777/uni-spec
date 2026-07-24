@@ -14,7 +14,7 @@ dependencies:
   - "t-012-cli-runtime-recovery"
   - "t-013-package-build-closure"
   - "t-014-direct-support-closure"
-status: "approved"
+status: "running"
 ---
 
 # Ticket: t-015-purge-preservation

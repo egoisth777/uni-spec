@@ -9,9 +9,10 @@ concrete-evidence-refs:
   - ".arca/issue/i-002-selective-cli-recovery/spec.md#R-003"
   - ".arca/issue/i-002-selective-cli-recovery/design.md#candidate-path-groups"
   - "historical baseline f179bc6^ contains test/**, docs/**, and schemas/** candidates"
-  - "sanitized current tree has no recovered test/docs/schema closure manifest"
-classification-rationale: "missing: no directly necessary tests, fixtures, docs, schemas, or path-level dependency-closure evidence is present for the recovered CLI because recovery has not started."
-status: "missing"
+  - ".arca/io/t-014-direct-support-closure.json"
+  - "test/t-014-direct-support-closure.test.mjs PT-014"
+classification-rationale: "satisfied: only the five spec-driven schema/template assets with direct package resolver and schemas/templates command edges were restored, plus the focused PT-014 test. All 140 inspected baseline docs/tests candidates are explicitly excluded with path-level provenance and concrete no-edge reasons; website/ and openspec/ remain hard exclusions. Isolated init/validate behavior and purge boundaries pass."
+status: "satisfied"
 required-test-refs:
   - "T-015"
   - "PT-014"

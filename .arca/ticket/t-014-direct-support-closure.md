@@ -13,7 +13,7 @@ planned-test-refs:
 dependencies:
   - "t-012-cli-runtime-recovery"
   - "t-013-package-build-closure"
-status: "running"
+status: "done"
 ---
 
 # Ticket: t-014-direct-support-closure
@@ -47,3 +47,11 @@ Trace the recovered CLI's public commands and package/test references, then sele
 | `PT-014-H4` | `.arca/issue/i-002-selective-cli-recovery/spec.md#R-003` | Add an unreferenced upstream artifact. | `Durability/Recovery` | Closure manifest rejects it. | `recovery-maintainer` |
 | `PT-014-H5` | `.arca/goal/test-list.md#verification` | Omit a selected fixture or schema. | `Output/Filesystem` | Targeted tests/docs check fails. | `recovery-maintainer` |
 | `PT-014-H6` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` | Cross-check all support edges. | `Cross-Feature` | Ticket closes only with complete manifest. | `recovery-maintainer` |
+
+## P5 Closure Evidence
+
+- PT-014 is `test/t-014-direct-support-closure.test.mjs`; its first run was intentionally red because the machine-readable closure evidence was absent, then passed 5/5 after direct support recovery.
+- Restored exactly five baseline package assets: `schemas/spec-driven/schema.yaml` and its four `templates/*.md` files. The focused PT-014 test is the only recovered verification path; no baseline docs, helpers, fixtures, or broad upstream tests were restored.
+- `.arca/io/t-014-direct-support-closure.json` records 6 restored paths and 140 excluded candidates, each with baseline, decision, source, concrete reason, and evidence. All baseline `docs/**` and `test/**` candidates were inspected and excluded without a retained import/script/public-contract edge; `website/` and `openspec/` remain hard exclusions.
+- Runtime proof passed from isolated temporary directories: `schemas --json`, `templates --json`, `init . --tools none`, and `validate --all --json`; temporary projects are removed in `finally` and root purge boundaries remain absent.
+- Green proof: `corepack pnpm install --frozen-lockfile`, `corepack pnpm run build`, strict typecheck, PT-012/PT-013/PT-014, configured Vitest, full package tests, clean-install rerun, CLI help/version, and purge checks. Generated `dist/` and `node_modules/` are removed before commit.
