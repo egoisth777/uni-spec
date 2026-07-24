@@ -1,8 +1,2 @@
-# Local test support
-node_modules/
-coverage/
-*.log
-*.tsbuildinfo
-
 # Local/private workspace artifacts
 .arca-private/

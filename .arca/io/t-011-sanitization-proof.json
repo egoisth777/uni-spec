@@ -7,11 +7,13 @@
     "id": "PT-011",
     "goalContractRef": ".arca/goal/spec.md#integrated-issue-requirements (US-12)",
     "executableTarget": "repository-audit PT-011",
-    "testFile": "test/sanitization-proof.test.ts"
+    "testFile": "test/sanitization-proof.test.ts",
+    "sourceStatus": "ephemeral runtime source; no Git-recoverable blob exists"
   },
   "redRun": {
     "command": "corepack pnpm exec vitest run test/sanitization-proof.test.ts",
     "result": "failed: 5 of 6 tests",
+    "evidenceStatus": "historical runtime evidence; the test source was never committed",
     "reason": "The intended semantic failure was the absent .arca/io/t-011-sanitization-proof.json proof record; the red run also exposed the exact CRLF ignore-file, route-delimiter, retained-support, and residual-ticket assertions that were corrected before proof publication."
   },
   "greenRun": {
@@ -24,8 +26,8 @@
     "results": [
       "pass: strict TypeScript check; node v24.15.0, pnpm 9.15.9",
       "pass: PT-007..PT-010, 4 files, 9 tests",
-      "pass: PT-011, 1 file, 6 tests",
-      "pass: full suite, 5 files, 15 tests"
+      "pass: PT-011, 1 ephemeral file, 6 tests; historical runtime evidence only",
+      "pass: full pre-sanitation suite, 5 files, 15 tests"
     ]
   },
   "toolVersions": {
@@ -37,22 +39,53 @@
     "deletedPaths": { "status": "pass", "inventory": ["website", "openspec", "src", "scripts", "schemas", "dist", "docs", ".github"] },
     "forbiddenIdentity": { "status": "pass", "inventory": ["AGENTS.md", "standard/**/*.md", "operational roots excluding .arca provenance/history and test assertion literals"] },
     "issueShape": { "status": "pass", "inventory": [".arca/issue/i-001-purge-sanitization", "standard/templates/issue", "standard/examples/fully-conforming/i-004-cross-aspect", "five conversion-output folders"] },
-    "markdownLinks": { "status": "pass", "inventory": [".arca/**/*.md and non-fixture standard/**/*.md; standard/examples fixture routes explicitly excluded"] },
+    "markdownLinks": {
+      "status": "pass",
+      "validated": "all 120 ordinary local links plus 2 external links across .arca/**/*.md and standard/**/*.md",
+      "excludedInvalidFixtureLinks": 22,
+      "exclusionEvidence": [
+        "standard/examples/aspect-invalid/broken-link.md:3 -> ../not-an-issue.md (deliberate traversal/missing destination)",
+        "standard/examples/conversion-c2/source.md:8 -> ../spec.md?bad (deliberate malformed-input query route)",
+        "standard/examples/conversion-c2/trace.md:5 -> ../spec.md?bad (trace of the deliberate malformed-input route)",
+        "standard/examples/index-metadata-invalid/duplicate-key.md:16 -> ./ubi-lang.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/duplicate-key.md:17 -> ./spec.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/duplicate-key.md:18 -> ./design.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/duplicate-key.md:19 -> ./test-plan.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/leading-byte.md:16 -> ./ubi-lang.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/leading-byte.md:17 -> ./spec.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/leading-byte.md:18 -> ./design.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/leading-byte.md:19 -> ./test-plan.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/non-scalar-status.md:16 -> ./ubi-lang.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/non-scalar-status.md:17 -> ./spec.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/non-scalar-status.md:18 -> ./design.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/non-scalar-status.md:19 -> ./test-plan.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/wrong-identity.md:15 -> ./ubi-lang.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/wrong-identity.md:16 -> ./spec.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/wrong-identity.md:17 -> ./design.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/index-metadata-invalid/wrong-identity.md:18 -> ./test-plan.md (single-file invalid-metadata fixture; companion absent)",
+        "standard/examples/lint-l3-content/test-plan.md:4 -> spec.md?view=raw (LINT-06 finding recorded in standard/examples/lint-findings/l3.json)",
+        "standard/examples/lint-l4-links-token/index.md:8 -> ../outside.md (LINT-06 finding recorded in standard/examples/lint-findings/l4.json)",
+        "standard/examples/lint-l4-links-token/index.md:8 -> missing.md#unresolved (LINT-06 finding recorded in standard/examples/lint-findings/l4.json)"
+      ],
+      "scope": "No standard/examples directory was broadly skipped; only the 22 explicitly enumerated invalid-fixture links were excluded."
+    },
     "residualConsistency": { "status": "pass", "inventory": ["residual-us-01 through residual-us-12", "t-001 through t-006 and t-007 through t-011 one-to-one ticket mapping where applicable", "frozen goal SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"] },
-    "retainedTree": { "status": "pass", "inventory": [".arca", "standard", "AGENTS.md", ".gitignore", "package.json", "test", "tsconfig.json", "vitest.config.ts", "node_modules/ ignored local support"] }
+    "retainedTree": { "status": "pass", "inventory": [".arca", ".gitignore", "AGENTS.md", "standard"], "trackedFileCount": 177, "rootFileCounts": { ".arca": 48, "standard": 127, "AGENTS.md": 1, ".gitignore": 1 } }
   },
   "removedTestSources": [
-    { "path": "test/adjacent-residue.test.ts", "sha256": "be69d16401e934c4615f7891c24328f2fa647da00b6c5147bb759e1a23ff0e2c" },
-    { "path": "test/minimal-retention.test.ts", "sha256": "e8786e96108eaf70c2f3f87a30f0a74a24aec190b048ded73176ba9ace2f8c10" },
-    { "path": "test/openspec-purge.test.ts", "sha256": "e7020ff880adf81c0019368d1d2470f721faaa691b87f70fc95537de1e0073b2" },
-    { "path": "test/sanitization-proof.test.ts", "sha256": "33653343b957596c43953cb12c3bd6d873b1be71dc074d8d36fb58eb4cccf207" },
-    { "path": "test/website-purge.test.ts", "sha256": "9a0f75963ef1e80778eb17271fa88212811c8ba79cafcfef022df7a21d7b661c" }
+    { "path": "test/adjacent-residue.test.ts", "sourceCommit": "f179bc6", "gitBlob": "aab4c9f6ef3eacf918ae568aa1ed2d589782737a", "sha256": "be69d16401e934c4615f7891c24328f2fa647da00b6c5147bb759e1a23ff0e2c", "evidenceStatus": "Git-recoverable" },
+    { "path": "test/minimal-retention.test.ts", "sourceCommit": "5da3064", "gitBlob": "f1cabfe3be6bc9576a6e70ecc465836c78411d85", "sha256": "e8786e96108eaf70c2f3f87a30f0a74a24aec190b048ded73176ba9ace2f8c10", "evidenceStatus": "Git-recoverable" },
+    { "path": "test/openspec-purge.test.ts", "sourceCommit": "31eb74a", "gitBlob": "f5c31b65bc5ec624233501e8d533b9b85633b997", "sha256": "e7020ff880adf81c0019368d1d2470f721faaa691b87f70fc95537de1e0073b2", "evidenceStatus": "Git-recoverable" },
+    { "path": "test/website-purge.test.ts", "sourceCommit": "5af718a", "gitBlob": "b0d793955b53724dcf5f9ea72003f7a176152363", "sha256": "9c1bcc1dd0fab80b63d5b225b8a3bff3d2c3d3bacbe79b671445baadfa299289", "evidenceStatus": "Git-recoverable" }
+  ],
+  "nonRecoverableRuntimeEvidence": [
+    { "path": "test/sanitization-proof.test.ts", "evidenceStatus": "ephemeral runtime source; no Git commit or blob exists, so no source hash is claimed" }
   ],
   "lastGreenBeforeRemoval": { "command": "corepack pnpm test", "result": "pass: 5 files, 15 tests" },
   "postSanitationStaticVerification": {
-    "command": "stdlib Python inline verification from repository root (no script): exact roots, forbidden paths/identity, retained links excluding standard/examples fixtures, issue shapes/frontmatter/routes, conversion outputs, residuals/tickets, proof, and .gitignore",
-    "result": "pass: roots exact [.arca, .gitignore, AGENTS.md, standard]; forbidden paths/identity empty; non-fixture link findings empty with standard/examples fixture routes explicitly excluded; 8 issue-shape directories conform; all 5 conversion outputs present; residual-us-01..12 satisfied and t-001..t-011 mappings consistent; proof complete"
+    "command": "stdlib Python inline verification from repository root (no script): exact roots, forbidden paths/identity, retained links with only 22 explicitly enumerated invalid-fixture links excluded, issue shapes/frontmatter/routes, conversion outputs, residuals/tickets, proof, and .gitignore",
+    "result": "pass: exact roots [.arca, .gitignore, AGENTS.md, standard]; forbidden paths/identity empty; 120 ordinary local links and 2 external links validated, 22 explicitly enumerated invalid-fixture links excluded; 8 issue-shape directories conform; all 5 conversion outputs present; residual-us-01..12 satisfied and t-001..t-011 mappings consistent; proof complete; .gitignore contains only .arca-private/"
   },
   "finalRootAllowlist": [".arca", ".gitignore", "AGENTS.md", "standard"],
-  "gitignoreEntries": ["node_modules/", "coverage/", "*.log", "*.tsbuildinfo", ".arca-private/"]
+  "gitignoreEntries": [".arca-private/"]
 }
