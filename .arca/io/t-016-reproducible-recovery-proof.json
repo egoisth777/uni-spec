@@ -2662,7 +2662,7 @@
   },
   "cleanCheckout": {
     "isolated": true,
-    "method": "fresh temporary clone of the recovery cutoff with core.autocrlf=false; staged proof/test copied in, generated state absent before install, clone removed after verification",
+    "method": "fresh temporary clone of the recovery cutoff with repository-enforced LF checkout via .gitattributes; staged proof/test copied in, generated state absent before install, clone removed after verification",
     "candidateTree": "HEAD^{tree}",
     "temporaryDirectoryCleaned": true,
     "versions": {

@@ -1,4 +1,5 @@
 import { test } from 'node:test';
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -33,6 +34,19 @@ function git(...args) {
   return execFileSync('git', args, { cwd: root, encoding: 'utf8' }).trim();
 }
 
+function frozenGoalDigest() {
+  const hash = createHash('sha256');
+  for (const name of goalFiles) {
+    hash.update(`${name}\0`);
+    hash.update(readFileSync(path.join(root, '.arca', 'goal', name)));
+  }
+  return hash.digest('hex');
+}
+
+function lineEndingAttributes() {
+  return git('check-attr', 'eol', '--', '.arca/goal/spec.md', 'src/cli/index.ts');
+}
+
 function candidateMap(evidence) {
   const candidates = [...(evidence.inventory?.restored ?? []), ...(evidence.inventory?.excluded ?? [])];
   assert.ok(candidates.length > 0, 'restored/excluded inventory must not be empty');
@@ -64,6 +78,8 @@ test('PT-016 records frozen provenance, goal bytes, and a linear recovery chain'
   const evidence = readEvidence();
   assert.equal(evidence.provenance?.baselineCommit, baseline);
   assert.equal(evidence.provenance?.planningParent, planningParent);
+  assert.equal(frozenGoalDigest(), frozenGoalHash);
+  assert.equal(lineEndingAttributes(), '.arca/goal/spec.md: eol: lf\nsrc/cli/index.ts: eol: lf');
   assert.equal(evidence.frozenGoal?.bundleSha256, frozenGoalHash);
   assert.deepEqual(evidence.frozenGoal?.files, goalFiles);
   assert.equal(evidence.provenance?.topology, 'single-parent linear recovery chain');
@@ -109,6 +125,8 @@ test('PT-016 proves package and source import closure without stale generated st
 test('PT-016 records exact clean-checkout commands, versions, results, and test counts', () => {
   const evidence = readEvidence();
   const clean = evidence.cleanCheckout;
+  assert.match(clean.method, /repository-enforced LF checkout/);
+  assert.doesNotMatch(clean.method, /core\.autocrlf/);
   assert.equal(clean?.isolated, true);
   assert.equal(clean?.temporaryDirectoryCleaned, true);
   assert.equal(clean?.candidateTree, 'HEAD^{tree}');

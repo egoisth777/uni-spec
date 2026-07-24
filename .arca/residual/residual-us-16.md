@@ -11,8 +11,8 @@ concrete-evidence-refs:
   - ".arca/current/log.md (append-only preservation history)"
   - ".arca/io/t-015-purge-preservation.json"
   - "test/t-015-purge-preservation.test.mjs (PT-015)"
-  - "current tree inspection: website/ and openspec/ absent; .arca/, standard/, AGENTS.md present"
-classification-rationale: "satisfied: PT-015 proves the recovered runtime/package/support slices preserve the repository-root purge boundaries, retained governance/standard/history routes, frozen goal bytes/hash, and append-only current state."
+  - "current tree inspection: website/ and openspec/ absent; .gitattributes, .arca/, standard/, AGENTS.md present with repository-enforced LF attributes"
+classification-rationale: "satisfied: PT-015 proves the recovered runtime/package/support slices preserve the repository-root purge boundaries, retained governance/standard/history routes, frozen goal bytes/hash, append-only current state, and repository-enforced LF checkout policy."
 status: "satisfied"
 required-test-refs:
   - "T-016"

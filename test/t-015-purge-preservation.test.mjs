@@ -14,7 +14,7 @@ const recoveryCutoff = '36026f06cd0f0f3be89cd140a3944c525a92562d';
 const frozenGoalHash = '86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021';
 const goalFiles = ['index.md', 'ubi-lang.md', 'spec.md', 'design.md', 'test-list.md'];
 const retainedRoots = [
-  '.arca', '.gitignore', 'AGENTS.md', 'bin', 'build.js', 'package.json',
+  '.arca', '.gitattributes', '.gitignore', 'AGENTS.md', 'bin', 'build.js', 'package.json',
   'pnpm-lock.yaml', 'schemas', 'src', 'standard', 'test', 'tsconfig.json', 'vitest.config.ts',
 ];
 const forbiddenRoots = [
@@ -52,6 +52,10 @@ function addedPaths(from, to) {
   return git('diff', '--diff-filter=A', '--name-only', from, to).split('\n').filter(Boolean).sort();
 }
 
+function indexRoots() {
+  return git('ls-files', '-z').split('\0').filter(Boolean).map((entry) => entry.split('/')[0]).filter((entry, index, all) => all.indexOf(entry) === index).sort();
+}
+
 
 function frozenGoalDigest() {
   const hash = createHash('sha256');
@@ -60,6 +64,10 @@ function frozenGoalDigest() {
     hash.update(readFileSync(path.join(root, '.arca', 'goal', name)));
   }
   return hash.digest('hex');
+}
+
+function lineEndingAttributes() {
+  return git('check-attr', 'eol', '--', '.arca/goal/spec.md', 'src/cli/index.ts');
 }
 
 test('PT-015 preservation evidence is machine-readable before filesystem proof', () => {
@@ -75,7 +83,7 @@ test('PT-015 inventories exact retained roots and additions since the recovery p
   const inventory = evidence.inventory;
   assert.deepEqual(inventory.retainedRoots, retainedRoots);
   assert.deepEqual(inventory.baselineRoots, trackedRoots(planningCommit));
-  assert.deepEqual(inventory.currentRoots, trackedRoots(recoveryCutoff));
+  assert.deepEqual(inventory.currentRoots, indexRoots());
   assert.deepEqual(inventory.prePlanningRoots, trackedRoots(planningParent));
   assert.deepEqual(inventory.planningRoots, trackedRoots(planningCommit));
   assert.deepEqual(inventory.planningAddedPaths, addedPaths(planningParent, planningCommit));
@@ -115,6 +123,7 @@ test('PT-015 freezes the goal bytes and preserves every authority/history route'
     files: goalFiles,
   });
   assert.equal(frozenGoalDigest(), frozenGoalHash);
+  assert.equal(lineEndingAttributes(), '.arca/goal/spec.md: eol: lf\nsrc/cli/index.ts: eol: lf');
   assert.equal(git('diff', '--quiet', planningCommit, recoveryCutoff, '--', '.arca/goal'), '');
   assert.deepEqual(evidence.retained.arca.issuePaths, [
     '.arca/issue/i-002-selective-cli-recovery/index.md',

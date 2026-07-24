@@ -22,7 +22,7 @@ status: "done"
 
 ## Vertical slice
 
-Publish the final machine-readable recovery proof: exact baseline and current revisions, deterministic goal/recovery hashes, ordered selective extraction commands, restored-vs-excluded path inventory, dependency-closure decisions, unresolved candidates, and clean install/build/CLI/test outputs. Re-run the proof from a fresh checkout and close only when independent results match; otherwise leave the residual open and cut a narrower follow-up ticket.
+Publish the final machine-readable recovery proof: exact baseline and current revisions, deterministic goal/recovery hashes, ordered selective extraction commands, restored-vs-excluded path inventory, dependency-closure decisions, unresolved candidates, and clean install/build/CLI/test outputs. Re-run the proof from a fresh checkout governed by the repository `.gitattributes` LF policy and close only when independent results match; otherwise leave the residual open and cut a narrower follow-up ticket.
 
 ## P4 Apparent Test Plan
 
