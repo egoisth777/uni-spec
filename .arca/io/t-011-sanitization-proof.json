@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "ticket": "t-011-sanitization-proof",
+  "phase": "P5",
+  "status": "complete",
+  "ptMapping": {
+    "id": "PT-011",
+    "goalContractRef": ".arca/goal/spec.md#integrated-issue-requirements (US-12)",
+    "executableTarget": "repository-audit PT-011",
+    "testFile": "test/sanitization-proof.test.ts"
+  },
+  "redRun": {
+    "command": "corepack pnpm exec vitest run test/sanitization-proof.test.ts",
+    "result": "failed: 5 of 6 tests",
+    "reason": "The intended semantic failure was the absent .arca/io/t-011-sanitization-proof.json proof record; the red run also exposed the exact CRLF ignore-file, route-delimiter, retained-support, and residual-ticket assertions that were corrected before proof publication."
+  },
+  "greenRun": {
+    "commands": [
+      "corepack pnpm exec tsc --noEmit",
+      "corepack pnpm exec vitest run test/website-purge.test.ts test/openspec-purge.test.ts test/adjacent-residue.test.ts test/minimal-retention.test.ts",
+      "corepack pnpm exec vitest run test/sanitization-proof.test.ts",
+      "corepack pnpm test"
+    ],
+    "results": [
+      "pass: strict TypeScript check; node v24.15.0, pnpm 9.15.9",
+      "pass: PT-007..PT-010, 4 files, 9 tests",
+      "pass: PT-011, 1 file, 6 tests",
+      "pass: full suite, 5 files, 15 tests"
+    ]
+  },
+  "toolVersions": {
+    "node": "v24.15.0",
+    "pnpm": "9.15.9",
+    "vitest": "3.2.6"
+  },
+  "checks": {
+    "deletedPaths": { "status": "pass", "inventory": ["website", "openspec", "src", "scripts", "schemas", "dist", "docs", ".github"] },
+    "forbiddenIdentity": { "status": "pass", "inventory": ["AGENTS.md", "standard/**/*.md", "operational roots excluding .arca provenance/history and test assertion literals"] },
+    "issueShape": { "status": "pass", "inventory": [".arca/issue/i-001-purge-sanitization", "standard/templates/issue", "standard/examples/fully-conforming/i-004-cross-aspect", "five conversion-output folders"] },
+    "markdownLinks": { "status": "pass", "inventory": [".arca/**/*.md and non-fixture standard/**/*.md; standard/examples fixture routes explicitly excluded"] },
+    "residualConsistency": { "status": "pass", "inventory": ["residual-us-01 through residual-us-12", "t-001 through t-006 and t-007 through t-011 one-to-one ticket mapping where applicable", "frozen goal SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"] },
+    "retainedTree": { "status": "pass", "inventory": [".arca", "standard", "AGENTS.md", ".gitignore", "package.json", "test", "tsconfig.json", "vitest.config.ts", "node_modules/ ignored local support"] }
+  },
+  "removedTestSources": [
+    { "path": "test/adjacent-residue.test.ts", "sha256": "be69d16401e934c4615f7891c24328f2fa647da00b6c5147bb759e1a23ff0e2c" },
+    { "path": "test/minimal-retention.test.ts", "sha256": "e8786e96108eaf70c2f3f87a30f0a74a24aec190b048ded73176ba9ace2f8c10" },
+    { "path": "test/openspec-purge.test.ts", "sha256": "e7020ff880adf81c0019368d1d2470f721faaa691b87f70fc95537de1e0073b2" },
+    { "path": "test/sanitization-proof.test.ts", "sha256": "33653343b957596c43953cb12c3bd6d873b1be71dc074d8d36fb58eb4cccf207" },
+    { "path": "test/website-purge.test.ts", "sha256": "9a0f75963ef1e80778eb17271fa88212811c8ba79cafcfef022df7a21d7b661c" }
+  ],
+  "lastGreenBeforeRemoval": { "command": "corepack pnpm test", "result": "pass: 5 files, 15 tests" },
+  "postSanitationStaticVerification": {
+    "command": "stdlib Python inline verification from repository root (no script): exact roots, forbidden paths/identity, retained links excluding standard/examples fixtures, issue shapes/frontmatter/routes, conversion outputs, residuals/tickets, proof, and .gitignore",
+    "result": "pass: roots exact [.arca, .gitignore, AGENTS.md, standard]; forbidden paths/identity empty; non-fixture link findings empty with standard/examples fixture routes explicitly excluded; 8 issue-shape directories conform; all 5 conversion outputs present; residual-us-01..12 satisfied and t-001..t-011 mappings consistent; proof complete"
+  },
+  "finalRootAllowlist": [".arca", ".gitignore", "AGENTS.md", "standard"],
+  "gitignoreEntries": ["node_modules/", "coverage/", "*.log", "*.tsbuildinfo", ".arca-private/"]
+}

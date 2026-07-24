@@ -58,7 +58,7 @@
       "decision": "retain",
       "required": false,
       "temporary": true,
-      "evidence": "The minimized file excludes node_modules and generated test output while retaining the sanitation-era intent for logs, caches, environment files, and tool metadata.",
+      "evidence": "The minimized file ignores node_modules/, coverage/, *.log, *.tsbuildinfo, and .arca-private/.",
       "rationale": "Local Vitest support needs ignored dependencies and generated output; no ignored pattern authorizes retained product content."
     },
     {

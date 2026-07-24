@@ -14,7 +14,7 @@ dependencies:
   - "t-008-openspec-purge"
   - "t-009-adjacent-residue"
   - "t-010-minimal-retention"
-status: "approved"
+status: "done"
 ---
 
 # Ticket: t-011-sanitization-proof
@@ -48,3 +48,10 @@ Run the final absence searches for upstream identity and deleted paths, resolve 
 | `PT-011-H4` | `.arca/goal/test-list.md#verification` | Make an applicable check fail. | `Durability/Recovery` | Failure remains visible and blocks status. | `purge-maintainer` |
 | `PT-011-H5` | `.arca/goal/test-list.md#verification` | Remove one required retained artifact. | `Output/Filesystem` | Shape/allowlist proof fails. | `purge-maintainer` |
 | `PT-011-H6` | `.arca/goal/spec.md#integrated-issue-requirements` | Cross-check all final evidence classes. | `Cross-Feature` | Ticket closes only with complete proof. | `purge-maintainer` |
+
+## Completion evidence
+
+- PT-011 red was run before the proof record existed and failed for the intended semantic reason: `.arca/io/t-011-sanitization-proof.json` was absent.
+- PT-011 then passed 6/6; strict TypeScript passed; PT-007 through PT-010 passed 9/9; and the last pre-sanitation full suite passed 5 files and 15 tests.
+- `.arca/io/t-011-sanitization-proof.json` records the command inventory, tool versions, check inventories, removed test-source hashes, exact final root allowlist, exact `.gitignore` entries, and post-sanitation static verification. The executable harness was intentionally removed after that green run and is historical, not runnable in the sanitized tree.
+- Post-sanitation stdlib verification passed with exact roots `.arca`, `.gitignore`, `AGENTS.md`, and `standard`; no forbidden paths or operational identity; zero non-fixture link findings with `standard/examples/` fixtures explicitly excluded; eight issue-shape directories conforming; five conversion outputs present; and all residual/ticket mappings consistent.
