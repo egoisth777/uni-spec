@@ -31,7 +31,7 @@ async function existingCandidates(): Promise<string[]> {
       }
     }),
   );
-  return results.filter((candidate): candidate is string => candidate !== null);
+  return results.filter((candidate) => candidate !== null);
 }
 
 async function standardReferencesToCandidates(): Promise<string[]> {

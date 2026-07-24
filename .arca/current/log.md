@@ -119,3 +119,4 @@
 - 2026-07-23 - Phase P5 - t-010 - wrote `.arca/io/t-010-minimal-retention.json`, added concrete root AGENTS.md routing, minimized `.gitignore`, and retained only required `.arca/`/`standard/` plus directly evidenced temporary test support; PT-010 passed 3/3 and PT-007..PT-010 passed 9/9.
 - 2026-07-23 - Phase P5 - complete - t-010-minimal-retention done and residual-us-11 satisfied; next approved ticket t-011-sanitization-proof is P4/running; no t-011 sanitation work started.
 - 2026-07-23 - Phase P4 - t-010 hole-poke - temporarily emptying root AGENTS.md made PT-010 fail on the required guidance route; restoring the concrete `.arca/index.md` routing entry returned the test to green.
+- 2026-07-23 - Phase P5 - t-010 corrective review - strict `tsc --noEmit` exposed a null-filter narrowing error in retained PT-008 test support; changed the filter to TypeScript-inferred narrowing, then `tsc --noEmit` and PT-007..PT-010/full suite passed (9/9).

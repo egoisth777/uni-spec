@@ -55,3 +55,7 @@ PT-010 is `test/minimal-retention.test.ts` and passed 3/3 after the P4 red run. 
 The retained allowlist is `.arca/`, `standard/`, `AGENTS.md`, `.gitignore`, `package.json`, `tsconfig.json`, `vitest.config.ts`, and `test/`. `.arca/` and `standard/` are required authority roots. The package, TypeScript/Vitest configs, and four audit tests are temporary support directly evidenced for PT-007 through PT-010 and the next t-011 all-test verification; they contain no inherited runtime functionality. `node_modules/` remains ignored local support and is not a deliverable. Every observed root has an allowlist or exclusion decision, and all retained Markdown routes remain subject to the existing audit tests.
 
 PT-007 through PT-010 passed together (9 tests); the full retained suite is green. Residual `US-11` is satisfied. The next approved ticket is `t-011-sanitization-proof`, now P4/running; no t-011 sanitation work is included here.
+
+## Corrective review
+
+Independent t-010 review found the retained PT-008 test did not type-check under the repository's strict `tsconfig.json`: its explicit `candidate is string` predicate was incompatible with the readonly candidate union. The filter now uses TypeScript's inferred `candidate !== null` narrowing in `test/openspec-purge.test.ts`; `tsc --noEmit` and PT-007..PT-010/full suite pass (9/9). No t-011 work is included.
