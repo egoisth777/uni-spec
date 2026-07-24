@@ -1,0 +1,120 @@
+{
+  "retentionRule": "Every root entry is classified; recursive required roots inherit authority for all descendants, and temporary roots are retained only for named PT-007..PT-010/t-011 verification.",
+  "allowlistPolicy": "Only the listed roots may exist at checkout root (excluding VCS metadata and ignored node_modules/); recursive entries are governed by their retained root evidence.",
+  "decisionRule": "No path is retained without a direct evidence and rationale; absence and ignored support are recorded as explicit decisions rather than silently omitted.",
+  "schemaVersion": 1,
+  "ticket": "t-010-minimal-retention",
+  "phase": "P5",
+  "status": "complete",
+  "observedRootPaths": [
+    ".arca",
+    ".gitignore",
+    "AGENTS.md",
+    "node_modules",
+    "package.json",
+    "standard",
+    "test",
+    "tsconfig.json",
+    "vitest.config.ts"
+  ],
+  "ptMapping": {
+    "id": "PT-010",
+    "goalContractRef": ".arca/goal/spec.md#integrated-issue-requirements (US-11)",
+    "executableTarget": "repository-audit PT-010",
+    "testFile": "test/minimal-retention.test.ts"
+  },
+  "requiredRoots": [".arca", "standard", "AGENTS.md"],
+  "allowlist": [
+    {
+      "path": ".arca",
+      "scope": "recursive",
+      "decision": "retain",
+      "required": true,
+      "temporary": false,
+      "evidence": "The governance index, frozen goal, issue record, residuals, ticket history, current state, and prior purge evidence are all rooted under .arca.",
+      "rationale": "US-11 explicitly requires .arca/ and the retained records are the authority and audit trail for this sanitation sequence."
+    },
+    {
+      "path": "standard",
+      "scope": "recursive",
+      "decision": "retain",
+      "required": true,
+      "temporary": false,
+      "evidence": "standard/index.md and its linked normative documents, templates, examples, and inspection traces define the uni-spec deliverable.",
+      "rationale": "US-11 explicitly requires standard/; deleting any child would remove normative content or its directly linked evidence."
+    },
+    {
+      "path": "AGENTS.md",
+      "scope": "exact",
+      "decision": "retain",
+      "required": true,
+      "temporary": false,
+      "evidence": "The root entry routes contributors to .arca/index.md, where repository governance and working rules are maintained.",
+      "rationale": "US-11 explicitly requires AGENTS.md; a concrete routing entry resolves the former unexplained empty artifact without duplicating governance."
+    },
+    {
+      "path": ".gitignore",
+      "scope": "exact",
+      "decision": "retain",
+      "required": false,
+      "temporary": true,
+      "evidence": "The minimized file excludes node_modules and generated test output while retaining the sanitation-era intent for logs, caches, environment files, and tool metadata.",
+      "rationale": "Local Vitest support needs ignored dependencies and generated output; no ignored pattern authorizes retained product content."
+    },
+    {
+      "path": "package.json",
+      "scope": "exact",
+      "decision": "retain",
+      "required": false,
+      "temporary": true,
+      "evidence": "The private manifest contains only the Vitest test command and its dev dependency; it has no upstream identity, runtime, source, release, or product dependency.",
+      "rationale": "Temporary test support remains directly evidenced for PT-007 through PT-010 and the next t-011 all-test verification."
+    },
+    {
+      "path": "tsconfig.json",
+      "scope": "exact",
+      "decision": "retain",
+      "required": false,
+      "temporary": true,
+      "evidence": "The config includes only test/**/*.ts with strict TypeScript settings and excludes node_modules.",
+      "rationale": "Temporary type-check/test support is directly needed by the retained Vitest suite through t-011; it contains no inherited runtime functionality."
+    },
+    {
+      "path": "vitest.config.ts",
+      "scope": "exact",
+      "decision": "retain",
+      "required": false,
+      "temporary": true,
+      "evidence": "The config only selects the test tree, Node environment, bounded workers, and test coverage exclusions.",
+      "rationale": "Temporary runnable support is directly needed for PT-007 through PT-010 and t-011 all-test verification; no product runtime is configured."
+    },
+    {
+      "path": "test",
+      "scope": "recursive",
+      "decision": "retain",
+      "required": false,
+      "temporary": true,
+      "evidence": "The directory contains exactly the three prior repository-audit tests and minimal-retention.test.ts, all exercising sanitation evidence; no inherited product tests remain.",
+      "rationale": "Temporary executable evidence is directly needed to run PT-007 through PT-010 and t-011 all-test verification."
+    }
+  ],
+  "decisions": [
+    {
+      "path": "node_modules/",
+      "observed": "Ignored local dependency installation is present in this worktree.",
+      "decision": "exclude",
+      "evidence": "It is ignored by .gitignore and is not a tracked or deliverable path.",
+      "rationale": "Node modules are local test support only and must never enter the retained repository allowlist."
+    },
+    {
+      "path": "test/AGENTS.md",
+      "observed": "No file exists at test/AGENTS.md.",
+      "decision": "absent",
+      "evidence": "The test tree has no distinct local routing rule; root AGENTS.md routes to .arca/index.md and the test file contracts are self-contained.",
+      "rationale": "Do not add a redundant guidance artifact when no test-specific rule is required."
+    }
+  ],
+  "absentPaths": ["test/AGENTS.md"],
+  "temporarySupport": ["package.json", "tsconfig.json", "vitest.config.ts", "test"],
+  "ignoredLocalSupport": ["node_modules/"]
+}

@@ -13,7 +13,7 @@ dependencies:
   - "t-007-website-purge"
   - "t-008-openspec-purge"
   - "t-009-adjacent-residue"
-status: "approved"
+status: "done"
 ---
 
 # Ticket: t-010-minimal-retention
@@ -47,3 +47,11 @@ Apply the minimal-retention criterion to the resulting checkout: preserve `.arca
 | `PT-010-H4` | `.arca/goal/spec.md#integrated-issue-requirements` | Encounter an ambiguous `AGENTS.md`. | `Durability/Recovery` | Preserve and record question. | `purge-maintainer` |
 | `PT-010-H5` | `.arca/goal/test-list.md#verification` | Compare expected allowlist with actual tree. | `Output/Filesystem` | Exact required set remains. | `purge-maintainer` |
 | `PT-010-H6` | `.arca/goal/spec.md#integrated-issue-requirements` | Validate routes after support pruning. | `Cross-Feature` | Links and standard checks remain green. | `purge-maintainer` |
+
+## P5 Disposition and proof
+
+PT-010 is `test/minimal-retention.test.ts` and passed 3/3 after the P4 red run. The machine-readable allowlist and evidence record is `.arca/io/t-010-minimal-retention.json`. It enumerates every retained root, records required versus temporary support, excludes ignored local `node_modules/`, and explicitly records absent `test/AGENTS.md`. The former empty root `AGENTS.md` now contains only a routing entry to `.arca/index.md`; `.gitignore` is reduced to local test support and `.arca-private/` protection.
+
+The retained allowlist is `.arca/`, `standard/`, `AGENTS.md`, `.gitignore`, `package.json`, `tsconfig.json`, `vitest.config.ts`, and `test/`. `.arca/` and `standard/` are required authority roots. The package, TypeScript/Vitest configs, and four audit tests are temporary support directly evidenced for PT-007 through PT-010 and the next t-011 all-test verification; they contain no inherited runtime functionality. `node_modules/` remains ignored local support and is not a deliverable. Every observed root has an allowlist or exclusion decision, and all retained Markdown routes remain subject to the existing audit tests.
+
+PT-007 through PT-010 passed together (9 tests); the full retained suite is green. Residual `US-11` is satisfied. The next approved ticket is `t-011-sanitization-proof`, now P4/running; no t-011 sanitation work is included here.
