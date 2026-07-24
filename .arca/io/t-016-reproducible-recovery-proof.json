@@ -1,0 +1,2908 @@
+{
+  "schemaVersion": 1,
+  "ticket": "t-016-reproducible-recovery-proof",
+  "pt": "PT-016",
+  "phase": "P5",
+  "status": "complete",
+  "provenance": {
+    "baselineRef": "f179bc6^",
+    "baselineCommit": "84741704290c547d64605699d697612ac03731bf",
+    "planningParent": "dd3fe7053bfee91ad9616367dd2c314ab2bf131f",
+    "recoveryCutoff": "0f7d91032ef1aedefbcaeda36cb7189916277286",
+    "topology": "single-parent linear recovery chain",
+    "rewriteDetected": false,
+    "broadRevertOrResetDetected": false,
+    "recoveryCommits": [
+      "a737ad4",
+      "cd84f85",
+      "d81a26f",
+      "36026f0",
+      "dc69e30",
+      "0f7d910"
+    ],
+    "restoreCommands": [
+      {
+        "order": 1,
+        "command": "git restore --source=84741704290c547d64605699d697612ac03731bf --worktree -- bin/openspec.js <167 resolved src paths>",
+        "scope": "CLI entrypoint and 167 reachable source modules",
+        "decision": "restored"
+      },
+      {
+        "order": 2,
+        "command": "git restore --source=84741704290c547d64605699d697612ac03731bf -- package.json pnpm-lock.yaml tsconfig.json build.js",
+        "scope": "minimal package/build closure",
+        "decision": "restored"
+      },
+      {
+        "order": 3,
+        "command": "git restore --source=84741704290c547d64605699d697612ac03731bf -- schemas/spec-driven/schema.yaml schemas/spec-driven/templates/proposal.md schemas/spec-driven/templates/spec.md schemas/spec-driven/templates/design.md schemas/spec-driven/templates/tasks.md",
+        "scope": "direct support closure (5 schema/template assets)",
+        "decision": "restored"
+      },
+      {
+        "order": 4,
+        "command": "git restore --source=84741704290c547d64605699d697612ac03731bf -- .arca/io/t-012-cli-runtime-recovery.json .arca/io/t-013-package-build-closure.json .arca/io/t-014-direct-support-closure.json .arca/io/t-015-purge-preservation.json",
+        "scope": "prior machine-readable prerequisite evidence",
+        "decision": "restored"
+      }
+    ]
+  },
+  "frozenGoal": {
+    "files": [
+      "index.md",
+      "ubi-lang.md",
+      "spec.md",
+      "design.md",
+      "test-list.md"
+    ],
+    "commit": "dd3fe7053bfee91ad9616367dd2c314ab2bf131f",
+    "bundleSha256": "86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021"
+  },
+  "inventory": {
+    "restored": [
+      {
+        "path": "bin/openspec.js",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/cli/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/shared-output.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/config.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/update.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/list.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/archive.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/view.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/root-selection.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/spec.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/validate.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/show.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/completion.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/feedback.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/config.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/store.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/doctor.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/context.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workset.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/telemetry/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/shared-flags.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/init.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/errors.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/file-system.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/command-references.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/shared/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/legacy-cleanup.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/interactive.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/global-config.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/profiles.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/available-tools.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/profile-sync-drift.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/migration.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/prompts/searchable-multi-select.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/task-progress.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/parsers/markdown-parser.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/validation/validator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/specs-apply.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/foundation.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/registry.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/openspec-root.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/planning-home.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/project-config.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/schemas/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/item-discovery.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/converters/json-converter.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/parsers/change-parser.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/shared.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/match.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/factory.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/command-registry.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/shell-detection.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/completion-provider.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/config-schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/resolver.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/types.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/git.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/shared-gather.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/relationship-health.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/working-set.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/worksets.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/openers.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/file-state.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workset-input.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workset-prompts.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/status.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/instructions.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/schemas.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/commands/workflow/new-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/telemetry/config.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/types.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/styles/palette.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/config-prompts.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/ui/welcome-screen.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/types.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/registry.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/generator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/shared/tool-detection.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/shared/skill-generation.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/change-metadata.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/parsers/requirement-text.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/validation/types.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/validation/constants.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/parsers/requirement-blocks.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/parsers/spec-structure.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/id.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/zod-issues.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/schemas/base.schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/schemas/spec.schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/schemas/change.schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/references.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/utils/change-utils.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/generators/zsh-generator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/generators/bash-generator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/generators/fish-generator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/generators/powershell-generator.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/installers/zsh-installer.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/installers/bash-installer.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/installers/fish-installer.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/installers/powershell-installer.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/store/operations.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/ui/ascii-patterns.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/amazon-q.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/antigravity.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/auggie.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/bob.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/claude.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/cline.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/codex.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/codebuddy.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/continue.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/costrict.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/crush.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/cursor.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/factory.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/gemini.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/github-copilot.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/iflow.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/junie.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/kilocode.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/kiro.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/oh-my-pi.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/opencode.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/pi.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/qoder.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/lingma.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/qwen.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/roocode.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/trae.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/adapters/windsurf.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/skill-templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/shared/allowed-tools.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/graph.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/state.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/outputs.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/artifact-graph/instruction-loader.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/change-status-policy.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/change-metadata/index.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/templates/zsh-templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/templates/bash-templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/templates/fish-templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/completions/templates/powershell-templates.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/command-generation/yaml.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/types.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/explore.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/new-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/continue-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/apply-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/update-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/ff-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/sync-specs.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/archive-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/bulk-archive-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/verify-change.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/onboard.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/propose.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/feedback.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/change-metadata/schema.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "src/core/templates/workflows/store-selection.ts",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Static source import closure rooted at src/cli/index.ts is required by the retained CLI runtime.",
+        "evidence": "PT-012 BFS closure and clean CLI smoke exercise the retained module."
+      },
+      {
+        "path": "package.json",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package/build closure is required for the retained CLI.",
+        "evidence": "PT-013 package, lockfile, build, and strict typecheck checks exercise this path."
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package/build closure is required for the retained CLI.",
+        "evidence": "PT-013 package, lockfile, build, and strict typecheck checks exercise this path."
+      },
+      {
+        "path": "tsconfig.json",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package/build closure is required for the retained CLI.",
+        "evidence": "PT-013 package, lockfile, build, and strict typecheck checks exercise this path."
+      },
+      {
+        "path": "build.js",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package/build closure is required for the retained CLI.",
+        "evidence": "PT-013 package, lockfile, build, and strict typecheck checks exercise this path."
+      },
+      {
+        "path": "schemas/spec-driven/schema.yaml",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package schema resolver and schemas/templates command directly read this asset at runtime.",
+        "evidence": "src/core/artifact-graph/resolver.ts resolves package schemas; src/commands/schema.ts and src/commands/workflow/templates.ts consume this path."
+      },
+      {
+        "path": "schemas/spec-driven/templates/design.md",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package schema resolver and schemas/templates command directly read this asset at runtime.",
+        "evidence": "src/core/artifact-graph/resolver.ts resolves package schemas; src/commands/schema.ts and src/commands/workflow/templates.ts consume this path."
+      },
+      {
+        "path": "schemas/spec-driven/templates/proposal.md",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package schema resolver and schemas/templates command directly read this asset at runtime.",
+        "evidence": "src/core/artifact-graph/resolver.ts resolves package schemas; src/commands/schema.ts and src/commands/workflow/templates.ts consume this path."
+      },
+      {
+        "path": "schemas/spec-driven/templates/spec.md",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package schema resolver and schemas/templates command directly read this asset at runtime.",
+        "evidence": "src/core/artifact-graph/resolver.ts resolves package schemas; src/commands/schema.ts and src/commands/workflow/templates.ts consume this path."
+      },
+      {
+        "path": "schemas/spec-driven/templates/tasks.md",
+        "decision": "restored",
+        "source": "frozen baseline path-scoped recovery",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Package schema resolver and schemas/templates command directly read this asset at runtime.",
+        "evidence": "src/core/artifact-graph/resolver.ts resolves package schemas; src/commands/schema.ts and src/commands/workflow/templates.ts consume this path."
+      },
+      {
+        "path": "test/t-014-direct-support-closure.test.mjs",
+        "decision": "restored",
+        "source": "current PT-014 test-first closure",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Focused executable proof for direct schemas/templates behavior and candidate closure manifest.",
+        "evidence": "The test invokes schemas --json and templates --json in an isolated temporary cwd and checks package assets and purge boundaries."
+      },
+      {
+        "path": "test/t-012-cli-runtime-recovery.test.mjs",
+        "decision": "restored",
+        "source": "recovery proof test slice",
+        "baseline": "current recovery chain",
+        "reason": "Focused retained runtime proof.",
+        "evidence": "The named PT is run by the clean package test command."
+      },
+      {
+        "path": "test/t-013-package-build-closure.test.mjs",
+        "decision": "restored",
+        "source": "recovery proof test slice",
+        "baseline": "current recovery chain",
+        "reason": "Focused retained package proof.",
+        "evidence": "The named PT is run by the clean package test command."
+      },
+      {
+        "path": "test/t-013-package-build-closure.vitest.test.ts",
+        "decision": "restored",
+        "source": "recovery proof test slice",
+        "baseline": "current recovery chain",
+        "reason": "Focused retained package runner proof.",
+        "evidence": "The named PT is run by the clean package test command."
+      },
+      {
+        "path": "test/t-015-purge-preservation.test.mjs",
+        "decision": "restored",
+        "source": "recovery proof test slice",
+        "baseline": "current recovery chain",
+        "reason": "Focused retained preservation proof.",
+        "evidence": "The named PT is run by the clean package test command."
+      },
+      {
+        "path": "test/t-016-reproducible-recovery-proof.test.mjs",
+        "decision": "restored",
+        "source": "recovery proof test slice",
+        "baseline": "current recovery chain",
+        "reason": "Focused final reproducibility proof.",
+        "evidence": "The named PT is run by the clean package test command."
+      }
+    ],
+    "excluded": [
+      {
+        "path": "docs/README.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/agent-contract.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/cli.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/commands.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/concepts.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/customization.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/editing-changes.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/examples.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/existing-projects.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/explore.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/faq.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/getting-started.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/glossary.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/how-commands-work.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/installation.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/migration-guide.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/multi-language.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/opsx.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/overview.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/reviewing-changes.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/stores-beta/user-guide.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/supported-tools.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/team-workflow.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/troubleshooting.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/workflows.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "docs/writing-specs.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline user documentation inspected; no retained command imports, scripts, tests, or unresolved public-contract edge requires restoring this page.",
+        "evidence": "No source/runtime import or package script references docs/**; current retained CLI has no docs build/link consumer."
+      },
+      {
+        "path": "test/AGENTS.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/cli-e2e/basic.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/cli-e2e/capstone-journeys.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/cli-e2e/store-lifecycle.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/cli-e2e/workset-journey.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/artifact-workflow.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/change-initiative-link.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/change.interactive-show.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/change.interactive-validate.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/completion.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/config-profile.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/config.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/context.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/declared-store-fallback.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/doctor.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/feedback.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/legacy-groups-removed.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/schema.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/show.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/spec.interactive-show.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/spec.interactive-validate.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/spec.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/store-git.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/store-references.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/store-remote.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/store-root-selection.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/store.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/validate.enriched-output.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/validate.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/commands/workset.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/archive.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/graph.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/instruction-loader.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/outputs.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/resolver.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/schema.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/state.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/artifact-graph/workflow.integration.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/available-tools.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/command-generation/adapters.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/command-generation/generator.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/command-generation/registry.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/command-generation/types.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/command-generation/yaml.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/commands/change-command.list.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/commands/change-command.show-validate.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/command-registry.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/completion-provider.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/generators/bash-generator.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/generators/fish-generator.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/generators/powershell-generator.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/generators/zsh-generator.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/installers/bash-installer.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/installers/fish-installer.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/installers/powershell-installer.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/completions/installers/zsh-installer.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/config-schema.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/converters/json-converter.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/file-state.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/global-config.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/init.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/legacy-cleanup.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/list.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/migration.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/openers.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/openspec-root.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/parsers/change-parser.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/parsers/markdown-parser.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/parsers/requirement-blocks.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/planning-home.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/profile-sync-drift.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/profiles.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/project-config.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/references.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/relationship-health.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/root-selection.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/shared/skill-generation.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/shared/tool-detection.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/store/foundation.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/store/registry.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/templates/skill-templates-parity.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/templates/update-change.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/update.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/validation.enriched-messages.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/validation.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/view.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/working-set.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/core/worksets.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/fixtures/tmp-init/openspec/changes/c1/proposal.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/fixtures/tmp-init/openspec/changes/c1/specs/alpha/spec.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/fixtures/tmp-init/openspec/specs/alpha/spec.md",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/fake-tool.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/fs-snapshot.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/openspec-fixtures.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/path-env.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/run-cli.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/store-git.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/helpers/temp-cleanup.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/openspec-purge.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/prompts/searchable-multi-select.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/telemetry/config.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/telemetry/index.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/change-metadata.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/change-utils.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/command-references.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/file-system.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/interactive.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/marker-updates.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/shell-detection.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/utils/task-progress.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/vocabulary-sweep.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "test/website-purge.test.ts",
+        "decision": "excluded",
+        "source": "frozen baseline candidate inspection",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Baseline test inspected but excluded as broad upstream coverage; PT-014 retains a focused direct-support test instead of restoring unrelated suite closure.",
+        "evidence": "No retained package script reaches this baseline test path; test/t-014-direct-support-closure.test.mjs covers the recovered schemas/templates commands."
+      },
+      {
+        "path": "website/",
+        "decision": "excluded",
+        "source": "purge boundary from t-012/t-013",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Hard purge boundary; website publication material is never direct CLI support.",
+        "evidence": "PT-012 and PT-014 assert website/ remains absent after recovery."
+      },
+      {
+        "path": "openspec/",
+        "decision": "excluded",
+        "source": "purge boundary from t-012/t-013",
+        "baseline": "84741704290c547d64605699d697612ac03731bf",
+        "reason": "Hard purge boundary; project fixture names are allowed only under isolated temporary test directories.",
+        "evidence": "PT-012 and PT-014 assert root openspec/ remains absent; runtime resolver uses package schemas and tests isolate temp roots."
+      }
+    ],
+    "restoredCount": 183,
+    "excludedCount": 140,
+    "inspected": 323
+  },
+  "packageClosure": {
+    "sourceModuleCount": 167,
+    "externalRuntimeDependencyCount": 10,
+    "manifestMatchesLockImporter": true,
+    "sourceImportClosure": "complete",
+    "distBeforeBuild": "absent",
+    "nodeModulesBeforeInstall": "absent",
+    "generatedArtifactsCleaned": true
+  },
+  "cleanCheckout": {
+    "isolated": true,
+    "method": "fresh temporary clone of the recovery cutoff with core.autocrlf=false; staged proof/test copied in, generated state absent before install, clone removed after verification",
+    "candidateTree": "HEAD^{tree}",
+    "temporaryDirectoryCleaned": true,
+    "versions": {
+      "node": "v24.15.0",
+      "pnpm": "9.15.9",
+      "typescript": "5.9.3",
+      "vitest": "3.2.6"
+    },
+    "commands": [
+      {
+        "command": "corepack pnpm install --frozen-lockfile",
+        "status": "passed",
+        "result": "Lockfile is up to date; pnpm v9.15.9; exact frozen install passed with warm store (already up to date)."
+      },
+      {
+        "command": "corepack pnpm run build",
+        "status": "passed",
+        "result": "Building uni-spec CLI; Build completed successfully."
+      },
+      {
+        "command": "corepack pnpm exec tsc --noEmit",
+        "status": "passed",
+        "result": "TypeScript 5.9.3; no diagnostics."
+      },
+      {
+        "command": "node --test test/t-012-cli-runtime-recovery.test.mjs test/t-013-package-build-closure.test.mjs test/t-014-direct-support-closure.test.mjs test/t-015-purge-preservation.test.mjs test/t-016-reproducible-recovery-proof.test.mjs",
+        "status": "passed",
+        "result": "22 tests passed, 0 failed."
+      },
+      {
+        "command": "corepack pnpm test",
+        "status": "passed",
+        "result": "6 test files, 23 tests passed, 0 skipped."
+      },
+      {
+        "command": "node bin/openspec.js --help",
+        "status": "passed",
+        "result": "Usage: openspec; AI-native system for spec-driven development."
+      },
+      {
+        "command": "node bin/openspec.js --version",
+        "status": "passed",
+        "result": "0.1.0"
+      },
+      {
+        "command": "node bin/openspec.js schemas",
+        "status": "passed",
+        "result": "Available schemas: spec-driven."
+      },
+      {
+        "command": "node bin/openspec.js templates",
+        "status": "passed",
+        "result": "Schema: spec-driven; Source: package; four template paths resolved."
+      }
+    ],
+    "tests": {
+      "pt012To016": {
+        "status": "passed",
+        "count": 22
+      },
+      "package": {
+        "status": "passed",
+        "files": 6,
+        "passed": 23,
+        "skipped": 0
+      }
+    }
+  },
+  "cli": {
+    "commands": [
+      {
+        "command": "node bin/openspec.js --help",
+        "status": "passed",
+        "stdout": "Usage: openspec [options] [command]\\nAI-native system for spec-driven development"
+      },
+      {
+        "command": "node bin/openspec.js --version",
+        "status": "passed",
+        "stdout": "0.1.0"
+      },
+      {
+        "command": "node bin/openspec.js schemas",
+        "status": "passed",
+        "stdout": "Available schemas: spec-driven"
+      },
+      {
+        "command": "node bin/openspec.js templates",
+        "status": "passed",
+        "stdout": "Schema: spec-driven\\nSource: package"
+      }
+    ],
+    "help": {
+      "status": "passed",
+      "stdout": "Usage: openspec [options] [command]\\nAI-native system for spec-driven development"
+    },
+    "version": {
+      "status": "passed",
+      "stdout": "0.1.0"
+    },
+    "schemas": {
+      "status": "passed",
+      "stdout": "Available schemas: spec-driven"
+    },
+    "templates": {
+      "status": "passed",
+      "stdout": "Schema: spec-driven\\nSource: package"
+    },
+    "init": {
+      "status": "passed",
+      "command": "node bin/openspec.js init . --tools none (isolated temporary directory)",
+      "stdout": "Setup Complete; isolated openspec/config.yaml created",
+      "rootSideEffects": false
+    },
+    "validate": {
+      "status": "passed",
+      "command": "node bin/openspec.js validate --all --json (isolated temporary directory)",
+      "stdout": "summary.totals.failed = 0",
+      "rootSideEffects": false
+    },
+    "temporaryDirectoriesCleaned": true
+  },
+  "purge": {
+    "website": "absent",
+    "openspec": "absent",
+    "rootSideEffectsAfterReadOnlyChecks": false,
+    "generatedArtifactsAfterCleanup": [
+      "dist/",
+      "node_modules/"
+    ]
+  },
+  "verification": {
+    "p4Red": {
+      "status": "failed-as-intended",
+      "command": "node --test test/t-016-reproducible-recovery-proof.test.mjs",
+      "result": "8 tests failed because .arca/io/t-016-reproducible-recovery-proof.json was absent."
+    },
+    "p5Green": {
+      "status": "passed",
+      "command": "clean-checkout command set plus PT-016",
+      "result": "All required commands and proof assertions passed."
+    }
+  },
+  "gapRecheck": {
+    "status": "complete",
+    "residuals": [
+      {
+        "us": "US-01",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-01.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-02",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-02.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-03",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-03.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-04",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-04.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-05",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-05.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-06",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-06.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-07",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-07.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-08",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-08.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-09",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-09.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-10",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-10.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-11",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-11.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-12",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-12.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-13",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-13.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-14",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-14.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-15",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-15.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-16",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-16.md and corresponding ticket/proof"
+      },
+      {
+        "us": "US-17",
+        "status": "satisfied",
+        "proof": ".arca/residual/residual-us-17.md and corresponding ticket/proof"
+      }
+    ]
+  },
+  "state": {
+    "phase": "Idle",
+    "status": "idle",
+    "waitingOn": "",
+    "activeRefs": []
+  },
+  "risks": [
+    "PostHog phc_ configuration is retained as baseline public telemetry configuration; no secret classification or out-of-scope removal.",
+    "Generated dist/ and node_modules/ are verification-only and removed before final commit."
+  ]
+}

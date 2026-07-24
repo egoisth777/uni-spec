@@ -15,7 +15,7 @@ dependencies:
   - "t-013-package-build-closure"
   - "t-014-direct-support-closure"
   - "t-015-purge-preservation"
-status: "approved"
+status: "done"
 ---
 
 # Ticket: t-016-reproducible-recovery-proof
