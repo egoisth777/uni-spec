@@ -12,7 +12,7 @@ planned-test-refs:
 dependencies:
   - "t-007-website-purge"
   - "t-008-openspec-purge"
-status: "approved"
+status: "done"
 ---
 
 # Ticket: t-009-adjacent-residue
@@ -46,3 +46,11 @@ Inventory every listed adjacent path and upstream identity occurrence, classify 
 | `PT-009-H4` | `.arca/goal/design.md#integrated-issue-requirements` | Remove only a dead entry point but retain its caller. | `Durability/Recovery` | Dependency evidence blocks unsafe change. | `purge-maintainer` |
 | `PT-009-H5` | `.arca/goal/test-list.md#verification` | Compare all listed roots and files. | `Output/Filesystem` | Inventory is complete. | `purge-maintainer` |
 | `PT-009-H6` | `.arca/goal/spec.md#integrated-issue-requirements` | Check package, CI, docs, and source classifications together. | `Cross-Feature` | Decisions are consistent. | `purge-maintainer` |
+
+## P5 disposition and proof
+
+PT-009 is `test/adjacent-residue.test.ts` and passed 3/3 after the red inventory run. The complete machine-readable inventory is `.arca/io/t-009-adjacent-residue.json`: 35 observed root candidates plus 507 nested tracked entries (542 candidates total), 359 purged, and 183 retained, with one category, decision, evidence, and rationale per candidate. Category counts are assets 1, configuration 57, documentation 136, identity 2, integrations 3, schemas 1, source 224, tests 113, and tooling 5. Purged candidates include inherited identity, branded assets, executable source/runtime, schemas, documentation, CI/release/integration configuration, generated output, and obsolete tests. Retained candidates are `.arca/`, `standard/`, root `AGENTS.md`, `.gitignore`, and temporary Vitest support (`package.json`, `tsconfig.json`, `vitest.config.ts`, `node_modules/`, and the three purge tests) explicitly deferred to t-010.
+
+The retained package manifest is now private `uni-spec` test infrastructure; stale upstream package, release, and runtime references are removed. PT-007, PT-008, and PT-009 pass together (6 tests), and the full retained suite is green (3 files, 6 passed). No operational upstream identity remains in the retained package/config or standard surfaces; historical/provenance mentions remain only in `.arca/` evidence and the purge-test assertions.
+
+Residual `US-10` is satisfied. The next approved ticket is `t-010-minimal-retention`.

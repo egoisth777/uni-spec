@@ -1,0 +1,3893 @@
+{
+  "schemaVersion": 1,
+  "ticket": "t-009-adjacent-residue",
+  "phase": "P5",
+  "status": "complete",
+  "observedRootCandidates": [
+    ".actrc",
+    ".agents",
+    ".arca",
+    ".changeset",
+    ".coderabbit.yaml",
+    ".devcontainer",
+    ".github",
+    ".gitignore",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "MAINTAINERS.md",
+    "README.md",
+    "README_OLD.md",
+    "assets",
+    "bin",
+    "build.js",
+    "dist",
+    "docs",
+    "eslint.config.js",
+    "flake.lock",
+    "flake.nix",
+    "node_modules",
+    "openspec",
+    "openspec-parallel-merge-plan.md",
+    "package.json",
+    "pnpm-lock.yaml",
+    "schemas",
+    "scripts",
+    "src",
+    "standard",
+    "test",
+    "tsconfig.json",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ],
+  "candidates": [
+    {
+      "path": ".actrc",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .actrc",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".agents",
+      "category": "integrations",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .agents",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".arca",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "root authority record",
+      "rationale": "governance authority and ticket evidence"
+    },
+    {
+      "path": ".changeset",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .changeset",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".coderabbit.yaml",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .coderabbit.yaml",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".devcontainer",
+      "category": "integrations",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .devcontainer",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".github",
+      "category": "integrations",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at .github",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".gitignore",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-existing unstaged diff inspected before mutation",
+      "rationale": "pre-existing sanitation ignore intent is preserved"
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "root instruction file",
+      "rationale": "required repository instruction route"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at CHANGELOG.md",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "LICENSE",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at LICENSE",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "MAINTAINERS.md",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at MAINTAINERS.md",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "README.md",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at README.md",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "README_OLD.md",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at README_OLD.md",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "assets",
+      "category": "assets",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at assets",
+      "rationale": "branded upstream assets have no retained uni-spec dependency"
+    },
+    {
+      "path": "bin",
+      "category": "tooling",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at bin",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "build.js",
+      "category": "tooling",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at build.js",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "dist",
+      "category": "tooling",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at dist",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "docs",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at docs",
+      "rationale": "upstream product documentation or metadata; normative content is under standard/ and governance under .arca/"
+    },
+    {
+      "path": "eslint.config.js",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at eslint.config.js",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": "flake.lock",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at flake.lock",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": "flake.nix",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at flake.nix",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": "node_modules",
+      "category": "tooling",
+      "decision": "retain",
+      "evidence": "pre-mutation root candidate observed at node_modules",
+      "rationale": "untracked local dependency installation required to execute the ticket tests; not a repository deliverable"
+    },
+    {
+      "path": "openspec",
+      "category": "identity",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at openspec",
+      "rationale": "empty upstream workflow root remained after t-008 and has no uni-spec dependency"
+    },
+    {
+      "path": "openspec-parallel-merge-plan.md",
+      "category": "documentation",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at openspec-parallel-merge-plan.md",
+      "rationale": "upstream workflow planning document, not uni-spec authority"
+    },
+    {
+      "path": "package.json",
+      "category": "identity",
+      "decision": "retain",
+      "evidence": "OpenSpec package/release metadata and test scripts observed before mutation",
+      "rationale": "temporary Vitest runner manifest required for PT-007/PT-008/PT-009 and t-010 verification"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at pnpm-lock.yaml",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas",
+      "category": "schemas",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at schemas",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "scripts",
+      "category": "tooling",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at scripts",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "src",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at src",
+      "rationale": "upstream implementation or generated output; uni-spec is docs-only and no retained test reaches it"
+    },
+    {
+      "path": "standard",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "root normative tree",
+      "rationale": "normative uni-spec documents and examples"
+    },
+    {
+      "path": "test",
+      "category": "tests",
+      "decision": "retain",
+      "evidence": "inherited OpenSpec test suite plus PT-007/PT-008 observed before mutation",
+      "rationale": "temporary retained PT-007/PT-008/PT-009 tests only; obsolete inherited tests and helpers are purged, with removal tracked for t-010"
+    },
+    {
+      "path": "tsconfig.json",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation root candidate observed at tsconfig.json",
+      "rationale": "temporary TypeScript test compilation support required by Vitest until t-010"
+    },
+    {
+      "path": "vitest.config.ts",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation root candidate observed at vitest.config.ts",
+      "rationale": "temporary Vitest test discovery and Node environment support required by PT-007/PT-008/PT-009 until t-010"
+    },
+    {
+      "path": "vitest.setup.ts",
+      "category": "configuration",
+      "decision": "purge",
+      "evidence": "pre-mutation root candidate observed at vitest.setup.ts",
+      "rationale": "upstream CI, release, integration, or config residue with no retained uni-spec dependency"
+    },
+    {
+      "path": ".agents/skills/release-openspec/SKILL.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".agents/skills/release-openspec/agents/openai.yaml",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".agents/skills/release-openspec/references/release-notes.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".arca/current/current.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/current/log.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/goal/design.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/goal/index.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/goal/spec.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/goal/test-list.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/goal/ubi-lang.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/index.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/issue/i-001-purge-sanitization/design.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/issue/i-001-purge-sanitization/index.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/issue/i-001-purge-sanitization/spec.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/issue/i-001-purge-sanitization/test-plan.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/issue/i-001-purge-sanitization/ubi-lang.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-01.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-02.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-03.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-04.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-05.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-06.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-07.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-08.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-09.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-10.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-11.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/residual/residual-us-12.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-001-five-file-package.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-002-issue-naming.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-003-index-metadata.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-004-aspect-contracts.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-005-lint-contract.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-006-conversion-procedure.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-007-website-purge.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-008-openspec-purge.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-009-adjacent-residue.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-010-minimal-retention.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/ticket/t-011-sanitization-proof.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/current.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/issue/design.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/issue/index.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/issue/spec.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/issue/test-plan.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/issue/ubi-lang.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/log.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/residual.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".arca/tpl/ticket.md",
+      "category": "configuration",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": ".changeset/README.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".changeset/config.json",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".devcontainer/README.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".github/CODEOWNERS",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".github/workflows/README.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": ".github/workflows/release-prepare.yml",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "assets/openspec_bg.png",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "assets/openspec_dashboard.png",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "assets/openspec_pixel_dark.svg",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "assets/openspec_pixel_light.svg",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "bin/openspec.js",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/README.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/agent-contract.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/cli.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/commands.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/concepts.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/customization.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/editing-changes.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/examples.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/existing-projects.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/explore.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/faq.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/getting-started.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/glossary.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/how-commands-work.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/installation.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/migration-guide.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/multi-language.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/opsx.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/overview.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/reviewing-changes.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/stores-beta/user-guide.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/supported-tools.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/team-workflow.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/workflows.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "docs/writing-specs.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas/spec-driven/schema.yaml",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas/spec-driven/templates/design.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas/spec-driven/templates/proposal.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas/spec-driven/templates/spec.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "schemas/spec-driven/templates/tasks.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "scripts/README.md",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "scripts/pack-version-check.mjs",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "scripts/postinstall.js",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "scripts/test-postinstall.sh",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "scripts/update-flake.sh",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/cli/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/completion.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/config.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/context.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/doctor.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/feedback.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/shared-gather.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/shared-output.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/show.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/spec.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/store.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/validate.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/instructions.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/new-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/schemas.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/shared.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/status.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workflow/templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workset-input.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workset-prompts.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/commands/workset.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/archive.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/graph.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/instruction-loader.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/outputs.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/resolver.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/state.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/artifact-graph/types.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/available-tools.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/change-metadata/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/change-metadata/schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/change-status-policy.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/amazon-q.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/antigravity.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/auggie.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/bob.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/claude.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/cline.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/codebuddy.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/codex.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/continue.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/costrict.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/crush.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/cursor.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/factory.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/gemini.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/github-copilot.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/iflow.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/junie.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/kilocode.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/kiro.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/lingma.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/oh-my-pi.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/opencode.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/pi.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/qoder.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/qwen.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/roocode.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/trae.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/adapters/windsurf.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/generator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/registry.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/types.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/command-generation/yaml.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/command-registry.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/completion-provider.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/factory.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/generators/bash-generator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/generators/fish-generator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/generators/powershell-generator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/generators/zsh-generator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/installers/bash-installer.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/installers/fish-installer.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/installers/powershell-installer.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/installers/zsh-installer.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/shared-flags.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/templates/bash-templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/templates/fish-templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/templates/powershell-templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/templates/zsh-templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/completions/types.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/config-prompts.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/config-schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/config.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/converters/json-converter.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/file-state.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/global-config.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/id.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/init.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/legacy-cleanup.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/list.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/migration.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/openers.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/openspec-root.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/parsers/change-parser.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/parsers/markdown-parser.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/parsers/requirement-blocks.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/parsers/requirement-text.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/parsers/spec-structure.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/planning-home.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/profile-sync-drift.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/profiles.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/project-config.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/references.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/relationship-health.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/root-selection.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/schemas/base.schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/schemas/change.schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/schemas/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/schemas/spec.schema.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/shared/allowed-tools.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/shared/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/shared/skill-generation.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/shared/tool-detection.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/specs-apply.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/errors.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/foundation.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/git.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/operations.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/store/registry.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/styles/palette.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/skill-templates.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/types.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/apply-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/archive-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/bulk-archive-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/continue-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/explore.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/feedback.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/ff-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/new-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/onboard.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/propose.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/store-selection.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/sync-specs.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/update-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/templates/workflows/verify-change.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/update.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/validation/constants.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/validation/types.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/validation/validator.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/view.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/working-set.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/worksets.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/core/zod-issues.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/prompts/searchable-multi-select.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/telemetry/config.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/telemetry/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/ui/ascii-patterns.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/ui/welcome-screen.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/change-metadata.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/change-utils.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/command-references.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/file-system.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/index.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/interactive.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/item-discovery.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/match.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/shell-detection.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "src/utils/task-progress.ts",
+      "category": "source",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "standard/conversion.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/blank-token.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/broken-link.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/design-bad-ref.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/spec-empty-field.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/test-plan-bad-ref.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/aspect-invalid/ubi-missing-columns.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c0/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c0/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c1/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c1/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c2/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c2/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c3/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c3/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c4/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c4/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c5/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c5/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c6/comparison.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c6/source.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-c6/trace.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-lint-observations.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-001-legacy-baseline/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-001-legacy-baseline/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-001-legacy-baseline/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-001-legacy-baseline/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-001-legacy-baseline/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-002-original-title/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-002-original-title/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-002-original-title/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-002-original-title/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-002-original-title/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-003-fallback-title/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-003-fallback-title/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-003-fallback-title/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-003-fallback-title/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-003-fallback-title/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-006-multi-source/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-006-multi-source/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-006-multi-source/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-006-multi-source/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-006-multi-source/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-007-untitled-issue/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-007-untitled-issue/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-007-untitled-issue/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-007-untitled-issue/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/conversion-outputs/i-007-untitled-issue/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/fully-conforming/i-004-cross-aspect/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/fully-conforming/i-004-cross-aspect/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/fully-conforming/i-004-cross-aspect/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/fully-conforming/i-004-cross-aspect/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/fully-conforming/i-004-cross-aspect/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-invalid/duplicate-key.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-invalid/leading-byte.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-invalid/non-scalar-status.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-invalid/wrong-identity.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-valid/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-valid/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-valid/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-valid/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/index-metadata-valid/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l0.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l1.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l2.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l3.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l4.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-findings/l5.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l0-pass/i-007-nucleus-only/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l0-pass/i-007-nucleus-only/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l0-pass/i-007-nucleus-only/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l0-pass/i-007-nucleus-only/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l0-pass/i-007-nucleus-only/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/entries.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l1-shape/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l2-metadata/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l2-metadata/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l2-metadata/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l2-metadata/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l2-metadata/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l3-content/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l3-content/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l3-content/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l3-content/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l3-content/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l4-links-token/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l4-links-token/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l4-links-token/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l4-links-token/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l4-links-token/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/goal-root/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/goal-root/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/goal-root/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/goal-root/test-list.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/goal-root/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/issue-target/i-012-scope/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/issue-target/i-012-scope/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/issue-target/i-012-scope/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/issue-target/i-012-scope/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/issue-target/i-012-scope/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/lint-l5-scope/observation.json",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/naming-c4/scenario.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/naming-c5/scenario.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/naming-invalid/scenario.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/extra.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only-extra-entry/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only/i-001-example-issue/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only/i-001-example-issue/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only/i-001-example-issue/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only/i-001-example-issue/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/examples/shape-only/i-001-example-issue/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/issue-format.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/lint.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/templates/issue/design.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/templates/issue/index.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/templates/issue/spec.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/templates/issue/test-plan.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "standard/templates/issue/ubi-lang.md",
+      "category": "documentation",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "test/AGENTS.md",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/cli-e2e/basic.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/cli-e2e/capstone-journeys.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/cli-e2e/store-lifecycle.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/cli-e2e/workset-journey.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/artifact-workflow.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/change-initiative-link.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/change.interactive-show.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/change.interactive-validate.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/completion.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/config-profile.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/config.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/context.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/declared-store-fallback.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/doctor.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/feedback.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/legacy-groups-removed.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/schema.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/show.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/spec.interactive-show.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/spec.interactive-validate.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/spec.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/store-git.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/store-references.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/store-remote.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/store-root-selection.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/store.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/validate.enriched-output.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/validate.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/commands/workset.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/archive.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/graph.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/instruction-loader.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/outputs.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/resolver.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/schema.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/state.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/artifact-graph/workflow.integration.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/available-tools.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/command-generation/adapters.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/command-generation/generator.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/command-generation/registry.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/command-generation/types.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/command-generation/yaml.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/commands/change-command.list.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/commands/change-command.show-validate.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/command-registry.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/completion-provider.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/generators/bash-generator.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/generators/fish-generator.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/generators/powershell-generator.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/generators/zsh-generator.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/installers/bash-installer.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/installers/fish-installer.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/installers/powershell-installer.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/completions/installers/zsh-installer.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/config-schema.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/converters/json-converter.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/file-state.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/global-config.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/init.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/legacy-cleanup.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/list.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/migration.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/openers.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/openspec-root.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/parsers/change-parser.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/parsers/markdown-parser.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/parsers/requirement-blocks.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/planning-home.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/profile-sync-drift.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/profiles.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/project-config.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/references.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/relationship-health.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/root-selection.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/shared/skill-generation.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/shared/tool-detection.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/store/foundation.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/store/registry.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/templates/skill-templates-parity.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/templates/update-change.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/update.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/validation.enriched-messages.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/validation.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/view.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/working-set.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/core/worksets.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/fixtures/tmp-init/openspec/changes/c1/proposal.md",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/fixtures/tmp-init/openspec/changes/c1/specs/alpha/spec.md",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/fixtures/tmp-init/openspec/specs/alpha/spec.md",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/fake-tool.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/fs-snapshot.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/openspec-fixtures.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/path-env.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/run-cli.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/store-git.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/helpers/temp-cleanup.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/openspec-purge.test.ts",
+      "category": "tests",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    },
+    {
+      "path": "test/prompts/searchable-multi-select.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/telemetry/config.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/telemetry/index.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/change-metadata.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/change-utils.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/command-references.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/file-system.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/interactive.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/marker-updates.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/shell-detection.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/utils/task-progress.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/vocabulary-sweep.test.ts",
+      "category": "tests",
+      "decision": "purge",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "nested member of a confirmed upstream-only root; no retained uni-spec dependency"
+    },
+    {
+      "path": "test/website-purge.test.ts",
+      "category": "tests",
+      "decision": "retain",
+      "evidence": "pre-mutation tracked entry observed in HEAD",
+      "rationale": "governance or normative nested artifact retained under its evidenced root"
+    }
+  ],
+  "stats": {
+    "total": 542,
+    "purge": 359,
+    "retain": 183,
+    "categories": {
+      "assets": 1,
+      "configuration": 57,
+      "documentation": 136,
+      "identity": 2,
+      "integrations": 3,
+      "schemas": 1,
+      "source": 224,
+      "tests": 113,
+      "tooling": 5
+    }
+  },
+  "ptMapping": {
+    "id": "PT-009",
+    "goalContractRef": ".arca/goal/spec.md#integrated-issue-requirements (US-10)",
+    "executableTarget": "repository-audit PT-009",
+    "testFile": "test/adjacent-residue.test.ts"
+  },
+  "retentionNote": "Temporary package, TypeScript/Vitest config, and three repository-audit tests are retained solely for PT-007/PT-008/PT-009 and must be reconsidered by t-010; inherited source/tests/helpers are purged.",
+  "purgeVerified": true,
+  "retainedSupport": [
+    "package.json",
+    "tsconfig.json",
+    "vitest.config.ts",
+    "test/adjacent-residue.test.ts",
+    "test/openspec-purge.test.ts",
+    "test/website-purge.test.ts"
+  ],
+  "observedTrackedEntryCount": 526,
+  "nestedCandidateCount": 507,
+  "verification": {
+    "p4Red": {
+      "command": "corepack pnpm exec vitest run test/adjacent-residue.test.ts",
+      "testFiles": 1,
+      "failedTests": 3,
+      "reason": "missing final disposition status and confirmed pre-purge candidates"
+    },
+    "holePokes": [
+      "nested tracked entries and retained-tree reachability",
+      "package/lockfile identity and release metadata",
+      "assets, CI, integrations, schemas, source/runtime, scripts/bin/build output",
+      "temporary support dependency for PT-007/PT-008/PT-009",
+      "historical/provenance mentions in .arca versus operational identity"
+    ],
+    "p5Green": {
+      "targeted": "PT-009 3/3",
+      "prior": "PT-007/PT-008 3/3",
+      "full": "3 files, 6 passed"
+    }
+  }
+}
