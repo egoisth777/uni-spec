@@ -19,13 +19,13 @@ status: "done"
 
 ## Vertical slice
 
-From `f179bc6^` (`84741704290c547d64605699d697612ac03731bf`), selectively restore `bin/openspec.js` and the complete source import closure rooted at `src/cli/index.ts`; clean any upstream-only identity encountered, compile the closure, and smoke representative non-destructive CLI commands. Record every restored and excluded path. Do not restore `website/` or `openspec/`, rewrite history, or add unrelated source.
+From `f179bc6^` (`84741704290c547d64605699d697612ac03731bf`), selectively restore `bin/openspec.js` and the complete source import closure rooted at `src/cli/index.ts`; clean any upstream-only identity encountered, compile the closure, and smoke the non-destructive `--help` and `--version` entrypoint commands. Record every restored and excluded path. Do not restore `website/` or `openspec/`, rewrite history, or add unrelated source.
 
 ## P4 Apparent Test Plan
 
 | Apparent Test ID | Goal Contract Ref | Fixture Ref | Executable Target | Oracle |
 | ---------------- | ----------------- | ----------- | ----------------- | ------ |
-| `PT-012` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` (`US-13`) | Baseline `bin/openspec.js` and reachable `src/**`; retained `.arca/`, `standard/` | `CLI smoke PT-012` | Selected entrypoint resolves, TypeScript compiles, representative read-only commands emit expected output, and purged trees remain absent. |
+| `PT-012` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` (`US-13`) | Baseline `bin/openspec.js` and reachable `src/**`; retained `.arca/`, `standard/` | `CLI smoke PT-012` | Selected entrypoint resolves, TypeScript compiles, `--help`/`--version` emit expected output, and purged trees remain absent. |
 
 ## P5 Hidden Test Public Coverage Manifest
 

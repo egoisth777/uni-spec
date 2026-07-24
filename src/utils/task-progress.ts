@@ -111,5 +111,3 @@ export function formatTaskStatus(progress: TaskProgress): string {
   if (progress.completed === progress.total) return '✓ Complete';
   return `${progress.completed}/${progress.total} tasks`;
 }
-
-

@@ -32,17 +32,17 @@ export class Validator {
     try {
       const content = readFileSync(filePath, 'utf-8');
       const parser = new MarkdownParser(content);
-      
+
       const spec = parser.parseSpec(specName);
-      
+
       const result = SpecSchema.safeParse(spec);
-      
+
       if (!result.success) {
         issues.push(...this.convertZodErrors(result.error));
       }
-      
+
       issues.push(...this.applySpecRules(spec, content));
-      
+
     } catch (error) {
       const baseMessage = error instanceof Error ? error.message : 'Unknown error';
       const enriched = this.enrichTopLevelError(specName, baseMessage);
@@ -52,7 +52,7 @@ export class Validator {
         message: enriched,
       });
     }
-    
+
     return this.createReport(issues);
   }
 
@@ -84,17 +84,17 @@ export class Validator {
       const content = readFileSync(filePath, 'utf-8');
       const changeDir = path.dirname(filePath);
       const parser = new ChangeParser(content, changeDir);
-      
+
       const change = await parser.parseChangeWithDeltas(changeName);
-      
+
       const result = ChangeSchema.safeParse(change);
-      
+
       if (!result.success) {
         issues.push(...this.convertZodErrors(result.error));
       }
-      
+
       issues.push(...this.applyChangeRules(change, content));
-      
+
     } catch (error) {
       const baseMessage = error instanceof Error ? error.message : 'Unknown error';
       const enriched = this.enrichTopLevelError(changeName, baseMessage);
@@ -104,7 +104,7 @@ export class Validator {
         message: enriched,
       });
     }
-    
+
     return this.createReport(issues);
   }
 
@@ -363,7 +363,7 @@ export class Validator {
         message: structuralIssue.message,
       });
     }
-    
+
     if (spec.overview.length < MIN_PURPOSE_LENGTH) {
       issues.push({
         level: 'WARNING',
@@ -371,7 +371,7 @@ export class Validator {
         message: VALIDATION_MESSAGES.PURPOSE_TOO_BRIEF,
       });
     }
-    
+
     spec.requirements.forEach((req, index) => {
       if (req.text.length > MAX_REQUIREMENT_TEXT_LENGTH) {
         issues.push({
@@ -413,9 +413,9 @@ export class Validator {
 
   private applyChangeRules(change: Change, content: string): ValidationIssue[] {
     const issues: ValidationIssue[] = [];
-    
+
     const MIN_DELTA_DESCRIPTION_LENGTH = 10;
-    
+
     change.deltas.forEach((delta, index) => {
       if (!delta.description || delta.description.length < MIN_DELTA_DESCRIPTION_LENGTH) {
         issues.push({
@@ -424,8 +424,8 @@ export class Validator {
           message: VALIDATION_MESSAGES.DELTA_DESCRIPTION_TOO_BRIEF,
         });
       }
-      
-      if ((delta.operation === 'ADDED' || delta.operation === 'MODIFIED') && 
+
+      if ((delta.operation === 'ADDED' || delta.operation === 'MODIFIED') &&
           (!delta.requirements || delta.requirements.length === 0)) {
         issues.push({
           level: 'WARNING',
@@ -434,7 +434,7 @@ export class Validator {
         });
       }
     });
-    
+
     return issues;
   }
 
@@ -455,7 +455,7 @@ export class Validator {
   private extractNameFromPath(filePath: string): string {
     const normalizedPath = FileSystemUtils.toPosixPath(filePath);
     const parts = normalizedPath.split('/');
-    
+
     // Look for the directory name after 'specs' or 'changes'
     for (let i = parts.length - 1; i >= 0; i--) {
       if (parts[i] === 'specs' || parts[i] === 'changes') {
@@ -464,7 +464,7 @@ export class Validator {
         }
       }
     }
-    
+
     // Fallback to filename without extension if not in expected structure
     const fileName = parts[parts.length - 1] ?? '';
     const dotIndex = fileName.lastIndexOf('.');
@@ -475,11 +475,11 @@ export class Validator {
     const errors = issues.filter(i => i.level === 'ERROR').length;
     const warnings = issues.filter(i => i.level === 'WARNING').length;
     const info = issues.filter(i => i.level === 'INFO').length;
-    
-    const valid = this.strictMode 
+
+    const valid = this.strictMode
       ? errors === 0 && warnings === 0
       : errors === 0;
-    
+
     return {
       valid,
       issues,

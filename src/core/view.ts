@@ -7,7 +7,7 @@ import { MarkdownParser } from './parsers/markdown-parser.js';
 export class ViewCommand {
   async execute(targetPath: string = '.'): Promise<void> {
     const openspecDir = path.join(targetPath, 'openspec');
-    
+
     if (!fs.existsSync(openspecDir)) {
       console.error(chalk.red('No openspec directory found'));
       process.exit(1);
@@ -62,10 +62,10 @@ export class ViewCommand {
     if (specsData.length > 0) {
       console.log(chalk.bold.blue('\nSpecifications'));
       console.log('─'.repeat(60));
-      
+
       // Sort specs by requirement count (descending)
       specsData.sort((a, b) => b.requirementCount - a.requirementCount);
-      
+
       specsData.forEach(spec => {
         const reqLabel = spec.requirementCount === 1 ? 'requirement' : 'requirements';
         console.log(
@@ -131,18 +131,18 @@ export class ViewCommand {
 
   private async getSpecsData(openspecDir: string): Promise<Array<{ name: string; requirementCount: number }>> {
     const specsDir = path.join(openspecDir, 'specs');
-    
+
     if (!fs.existsSync(specsDir)) {
       return [];
     }
 
     const specs: Array<{ name: string; requirementCount: number }> = [];
     const entries = fs.readdirSync(specsDir, { withFileTypes: true });
-    
+
     for (const entry of entries) {
       if (entry.isDirectory()) {
         const specFile = path.join(specsDir, entry.name, 'spec.md');
-        
+
         if (fs.existsSync(specFile)) {
           try {
             const content = fs.readFileSync(specFile, 'utf-8');
@@ -206,14 +206,14 @@ export class ViewCommand {
 
   private createProgressBar(completed: number, total: number, width: number = 20): string {
     if (total === 0) return chalk.dim('─'.repeat(width));
-    
+
     const percentage = completed / total;
     const filled = Math.round(percentage * width);
     const empty = width - filled;
-    
+
     const filledBar = chalk.green('█'.repeat(filled));
     const emptyBar = chalk.dim('░'.repeat(empty));
-    
+
     return `[${filledBar}${emptyBar}]`;
   }
 }

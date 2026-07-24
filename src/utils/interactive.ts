@@ -26,4 +26,3 @@ export function isInteractive(value?: boolean | InteractiveOptions): boolean {
   if ('CI' in process.env) return false;
   return !!process.stdin.isTTY;
 }
-

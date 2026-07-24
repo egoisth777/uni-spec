@@ -27,13 +27,13 @@ export class MarkdownParser {
   parseSpec(name: string): Spec {
     const sections = this.parseSections();
     const purpose = this.findSection(sections, 'Purpose')?.content || '';
-    
+
     const requirementsSection = this.findSection(sections, 'Requirements');
-    
+
     if (!purpose) {
       throw new Error('Spec must have a Purpose section');
     }
-    
+
     if (!requirementsSection) {
       throw new Error('Spec must have a Requirements section');
     }
@@ -55,11 +55,11 @@ export class MarkdownParser {
     const sections = this.parseSections();
     const why = this.findSection(sections, 'Why')?.content || '';
     const whatChanges = this.findSection(sections, 'What Changes')?.content || '';
-    
+
     if (!why) {
       throw new Error('Change must have a Why section');
     }
-    
+
     if (!whatChanges) {
       throw new Error('Change must have a What Changes section');
     }
@@ -81,19 +81,19 @@ export class MarkdownParser {
   protected parseSections(): Section[] {
     const sections: Section[] = [];
     const stack: Section[] = [];
-    
+
     for (let i = 0; i < this.lines.length; i++) {
       const line = this.lines[i];
       if (this.codeFenceLineMask[i]) {
         continue;
       }
       const headerMatch = line.match(/^(#{1,6})\s+(.+)$/);
-      
+
       if (headerMatch) {
         const level = headerMatch[1].length;
         const title = headerMatch[2].trim();
         const content = this.getContentUntilNextHeader(i + 1, level);
-        
+
         const section: Section = {
           level,
           title,
@@ -110,28 +110,28 @@ export class MarkdownParser {
         } else {
           stack[stack.length - 1].children.push(section);
         }
-        
+
         stack.push(section);
       }
     }
-    
+
     return sections;
   }
 
   protected getContentUntilNextHeader(startLine: number, currentLevel: number): string {
     const contentLines: string[] = [];
-    
+
     for (let i = startLine; i < this.lines.length; i++) {
       const line = this.lines[i];
       const headerMatch = this.codeFenceLineMask[i] ? null : line.match(/^(#{1,6})\s+/);
-      
+
       if (headerMatch && headerMatch[1].length <= currentLevel) {
         break;
       }
-      
+
       contentLines.push(line);
     }
-    
+
     return contentLines.join('\n').trim();
   }
 
@@ -169,7 +169,7 @@ export class MarkdownParser {
 
   protected parseScenarios(requirementSection: Section): Scenario[] {
     const scenarios: Scenario[] = [];
-    
+
     for (const scenarioSection of requirementSection.children) {
       // Store the raw text content of the scenario section
       if (scenarioSection.content.trim()) {
@@ -178,7 +178,7 @@ export class MarkdownParser {
         });
       }
     }
-    
+
     return scenarios;
   }
 
@@ -186,17 +186,17 @@ export class MarkdownParser {
   protected parseDeltas(content: string): Delta[] {
     const deltas: Delta[] = [];
     const lines = content.split('\n');
-    
+
     for (const line of lines) {
       // Match both formats: **spec:** and **spec**:
       const deltaMatch = line.match(/^\s*-\s*\*\*([^*:]+)(?::\*\*|\*\*:)\s*(.+)$/);
       if (deltaMatch) {
         const specName = deltaMatch[1].trim();
         const description = deltaMatch[2].trim();
-        
+
         let operation: DeltaOperation = 'MODIFIED';
         const lowerDesc = description.toLowerCase();
-        
+
         // Use word boundaries to avoid false matches (e.g., "address" matching "add")
         // Check RENAMED first since it's more specific than patterns containing "new"
         if (/\brename(s|d|ing)?\b/.test(lowerDesc) || /\brenamed\s+(to|from)\b/.test(lowerDesc)) {
@@ -206,7 +206,7 @@ export class MarkdownParser {
         } else if (/\bremove(s|d|ing)?\b/.test(lowerDesc) || /\bdelete(s|d|ing)?\b/.test(lowerDesc)) {
           operation = 'REMOVED';
         }
-        
+
         deltas.push({
           spec: specName,
           operation,
@@ -214,7 +214,7 @@ export class MarkdownParser {
         });
       }
     }
-    
+
     return deltas;
   }
 }

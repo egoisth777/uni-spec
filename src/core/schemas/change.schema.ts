@@ -1,10 +1,10 @@
 import { z } from 'zod';
 import { RequirementSchema } from './base.schema.js';
-import { 
+import {
   MIN_WHY_SECTION_LENGTH,
   MAX_WHY_SECTION_LENGTH,
   MAX_DELTAS_PER_CHANGE,
-  VALIDATION_MESSAGES 
+  VALIDATION_MESSAGES
 } from '../validation/constants.js';
 
 export const DeltaOperationType = z.enum(['ADDED', 'MODIFIED', 'REMOVED', 'RENAMED']);

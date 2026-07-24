@@ -22,5 +22,3 @@ export function levenshtein(a: string, b: string): number {
   }
   return dp[m][n];
 }
-
-

@@ -239,7 +239,7 @@
       "yaml",
       "zod"
     ],
-    "support_note": "package.json retains baseline dependency/devDependency lock importer for frozen installation; package identity/scripts were cleaned to uni-spec-cli and package/release/site hooks removed. Broader package closure cleanup and reproducibility are deferred to t-013."
+    "support_note": "package.json retains baseline dependency/devDependency lock importer for frozen installation; package identity/scripts were cleaned to uni-spec-cli and package/release/site hooks removed. Broader package closure cleanup and reproducibility are deferred to t-013; the five baseline schemas/spec-driven template assets remain excluded and deferred to t-014/US-15."
   },
   "verification": {
     "red": "node --test test/t-012-cli-runtime-recovery.test.mjs (1 failed: MODULE_NOT_FOUND bin/openspec.js)",

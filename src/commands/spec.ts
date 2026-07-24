@@ -169,7 +169,7 @@ export function registerSpecCommand(rootProgram: typeof program) {
             if (existsSync(specPath)) {
               try {
                 const spec = parseSpecFromFile(specPath, dirent.name);
-                
+
                 return {
                   id: dirent.name,
                   title: spec.name,
@@ -232,7 +232,7 @@ export function registerSpecCommand(rootProgram: typeof program) {
         }
 
         const specPath = join(SPECS_DIR, specId, 'spec.md');
-        
+
         if (!existsSync(specPath)) {
           throw new Error(`Spec '${specId}' not found at openspec/specs/${specId}/spec.md`);
         }

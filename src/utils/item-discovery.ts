@@ -63,4 +63,3 @@ export async function getArchivedChangeIds(root: string = process.cwd()): Promis
     return [];
   }
 }
-

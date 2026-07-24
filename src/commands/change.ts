@@ -100,9 +100,9 @@ export class ChangeCommand {
    */
   async list(options?: { json?: boolean; long?: boolean }): Promise<void> {
     const changesPath = path.join(process.cwd(), 'openspec', 'changes');
-    
+
     const changes = await this.getActiveChanges(changesPath);
-    
+
     if (options?.json) {
       const changeDetails = await Promise.all(
         changes.map(async (changeName) => {
@@ -134,7 +134,7 @@ export class ChangeCommand {
           }
         })
       );
-      
+
       const sorted = changeDetails.sort((a, b) => a.id.localeCompare(b.id));
       console.log(JSON.stringify(sorted, null, 2));
     } else {
@@ -171,7 +171,7 @@ export class ChangeCommand {
 
   async validate(changeName?: string, options?: { strict?: boolean; json?: boolean; noInteractive?: boolean }): Promise<void> {
     const changesPath = path.join(process.cwd(), 'openspec', 'changes');
-    
+
     if (!changeName) {
       const canPrompt = isInteractive(options);
       const changes = await getActiveChangeIds();
@@ -193,18 +193,18 @@ export class ChangeCommand {
         return;
       }
     }
-    
+
     const changeDir = path.join(changesPath, changeName);
-    
+
     try {
       await fs.access(changeDir);
     } catch {
       throw new Error(`Change "${changeName}" not found at ${changeDir}`);
     }
-    
+
     const validator = new Validator(options?.strict || false);
     const report = await validator.validateChangeDeltaSpecs(changeDir);
-    
+
     if (options?.json) {
       console.log(JSON.stringify(report, null, 2));
     } else {

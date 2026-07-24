@@ -244,10 +244,10 @@ export class FileSystemUtils {
     endMarker: string
   ): Promise<void> {
     let existingContent = '';
-    
+
     if (await this.fileExists(filePath)) {
       existingContent = await this.readFile(filePath);
-      
+
       const startIndex = findMarkerIndex(existingContent, startMarker);
       const endIndex = startIndex !== -1
         ? findMarkerIndex(existingContent, endMarker, startIndex + startMarker.length)
@@ -271,7 +271,7 @@ export class FileSystemUtils {
     } else {
       existingContent = startMarker + '\n' + content + '\n' + endMarker;
     }
-    
+
     await this.writeFile(filePath, existingContent);
   }
 
