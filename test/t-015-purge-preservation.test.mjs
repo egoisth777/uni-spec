@@ -148,6 +148,11 @@ test('PT-015 proves append-only current state and excludes unapproved artifacts 
   assert.equal(state.log.baselineLineCount < state.log.currentLineCount, true);
   assert.equal(state.log.appendedLineCount, state.log.currentLineCount - state.log.baselineLineCount);
   assert.equal(state.log.appendedLineCount, evidence.logAppendedLines.length);
+  const baselineLog = git('show', `${recoveryCutoff}:.arca/current/log.md`);
+  const currentLog = readFileSync(path.join(root, '.arca', 'current', 'log.md'), 'utf8');
+  const baselinePrefix = `${baselineLog}\n`;
+  assert.equal(currentLog.startsWith(baselinePrefix), true, 'current log must retain the exact cutoff prefix');
+  assert.equal(currentLog.slice(baselinePrefix.length), `${evidence.logAppendedLines.join('\n')}\n`, 'evidence must match the exact appended log suffix');
   assert.ok(evidence.logAppendedLines.every((line) => line.startsWith('- 2026-07-23 - Phase')));
   assert.equal(evidence.exclusions.intentionalCliIdentityAllowed, true);
   assert.equal(evidence.exclusions.temporaryProjectFixtureAllowed, true);

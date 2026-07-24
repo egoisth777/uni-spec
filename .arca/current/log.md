@@ -159,3 +159,4 @@
 - 2026-07-23 - Phase P5 - t-015 - published machine-readable preservation inventory/proof; PT-015 passed 6/6 with website/ and openspec/ absent and retained routes/history verified.
 - 2026-07-23 - Phase P5 - complete - t-015-purge-preservation done and residual-us-16/US-16 satisfied; frozen install/build/typecheck, PT-012..PT-015, package tests, side-effect-safe CLI, diff/secrets checks, and cleanup passed.
 - 2026-07-23 - Phase P4 - running - next approved ticket t-016-reproducible-recovery-proof; current waiting_on remains empty.
+- 2026-07-23 - Phase P5 - t-015 review correction - strengthened PT-015 with an exact cutoff-log prefix and evidence-matched appended suffix oracle; t-016 remains untouched.
