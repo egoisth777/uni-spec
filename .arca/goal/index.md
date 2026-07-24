@@ -8,6 +8,10 @@
 
 The accepted requirements from [purge and sanitization](../issue/i-001-purge-sanitization/index.md) are `US-08` through `US-12`; their reverse mapping is recorded in `.arca/issue/i-001-purge-sanitization/spec.md`.
 
+The accepted requirements from [selective CLI recovery](../issue/i-002-selective-cli-recovery/index.md) are `US-13` through `US-17`; their reverse mapping is recorded in `.arca/issue/i-002-selective-cli-recovery/spec.md`.
+
+The recovery requirements govern repository restoration only. They do not expand the five-file standard into a CLI product: the standard and its existing `US-01` through `US-12` contracts remain authoritative, while the recovery slice separately requires a runnable historical CLI closure and its evidence.
+
 ## Routes
 
 | Need | File |

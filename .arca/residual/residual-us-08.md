@@ -3,7 +3,7 @@
 ```yaml
 residual-id: "residual-us-08"
 goal-requirement-ref: "US-08"
-frozen-goal-bundle-revision: "HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0; SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"
+frozen-goal-bundle-revision: "HEAD dd3fe7053bfee91ad9616367dd2c314ab2bf131f; SHA-256 86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021"
 implementation-revision: "t-007-website-purge implementation commit (local)"
 concrete-evidence-refs:
   - "website/ (pre-mutation inventory: 32 tracked files, all classified as standalone OpenSpec website residue)"

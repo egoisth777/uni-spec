@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`uni-spec` defines a uniform, persistent issue-folder standard plus written procedures for conversion and linting. It specifies documents and inspection evidence only. It does not specify commands, APIs, executable runtime behavior, source or package requirements, dependencies, orchestration, apply or archive workflows, or implementation plans.
+`US-01` through `US-12` define the uniform issue-folder standard and its written conversion/lint evidence only. They do not specify commands, APIs, executable runtime behavior, source or package requirements, dependencies, orchestration, apply or archive workflows, or implementation plans. The separately scoped `US-13` through `US-17` requirements govern selective recovery of this repository's historical CLI and its proof; they do not change the standard product boundary.
 
 ## Source requests
 
@@ -29,3 +29,15 @@ These accepted requirements are the forward authority for `R-001` through `R-005
 | `US-10` | Inventory and classify other inherited residue, including upstream identity, assets, executable tooling, build/release configuration, integrations, documentation, source, tests, and schemas, before changing any path. | `accepted` | The source requires an exhaustive audit beyond the two named directories so residue cannot remain hidden in adjacent paths. | `R-003` |
 | `US-11` | Apply a minimal-retention criterion preserving `.arca/`, `standard/`, `AGENTS.md`, and only directly evidenced supporting files; never delete required content solely because it resembles upstream structure. | `accepted` | The source requires a minimal, evidence-led purge that preserves uni-spec authority and working records. | `R-004` |
 | `US-12` | After the purge, prove upstream identity and deleted-path absence, retained-link integrity, and passing checks for the retained standard and working artifacts. | `accepted` | The source requires both negative absence proof and positive preservation proof. | `R-005` |
+
+## Integrated selective CLI recovery requirements
+
+These accepted requirements are the forward authority for `R-001` through `R-005` in `.arca/issue/i-002-selective-cli-recovery/spec.md`; the issue is the reverse source record. They govern repository recovery only and do not revise the docs-only product contract in `US-01` through `US-07`.
+
+| Request ID | Source ask | Disposition | Rationale | Reverse issue ref |
+| :--- | :--- | :--- | :--- | :--- |
+| `US-13` | Restore a runnable CLI/runtime closure selectively from `f179bc6^` (`84741704290c547d64605699d697612ac03731bf`), including the exact entrypoint and source imports needed for supported commands, without reverting history or restoring unrelated upstream behavior. | `accepted` | The accepted recovery boundary names the CLI and required source, while path-scoped extraction preserves the completed purge. | `R-001` |
+| `US-14` | Restore clean package identity, dependency lock data, TypeScript/Vitest configuration, build entrypoints, and only directly required package scripts so the recovered CLI can install, build, and run reproducibly without OpenSpec-branded package or release/site residue. | `accepted` | Source recovery cannot be runnable or clean without deterministic package and build support. | `R-002` |
+| `US-15` | Restore only tests, fixtures, user-facing docs, and schemas directly required by the recovered CLI contract, and publish dependency-closure evidence for every restored path and every inspected excluded candidate. | `accepted` | The boundary requests required support, not an automatic restoration of unrelated upstream artifacts. | `R-003` |
+| `US-16` | Preserve the completed `website/` and `openspec/` purges, `.arca/` governance and current records, `standard/`, `AGENTS.md`, and existing issue/residual/ticket history; recovery must not use revert/reset or rewrite append-only logs. | `accepted` | Purge preservation and history safety are explicit accepted constraints. | `R-004` |
+| `US-17` | Record reproducible recovery proof containing the exact baseline, deterministic goal/recovery hashes, ordered restore commands, restored-vs-excluded inventory, dependency-closure decisions, and build/CLI/test results; unresolved candidates remain explicit. | `accepted` | Selective recovery is auditable only when both selection and outcomes can be reproduced. | `R-005` |

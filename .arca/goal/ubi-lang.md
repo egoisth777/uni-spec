@@ -21,3 +21,9 @@
 | minimal-retention set | `.arca/`, `standard/`, `AGENTS.md`, and only supporting paths with direct evidence of uni-spec need. |
 | retained artifact | A path preserved because a concrete standard, governance rule, link, or check depends on it. |
 | absence proof | A post-purge inspection record showing forbidden identity and deleted-path references are absent. |
+
+| selective CLI recovery | A dependency-ordered restoration from the frozen historical baseline that includes only the runnable CLI and directly evidenced support; it is not a history revert or reset. |
+| recovery baseline | The exact source revision selected for read-only inspection and path-scoped extraction. |
+| dependency closure | Every file, package, configuration, fixture, or document directly reached by a recovered import, script, test, or public command contract. |
+| restored-vs-excluded inventory | A path-level record of each selected restore and each inspected candidate intentionally excluded with evidence. |
+| recovery proof | Reproducible source revisions, commands, hashes, inventories, and observable build/runtime/test outcomes. |
