@@ -12,7 +12,7 @@ planned-test-refs:
   - "PT-013"
 dependencies:
   - "t-012-cli-runtime-recovery"
-status: "running"
+status: "done"
 ---
 
 # Ticket: t-013-package-build-closure
@@ -46,3 +46,12 @@ Restore the package/build closure required by the recovered runtime: package met
 | `PT-013-H4` | `.arca/issue/i-002-selective-cli-recovery/spec.md#R-002` | Change lock data without package evidence. | `Durability/Recovery` | Reproducibility check fails. | `recovery-maintainer` |
 | `PT-013-H5` | `.arca/goal/test-list.md#verification` | Omit build output or required config. | `Output/Filesystem` | Build proof fails. | `recovery-maintainer` |
 | `PT-013-H6` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` | Combine clean metadata and CLI smoke. | `Cross-Feature` | Ticket closes only with both. | `recovery-maintainer` |
+
+## P5 Closure Evidence
+
+- PT-013 is `test/t-013-package-build-closure.test.mjs` (Node test) plus `test/t-013-package-build-closure.vitest.test.ts` (configured Vitest startup check); the former is intentionally red before closure evidence/build output and green after recovery.
+- Mechanical scan of all 167 `src/**/*.ts` modules found 80 external references across 10 runtime packages: `@inquirer/core`, `@inquirer/prompts`, `chalk`, `commander`, `cross-spawn`, `fast-glob`, `ora`, `posthog-node`, `yaml`, and `zod`. Manifest and lock importer match exactly.
+- Removed unreachable inherited devDependencies: `@changesets/changelog-github`, `@changesets/cli`, `@vitest/ui`, `eslint`, and `typescript-eslint`; retained only `@types/node`, `typescript`, and `vitest`.
+- Retained private `uni-spec-cli` identity, pinned `pnpm@9.15.9`, `openspec` bin, strict TypeScript build, minimal Vitest config, and bounded `build`/`test` scripts. No website, openspec, release, publish, prepare, postinstall, or changeset hooks were restored.
+- Machine-readable provenance and closure map: `.arca/io/t-013-package-build-closure.json`.
+- Green proof: frozen install, `pnpm run build`, strict `tsc --noEmit`, `pnpm test` (PT-012 plus PT-013 Node and Vitest checks), and CLI help/version smoke. Generated `dist/` and `node_modules/` were removed before commit.

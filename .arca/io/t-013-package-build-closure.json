@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ticket": "t-013-package-build-closure",
+  "generatedAt": "2026-07-23",
+  "source": {
+    "root": "src/cli/index.ts",
+    "sourceModuleCount": 167,
+    "sourceFiles": "src/**/*.ts",
+    "extraction": "Collect static import-from, dynamic import(), and require() specifiers from each TypeScript source file; exclude relative imports and Node built-ins."
+  },
+  "externalImports": [
+    "@inquirer/core",
+    "@inquirer/prompts",
+    "chalk",
+    "commander",
+    "cross-spawn",
+    "fast-glob",
+    "ora",
+    "posthog-node",
+    "yaml",
+    "zod"
+  ],
+  "externalReferenceCount": 80,
+  "externalImportFiles": {
+    "@inquirer/core": ["src/prompts/searchable-multi-select.ts"],
+    "@inquirer/prompts": ["src/commands/change.ts", "src/commands/completion.ts", "src/commands/config.ts", "src/commands/schema.ts", "src/commands/show.ts", "src/commands/spec.ts", "src/commands/store.ts", "src/commands/validate.ts", "src/commands/workset-prompts.ts", "src/core/archive.ts", "src/core/init.ts", "src/core/update.ts"],
+    "chalk": ["src/commands/config.ts", "src/commands/workflow/schemas.ts", "src/commands/workflow/shared.ts", "src/commands/workflow/status.ts", "src/core/archive.ts", "src/core/init.ts", "src/core/legacy-cleanup.ts", "src/core/specs-apply.ts", "src/core/styles/palette.ts", "src/core/update.ts", "src/core/view.ts", "src/prompts/searchable-multi-select.ts", "src/ui/welcome-screen.ts"],
+    "commander": ["src/cli/index.ts", "src/commands/config.ts", "src/commands/context.ts", "src/commands/doctor.ts", "src/commands/schema.ts", "src/commands/spec.ts", "src/commands/store.ts", "src/commands/workset.ts"],
+    "cross-spawn": ["src/commands/workset.ts"],
+    "fast-glob": ["src/core/artifact-graph/outputs.ts"],
+    "ora": ["src/cli/index.ts", "src/commands/completion.ts", "src/commands/schema.ts", "src/commands/validate.ts", "src/commands/workflow/instructions.ts", "src/commands/workflow/new-change.ts", "src/commands/workflow/status.ts", "src/commands/workflow/templates.ts", "src/core/init.ts", "src/core/update.ts"],
+    "posthog-node": ["src/telemetry/index.ts"],
+    "yaml": ["src/commands/schema.ts", "src/core/artifact-graph/schema.ts", "src/core/project-config.ts", "src/core/store/foundation.ts", "src/core/worksets.ts", "src/utils/change-metadata.ts"],
+    "zod": ["src/core/artifact-graph/types.ts", "src/core/change-metadata/schema.ts", "src/core/config-schema.ts", "src/core/openers.ts", "src/core/project-config.ts", "src/core/schemas/base.schema.ts", "src/core/schemas/change.schema.ts", "src/core/schemas/spec.schema.ts", "src/core/store/foundation.ts", "src/core/validation/validator.ts", "src/core/worksets.ts", "src/core/zod-issues.ts"]
+  },
+  "manifestRuntimeDependencies": ["@inquirer/core", "@inquirer/prompts", "chalk", "commander", "cross-spawn", "fast-glob", "ora", "posthog-node", "yaml", "zod"],
+  "manifestDevDependencies": ["@types/node", "typescript", "vitest"],
+  "packageIdentity": {
+    "name": "uni-spec-cli",
+    "version": "0.1.0",
+    "private": true,
+    "bin": {"openspec": "./bin/openspec.js"},
+    "packageManager": "pnpm@9.15.9"
+  },
+  "lock": {
+    "path": "pnpm-lock.yaml",
+    "packageManager": "pnpm@9.15.9",
+    "importerConsistent": true,
+    "regenerated": "corepack pnpm install --lockfile-only"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "test": "node --test test/*.test.mjs && vitest run",
+    "allowed": ["build", "test"],
+    "excludedHooks": ["release", "site", "changesets", "publish", "prepare", "postinstall"]
+  },
+  "configs": {"typescript": "tsconfig.json", "vitest": "vitest.config.ts", "build": "build.js"},
+  "verification": {
+    "p4Red": "node --test test/t-013-package-build-closure.test.mjs failed because closure evidence was absent; CLI behavior failed before build because dist was absent.",
+    "p5Green": ["corepack pnpm install --frozen-lockfile", "corepack pnpm run build", "corepack pnpm exec tsc --noEmit", "node --test test/t-013-package-build-closure.test.mjs"]
+  },
+  "excludedInheritedDependencies": ["@changesets/changelog-github", "@changesets/cli", "@vitest/ui", "eslint", "typescript-eslint"]
+}

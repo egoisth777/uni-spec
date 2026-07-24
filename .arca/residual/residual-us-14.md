@@ -9,9 +9,10 @@ concrete-evidence-refs:
   - ".arca/issue/i-002-selective-cli-recovery/spec.md#R-002"
   - ".arca/issue/i-002-selective-cli-recovery/design.md#candidate-path-groups"
   - "historical baseline f179bc6^ package.json, pnpm-lock.yaml, tsconfig.json, vitest.config.ts, and build.js"
-  - "sanitized current tree has no package/dependency/build closure"
-classification-rationale: "missing: the baseline package/build artifacts were inspected read-only, but current metadata and lock/build support are absent and no clean install, build, or test-run proof exists."
-status: "missing"
+  - ".arca/io/t-013-package-build-closure.json"
+  - "test/t-013-package-build-closure.test.mjs PT-013; test/t-013-package-build-closure.vitest.test.ts"
+classification-rationale: "satisfied: the retained package is private uni-spec-cli with pinned pnpm identity and openspec bin; the mechanically derived 167-module closure has exactly 10 external runtime packages, matching package.json and the regenerated lock importer. Unreachable Changesets, lint, UI, and typescript-eslint inheritance was removed; strict build/typecheck, frozen install, configured test runner, PT-012/PT-013, CLI help/version, and purge checks pass."
+status: "satisfied"
 required-test-refs:
   - "T-014"
   - "PT-013"

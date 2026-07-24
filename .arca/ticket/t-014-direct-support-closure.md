@@ -13,7 +13,7 @@ planned-test-refs:
 dependencies:
   - "t-012-cli-runtime-recovery"
   - "t-013-package-build-closure"
-status: "approved"
+status: "running"
 ---
 
 # Ticket: t-014-direct-support-closure
