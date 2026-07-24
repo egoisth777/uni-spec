@@ -6,7 +6,7 @@ goal-requirement-ref: "US-10"
 frozen-goal-bundle-revision: "HEAD 0a99f410457271aa773d8b106f03f637f7c6b3c0; SHA-256 4cf93e9a9a26f61b33c16a98b7e5bb5f2274b67c5102c1bc937c4267e0a6e6f0"
 implementation-revision: "P4/P5 t-009-adjacent-residue purge commit; repository history records the immutable revision"
 concrete-evidence-refs:
-  - ".arca/io/t-009-adjacent-residue.json (complete 35-candidate disposition inventory; PT-009)"
+  - ".arca/io/t-009-adjacent-residue.json (complete 542-candidate disposition inventory: 35 observed roots plus 507 nested tracked entries; PT-009)"
   - ".arca/ticket/t-009-adjacent-residue.md (P4 red and P5 proof)"
   - ".arca/issue/i-001-purge-sanitization/spec.md (R-003)"
   - ".arca/issue/i-001-purge-sanitization/test-plan.md (T-002)"
