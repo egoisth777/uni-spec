@@ -12,7 +12,7 @@ planned-test-refs:
   - "PT-012"
 dependencies:
   - "none"
-status: "running"
+status: "done"
 ---
 
 # Ticket: t-012-cli-runtime-recovery
@@ -46,3 +46,11 @@ From `f179bc6^` (`84741704290c547d64605699d697612ac03731bf`), selectively restor
 | `PT-012-H4` | `.arca/issue/i-002-selective-cli-recovery/spec.md#R-001` | Attempt a full-tree revert. | `Durability/Recovery` | History/purge guard fails. | `recovery-maintainer` |
 | `PT-012-H5` | `.arca/goal/test-list.md#verification` | Leave the entrypoint or a selected file absent. | `Output/Filesystem` | Inventory/build fails. | `recovery-maintainer` |
 | `PT-012-H6` | `.arca/goal/spec.md#integrated-selective-cli-recovery-requirements` | Combine CLI smoke with absence checks. | `Cross-Feature` | Slice closes only with both proofs. | `recovery-maintainer` |
+
+## P5 Evidence
+
+PT-012 maps to `PT-012_cli_runtime_smoke` in `test/t-012-cli-runtime-recovery.test.mjs`. The static relative-import BFS rooted at `src/cli/index.ts` resolved 167 source modules (the baseline has 171; the four unreachable modules remain excluded), plus `bin/openspec.js`. The machine-readable restored/excluded/provenance inventory is `.arca/io/t-012-cli-runtime-recovery.json`.
+
+The test-first red run was `node --test test/t-012-cli-runtime-recovery.test.mjs` and failed only because `bin/openspec.js` was absent (`MODULE_NOT_FOUND`). After path-selective restoration, `corepack pnpm install --frozen-lockfile`, `corepack pnpm run build`, `corepack pnpm exec tsc --noEmit`, `node --test test/t-012-cli-runtime-recovery.test.mjs`, and `corepack pnpm test` passed. `node bin/openspec.js --help` emitted `Usage: openspec` and the expected description; `node bin/openspec.js --version` emitted `0.1.0`. `website/` and `openspec/` remain absent.
+
+Package/build support is provisional: `package.json`, `pnpm-lock.yaml`, `tsconfig.json`, and `build.js` were restored; package identity and scripts were cleaned to `uni-spec-cli`, while the frozen baseline dependency importer remains for this smoke. Broader package-closure cleanup and reproducibility are deferred to t-013.

@@ -12,7 +12,7 @@ planned-test-refs:
   - "PT-013"
 dependencies:
   - "t-012-cli-runtime-recovery"
-status: "approved"
+status: "running"
 ---
 
 # Ticket: t-013-package-build-closure
