@@ -69,21 +69,25 @@ test('PT-014 schemas and templates commands resolve the recovered package contra
   assert.equal(evidence.runtimeEdge.commands.schemas, 'direct package schema lookup');
   assert.equal(evidence.runtimeEdge.commands.templates, 'direct package schema and template lookup');
   const tempDir = mkdtempSync(path.join(os.tmpdir(), 'uni-spec-t014-'));
-  const env = { ...process.env, NO_COLOR: '1' };
-  const schemas = execFileSync(process.execPath, [path.join(root, 'bin/openspec.js'), 'schemas', '--json'], {
-    cwd: tempDir,
-    env,
-    encoding: 'utf8',
-  });
-  const schemaJson = JSON.parse(schemas);
-  assert.ok(schemaJson.some((schema) => schema.name === 'spec-driven'));
-  const templates = execFileSync(process.execPath, [path.join(root, 'bin/openspec.js'), 'templates', '--json'], {
-    cwd: tempDir,
-    env,
-    encoding: 'utf8',
-  });
-  const templateJson = JSON.parse(templates);
-  assert.deepEqual(Object.keys(templateJson).sort(), ['design', 'proposal', 'specs', 'tasks']);
+  try {
+    const env = { ...process.env, NO_COLOR: '1' };
+    const schemas = execFileSync(process.execPath, [path.join(root, 'bin/openspec.js'), 'schemas', '--json'], {
+      cwd: tempDir,
+      env,
+      encoding: 'utf8',
+    });
+    const schemaJson = JSON.parse(schemas);
+    assert.ok(schemaJson.some((schema) => schema.name === 'spec-driven'));
+    const templates = execFileSync(process.execPath, [path.join(root, 'bin/openspec.js'), 'templates', '--json'], {
+      cwd: tempDir,
+      env,
+      encoding: 'utf8',
+    });
+    const templateJson = JSON.parse(templates);
+    assert.deepEqual(Object.keys(templateJson).sort(), ['design', 'proposal', 'specs', 'tasks']);
+  } finally {
+    rmSync(tempDir, { recursive: true, force: true });
+  }
 });
 
 test('PT-014 init and validate remain side-effect-safe in an isolated temporary project', () => {
