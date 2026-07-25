@@ -2,21 +2,27 @@
 
 ## Summary
 
-`uni-spec` is a lightweight, persistent documentation standard and guardrail for one issue folder. Each folder contains exactly five distinct regular files: `index.md`, `ubi-lang.md`, `spec.md`, `design.md`, and `test-plan.md`. The standard declaratively describes conversion of issue-like source material and inspection of malformed or parsing-broken folders; it is not software. The integrated sanitation requirements `US-08` through `US-12` additionally require an evidence-led purge of inherited OpenSpec residue while retaining the standard and its governance records.
+`uni-spec` is a lightweight, persistent documentation standard and guardrail for one issue folder. Each folder contains exactly five distinct regular files: `index.md`, `ubi-lang.md`, `spec.md`, `design.md`, and `test-plan.md`. The standard declaratively describes conversion of issue-like source material and inspection of malformed or parsing-broken folders; it is not software. The integrated sanitation requirements `US-08` through `US-12` additionally require an evidence-led purge of inherited OpenSpec residue while retaining the standard and its governance records. The separately scoped `US-18` governs Windows shell guidance for generated commands and tool selection, and `US-19` governs the repository's end-of-loop cleanup, current-goal promotion, and terminal-record archive lifecycle; `US-20` widens that lifecycle to sweep every terminal record in every collection beneath its owning archive.
 
 ## Integrated issue
 
-The accepted requirements from [purge and sanitization](../issue/i-001-purge-sanitization/index.md) are `US-08` through `US-12`; their reverse mapping is recorded in `.arca/issue/i-001-purge-sanitization/spec.md`.
+The accepted requirements from [purge and sanitization](../issue/archive/i-001-purge-sanitization/index.md) are `US-08` through `US-12`; their reverse mapping is recorded in `.arca/issue/i-001-purge-sanitization/spec.md`.
 
-The accepted requirements from [selective CLI recovery](../issue/i-002-selective-cli-recovery/index.md) are `US-13` through `US-17`; their reverse mapping is recorded in `.arca/issue/i-002-selective-cli-recovery/spec.md`.
+The accepted requirements from [selective CLI recovery](../issue/archive/i-002-selective-cli-recovery/index.md) are `US-13` through `US-17`; their reverse mapping is recorded in `.arca/issue/i-002-selective-cli-recovery/spec.md`.
 
-The recovery requirements govern repository restoration only. They do not expand the five-file standard into a CLI product: the standard and its existing `US-01` through `US-12` contracts remain authoritative, while the recovery slice separately requires a runnable historical CLI closure and its evidence.
+The accepted requirement from [Windows PowerShell preference](../issue/archive/i-003-windows-powershell-preference/index.md) is `US-18`; its reverse mapping is recorded in the issue [specification](../issue/archive/i-003-windows-powershell-preference/spec.md).
+
+The accepted requests from [end-of-loop cleanup and archive lifecycle](../issue/archive/i-004-loop-cleanup-archive/index.md) are integrated cohesively as `US-19`; their reverse mapping is recorded in the issue [specification](../issue/archive/i-004-loop-cleanup-archive/spec.md).
+
+The accepted requests from [terminal archive sweep](../issue/archive/i-005-terminal-archive-sweep/index.md) are integrated cohesively as `US-20`; their reverse mapping is recorded in the issue [specification](../issue/archive/i-005-terminal-archive-sweep/spec.md).
+
+The recovery requirements govern repository restoration only. They do not expand the five-file standard into a CLI product: the standard and its existing `US-01` through `US-12` contracts remain authoritative, while the recovery slice separately requires a runnable historical CLI closure and its evidence. `US-18` is separately scoped platform guidance for command generation and shell-tool selection, not a model-specific or product-runtime requirement. `US-19` is separately scoped repository lifecycle governance and preserves `.arca/goal/` as this cumulative current authority and stable front door. `US-20` is the same governance slice: it changes which finished records are relocated, never the standard, the goal authority paths, or any live nonterminal work.
 
 ## Routes
 
 | Need | File |
 | :--- | :--- |
-| Domain terms | [Ubiquitous language](ubi-lang.md) |
-| Stable source requests | [Specification](spec.md) |
-| Structure, conversion, and lint contract | [Design](design.md) |
-| Inspection checks and state traces | [Test list](test-list.md) |
+| Domain terms | [Ubiquitous language](./ubi-lang.md) |
+| Stable source requests | [Specification](./spec.md) |
+| Structure, conversion, and lint contract | [Design](./design.md) |
+| Inspection checks and state traces | [Test list](./test-list.md) |

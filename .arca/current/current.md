@@ -1,7 +1,7 @@
 phase: "Idle"
 status: "idle"
-goal_revision: "frozen revised goal bundle at repository HEAD dd3fe7053bfee91ad9616367dd2c314ab2bf131f; ordered goal index, ubi, spec, design, test-list filename-NUL-content SHA-256 86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021"
-input_revision: "P2 frozen revised goal HEAD dd3fe7053bfee91ad9616367dd2c314ab2bf131f plus bundle SHA-256 86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021"
-output_revision: "P5 complete for t-016-reproducible-recovery-proof: deterministic recovery proof published; repository-enforced LF checkout via `.gitattributes`; fresh clone frozen install/build/typecheck/22 targeted tests/full 23-test package suite/CLI smokes all green; residual-us-01 through residual-us-17 satisfied"
+goal_revision: "HEAD badbfd65c1452dd7f71d2415ac4e4e7ce4ca2d68; ordered goal index.md, ubi-lang.md, spec.md, design.md, test-list.md filename-NUL-content SHA-256 53110161fb9cabf775f9d5706a28b6987e58f3a5a738f572476c820bc64170c7"
+input_revision: "Final gap recheck found no missing or partial requirement: all twenty requirement records are satisfied and all nineteen tickets are done."
+output_revision: "US-20 completion lifecycle: 35 legacy plus 3 loop-owned terminal records swept into .arca/issue/archive/, .arca/residual/archive/, and .arca/ticket/archive/, leaving every live collection empty apart from its reserved archive; final link-normalized ordered goal filename-NUL-content SHA-256 bb6c2a0ec786bcebe425fdba7f4071c7669f1a34e9e7a06145f7f85021a66875 (semantic frozen revision remains goal_revision)"
 active_refs: []
 waiting_on: ""

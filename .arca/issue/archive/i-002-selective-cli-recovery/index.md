@@ -26,7 +26,7 @@ The bidirectional authority map is `.arca/issue/i-002-selective-cli-recovery/spe
 
 | Need | File |
 | :--- | :--- |
-| Terms | [Ubiquitous language](ubi-lang.md) |
-| Requirements | [Specification](spec.md) |
-| Proposed mechanics | [Design](design.md) |
-| Verification and integration traces | [Test plan](test-plan.md) |
+| Terms | [Ubiquitous language](./ubi-lang.md) |
+| Requirements | [Specification](./spec.md) |
+| Proposed mechanics | [Design](./design.md) |
+| Verification and integration traces | [Test plan](./test-plan.md) |

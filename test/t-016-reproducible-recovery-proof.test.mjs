@@ -10,7 +10,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const evidencePath = path.join(root, '.arca', 'io', 't-016-reproducible-recovery-proof.json');
 const baseline = '84741704290c547d64605699d697612ac03731bf';
 const planningParent = 'dd3fe7053bfee91ad9616367dd2c314ab2bf131f';
-const frozenGoalHash = '86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021';
+const frozenBundleCommit = '1c4d1fe516482adc1b550be0c364be32aeeb3298';
+const recordedGoalHash = '86153fcdcccdc5bbd7c4bb98358a6423f79047c1e665f86ae01184f496694021';
 const goalFiles = ['index.md', 'ubi-lang.md', 'spec.md', 'design.md', 'test-list.md'];
 const purgeBoundaries = ['website/', 'openspec/'];
 const requiredCommands = [
@@ -34,11 +35,11 @@ function git(...args) {
   return execFileSync('git', args, { cwd: root, encoding: 'utf8' }).trim();
 }
 
-function frozenGoalDigest() {
+function frozenGoalDigest(revision) {
   const hash = createHash('sha256');
   for (const name of goalFiles) {
     hash.update(`${name}\0`);
-    hash.update(readFileSync(path.join(root, '.arca', 'goal', name)));
+    hash.update(execFileSync('git', ['show', `${revision}:.arca/goal/${name}`], { cwd: root }));
   }
   return hash.digest('hex');
 }
@@ -78,9 +79,11 @@ test('PT-016 records frozen provenance, goal bytes, and a linear recovery chain'
   const evidence = readEvidence();
   assert.equal(evidence.provenance?.baselineCommit, baseline);
   assert.equal(evidence.provenance?.planningParent, planningParent);
-  assert.equal(frozenGoalDigest(), frozenGoalHash);
+  assert.equal(evidence.frozenGoal?.commit, planningParent);
+  assert.equal(git('show', '-s', '--format=%P', frozenBundleCommit), planningParent);
+  assert.equal(frozenGoalDigest(frozenBundleCommit), recordedGoalHash);
   assert.equal(lineEndingAttributes(), '.arca/goal/spec.md: eol: lf\nsrc/cli/index.ts: eol: lf');
-  assert.equal(evidence.frozenGoal?.bundleSha256, frozenGoalHash);
+  assert.equal(evidence.frozenGoal?.bundleSha256, recordedGoalHash);
   assert.deepEqual(evidence.frozenGoal?.files, goalFiles);
   assert.equal(evidence.provenance?.topology, 'single-parent linear recovery chain');
   assert.equal(evidence.provenance?.rewriteDetected, false);

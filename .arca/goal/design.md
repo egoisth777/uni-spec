@@ -2,7 +2,7 @@
 
 ## Overview
 
-The standard is a written contract for documents and inspections. A person, agent, or external tool may apply the procedure, but the product defined by this goal has no executable converter, linter, runtime, command, API, package, dependency, orchestration, apply/archive operation, or implementation plan.
+The standard is a written contract for documents and inspections. A person, agent, or external tool may apply the procedure, but the product defined by this goal has no executable converter, linter, runtime, command, API, package, dependency, orchestration, apply/archive operation, or implementation plan. The separately scoped repository recovery, platform guidance, and end-of-loop lifecycle requirements do not change that product boundary.
 
 ## Goal design mapping
 
@@ -28,7 +28,7 @@ The purge is a repository-governance slice, not a product runtime. Each accepted
 | `US-11` (`R-004`) | Apply the allowlist rooted at `.arca/`, `standard/`, and `AGENTS.md`; preserve supporting files only with direct evidence. |
 | `US-12` (`R-005`) | Re-run absence searches, resolve retained Markdown links, inspect retained five-file artifacts, and record green applicable checks. |
 
-No row in `US-01` through `US-12` authorizes a converter, linter, runtime, package, dependency, orchestration, or apply/archive product. The separately scoped `US-13` through `US-17` recovery requirements govern restoration of this repository's historical CLI closure and its proof only.
+No row in `US-01` through `US-12` authorizes a converter, linter, runtime, package, dependency, orchestration, or apply/archive product. The separately scoped `US-13` through `US-17` recovery requirements govern restoration of this repository's historical CLI closure and its proof only. The separately scoped `US-18` governs shell selection in Windows-targeted guidance, and `US-19` governs repository end-of-loop lifecycle behavior; neither changes the docs-only product boundary.
 
 ## Integrated selective CLI recovery mapping
 
@@ -43,6 +43,30 @@ The recovery slice is repository restoration work, separate from the docs-only s
 | `US-17` (`R-005`) | Publish exact baseline and goal/recovery hashes, ordered path inventory and extraction commands, restored-vs-excluded decisions, unresolved candidates, and reproducible install/build/CLI/test evidence. |
 
 Candidate groups are `bin/` plus reachable `src/` (runtime), package/lock/compiler/test/build configuration and reached scripts (support), reachable tests/fixtures (verification), and reachable docs/schemas (public contract). Unreferenced upstream `.agents/`, release/CI/devcontainer/change-set assets, site material, and all `website/`/`openspec/` entries remain excluded unless direct closure evidence proves otherwise.
+
+## Integrated Windows shell guidance mapping
+
+This mapping applies to generated commands and shell-tool choices whenever the target platform is Windows. It is platform-level guidance and does not branch on model identity.
+
+| Request ID | Proposal |
+| :--- | :--- |
+| `US-18` ([`R-001`](../issue/archive/i-003-windows-powershell-preference/spec.md#source-requests)) | Generate PowerShell-native command syntax and select `pwsh` for Windows shell operations. Do not direct ordinary Windows work to Bash and do not use Bash as a fallback after a tool failure. Select Bash only when the requested operation explicitly requires a Bash/Unix environment, and make that exception reason visible in the guidance. |
+
+## Integrated end-of-loop archive lifecycle mapping
+
+This repository-governance mapping applies only after the final green gap recheck has found no `missing` or `partial` requirement and the loop has satisfied its Idle gate. It is one ordered, idempotent completion lifecycle, not three independently optional actions.
+
+| Request ID | Proposal |
+| :--- | :--- |
+| `US-19` ([`R-001`](../issue/archive/i-004-loop-cleanup-archive/spec.md#source-requests), [`R-002`](../issue/archive/i-004-loop-cleanup-archive/spec.md#source-requests), [`R-003`](../issue/archive/i-004-loop-cleanup-archive/spec.md#source-requests)) | Classify working artifacts against the retention boundary and remove only reproducible generated output, installed dependencies, caches, temporary fixtures, and equivalent transient products. Preserve `.arca/goal/`, source, executable tests, `.arca/io/` evidence, permanent verification evidence, all nonterminal records, and `.arca/current/log.md`. Record in `.arca/current/current.md` the exact goal Git HEAD and ordered filename-NUL-content goal-bundle SHA-256 frozen for that loop; do not relocate or replace `.arca/goal/`, which remains the cumulative authority and stable front door. Reserve only the owning archive directories, recursively exclude their descendants from live scans while preserving archived IDs in allocation, reject active or nonterminal records, close the selected loop-owned records, repair every affected link, and relocate the complete eligible set atomically. A repeated unchanged pass performs no moves and appends no duplicate transition. |
+
+## Integrated repository-wide terminal archive mapping
+
+This mapping widens the relocation scope of the [end-of-loop archive lifecycle mapping](#integrated-end-of-loop-archive-lifecycle-mapping) and changes none of its cleanup, promotion, atomicity, or safety terms.
+
+| Request ID | Proposal |
+| :--- | :--- |
+| `US-20` ([`R-001`](../issue/archive/i-005-terminal-archive-sweep/spec.md#source-requests), [`R-002`](../issue/archive/i-005-terminal-archive-sweep/spec.md#source-requests), [`R-003`](../issue/archive/i-005-terminal-archive-sweep/spec.md#source-requests)) | Select the relocation set by terminal status alone: every `integrated` or `rejected` issue, every `satisfied` residual, and every `done` ticket, whichever loop created it. Exclude every nonterminal record and every record named by `active_refs`. Move the whole selected set atomically beneath the owning `.arca/issue/archive/`, `.arca/residual/archive/`, and `.arca/ticket/archive/`, repair and validate affected links, and leave each live collection holding only nonterminal records and its reserved `archive/`. Resolve every retention, preservation, or census check against the live-or-archived location of the record it names, and count live and archived records together, so relocation is never observable as loss. Re-running the sweep against unchanged state performs zero moves. |
 
 ## Five-file shape
 
@@ -116,4 +140,4 @@ Each finding has exactly these conceptual fields: rule ID, path relative to the 
 
 ## Docs-only boundary
 
-The standard's deliverables are the five documents and their written conversion, aspect, and lint contracts. Applying them may be done by a person, agent, or external tool, but `US-01` through `US-12` neither requests nor implies a converter or linter program, command interface, APIs, runtime behavior, source/package/dependency requirements, orchestration, apply/archive behavior, or an implementation plan. `US-13` through `US-17` are a separately scoped repository recovery contract and do not alter the standard's five-file product boundary.
+The standard's deliverables are the five documents and their written conversion, aspect, and lint contracts. Applying them may be done by a person, agent, or external tool, but `US-01` through `US-12` neither requests nor implies a converter or linter program, command interface, APIs, runtime behavior, source/package/dependency requirements, orchestration, apply/archive behavior, or an implementation plan. `US-13` through `US-17` are a separately scoped repository recovery contract and do not alter the standard's five-file product boundary. `US-18` is separately scoped platform guidance, and `US-19` is separately scoped repository lifecycle governance.
