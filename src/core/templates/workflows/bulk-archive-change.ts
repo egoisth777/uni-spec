@@ -6,8 +6,27 @@
  */
 import type { SkillTemplate, CommandTemplate } from '../types.js';
 import { STORE_SELECTION_GUIDANCE } from './store-selection.js';
+import { resolveShellPolicy, type ShellPolicyContext } from '../../shared/allowed-tools.js';
 
-export function getBulkArchiveChangeSkillTemplate(): SkillTemplate {
+function getBulkArchiveShellCommands(shellContext?: ShellPolicyContext): string {
+  if (resolveShellPolicy(shellContext).shell === 'pwsh') {
+    return `      \`\`\`powershell
+      $archiveDirectory = Join-Path "<planningHome.changesDir>" "archive"
+      New-Item -ItemType Directory -Force -Path $archiveDirectory | Out-Null
+      $archiveTarget = Join-Path $archiveDirectory "YYYY-MM-DD-<name>"
+      Move-Item -LiteralPath "<changeRoot>" -Destination $archiveTarget
+      \`\`\``;
+  }
+
+  return `      \`\`\`bash
+      mkdir -p "<planningHome.changesDir>/archive"
+      mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
+      \`\`\``;
+}
+
+export function getBulkArchiveChangeSkillTemplate(shellContext?: ShellPolicyContext): SkillTemplate {
+  const archiveCommands = getBulkArchiveShellCommands(shellContext);
+
   return {
     name: 'openspec-bulk-archive-change',
     description: 'Archive multiple completed changes at once. Use when archiving several parallel changes.',
@@ -130,10 +149,7 @@ ${STORE_SELECTION_GUIDANCE}
       - Track if sync was done
 
    b. **Perform the archive**:
-      \`\`\`bash
-      mkdir -p "<planningHome.changesDir>/archive"
-      mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
-      \`\`\`
+${archiveCommands}
 
    c. **Track outcome** for each change:
       - Success: archived successfully
@@ -254,7 +270,9 @@ No active changes found. Create a new change to get started.
   };
 }
 
-export function getOpsxBulkArchiveCommandTemplate(): CommandTemplate {
+export function getOpsxBulkArchiveCommandTemplate(shellContext?: ShellPolicyContext): CommandTemplate {
+  const archiveCommands = getBulkArchiveShellCommands(shellContext);
+
   return {
     name: 'OPSX: Bulk Archive',
     description: 'Archive multiple completed changes at once',
@@ -379,10 +397,7 @@ ${STORE_SELECTION_GUIDANCE}
       - Track if sync was done
 
    b. **Perform the archive**:
-      \`\`\`bash
-      mkdir -p "<planningHome.changesDir>/archive"
-      mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
-      \`\`\`
+${archiveCommands}
 
    c. **Track outcome** for each change:
       - Success: archived successfully

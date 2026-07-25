@@ -6,8 +6,41 @@
  */
 import type { SkillTemplate, CommandTemplate } from '../types.js';
 import { STORE_SELECTION_GUIDANCE } from './store-selection.js';
+import { resolveShellPolicy, type ShellPolicyContext } from '../../shared/allowed-tools.js';
 
-export function getArchiveChangeSkillTemplate(): SkillTemplate {
+interface ArchiveShellCommands {
+  createDirectory: string;
+  moveChange: string;
+}
+
+function getArchiveShellCommands(shellContext?: ShellPolicyContext): ArchiveShellCommands {
+  if (resolveShellPolicy(shellContext).shell === 'pwsh') {
+    return {
+      createDirectory: `   \`\`\`powershell
+   $archiveDirectory = Join-Path "<planningHome.changesDir>" "archive"
+   New-Item -ItemType Directory -Force -Path $archiveDirectory | Out-Null
+   \`\`\``,
+      moveChange: `   \`\`\`powershell
+   $archiveDirectory = Join-Path "<planningHome.changesDir>" "archive"
+   $archiveTarget = Join-Path $archiveDirectory "YYYY-MM-DD-<name>"
+   Move-Item -LiteralPath "<changeRoot>" -Destination $archiveTarget
+   \`\`\``,
+    };
+  }
+
+  return {
+    createDirectory: `   \`\`\`bash
+   mkdir -p "<planningHome.changesDir>/archive"
+   \`\`\``,
+    moveChange: `   \`\`\`bash
+   mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
+   \`\`\``,
+  };
+}
+
+export function getArchiveChangeSkillTemplate(shellContext?: ShellPolicyContext): SkillTemplate {
+  const archiveCommands = getArchiveShellCommands(shellContext);
+
   return {
     name: 'openspec-archive-change',
     description: 'Archive a completed change in the experimental workflow. Use when the user wants to finalize and archive a change after implementation is complete.',
@@ -73,9 +106,7 @@ ${STORE_SELECTION_GUIDANCE}
 5. **Perform the archive**
 
    Create an \`archive\` directory under \`planningHome.changesDir\` if it doesn't exist:
-   \`\`\`bash
-   mkdir -p "<planningHome.changesDir>/archive"
-   \`\`\`
+${archiveCommands.createDirectory}
 
    Generate target name using current date: \`YYYY-MM-DD-<change-name>\`
 
@@ -83,9 +114,7 @@ ${STORE_SELECTION_GUIDANCE}
    - If yes: Fail with error, suggest renaming existing archive or using different date
    - If no: Move \`changeRoot\` to the archive directory
 
-   \`\`\`bash
-   mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
-   \`\`\`
+${archiveCommands.moveChange}
 
 6. **Display summary**
 
@@ -123,7 +152,9 @@ All artifacts complete. All tasks complete.
   };
 }
 
-export function getOpsxArchiveCommandTemplate(): CommandTemplate {
+export function getOpsxArchiveCommandTemplate(shellContext?: ShellPolicyContext): CommandTemplate {
+  const archiveCommands = getArchiveShellCommands(shellContext);
+
   return {
     name: 'OPSX: Archive',
     description: 'Archive a completed change in the experimental workflow',
@@ -191,9 +222,7 @@ ${STORE_SELECTION_GUIDANCE}
 5. **Perform the archive**
 
    Create an \`archive\` directory under \`planningHome.changesDir\` if it doesn't exist:
-   \`\`\`bash
-   mkdir -p "<planningHome.changesDir>/archive"
-   \`\`\`
+${archiveCommands.createDirectory}
 
    Generate target name using current date: \`YYYY-MM-DD-<change-name>\`
 
@@ -201,9 +230,7 @@ ${STORE_SELECTION_GUIDANCE}
    - If yes: Fail with error, suggest renaming existing archive or using different date
    - If no: Move \`changeRoot\` to the archive directory
 
-   \`\`\`bash
-   mv "<changeRoot>" "<planningHome.changesDir>/archive/YYYY-MM-DD-<name>"
-   \`\`\`
+${archiveCommands.moveChange}
 
 6. **Display summary**
 

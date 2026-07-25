@@ -55,7 +55,7 @@ ${STORE_SELECTION_GUIDANCE}
    The first artifact depends on the schema (e.g., \`proposal\` for spec-driven).
    Check the status output to find the first artifact with status "ready".
    \`\`\`bash
-   openspec instructions <first-artifact-id> --change "<name>"
+   openspec instructions "<first-artifact-id>" --change "<name>"
    \`\`\`
    This outputs the template and context for creating the first artifact.
 
@@ -131,7 +131,7 @@ ${STORE_SELECTION_GUIDANCE}
 5. **Get instructions for the first artifact**
    The first artifact depends on the schema. Check the status output to find the first artifact with status "ready".
    \`\`\`bash
-   openspec instructions <first-artifact-id> --change "<name>"
+   openspec instructions "<first-artifact-id>" --change "<name>"
    \`\`\`
    This outputs the template and context for creating the first artifact.
 

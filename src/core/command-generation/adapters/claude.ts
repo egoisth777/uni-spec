@@ -7,7 +7,7 @@
 import path from 'path';
 import type { CommandContent, ToolCommandAdapter } from '../types.js';
 import { escapeYamlValue } from '../yaml.js';
-import { OPENSPEC_CLI_ALLOWED_TOOLS } from '../../shared/allowed-tools.js';
+import { resolveShellPolicy, type ShellPolicyContext } from '../../shared/allowed-tools.js';
 
 /**
  * Formats a tags array as a YAML array with proper escaping.
@@ -29,16 +29,19 @@ export const claudeAdapter: ToolCommandAdapter = {
     return path.join('.claude', 'commands', 'opsx', `${commandId}.md`);
   },
 
-  formatFile(content: CommandContent): string {
+  formatFile(content: CommandContent, shellContext?: ShellPolicyContext): string {
+    const shellPolicy = resolveShellPolicy(shellContext);
+    const shellGuidance = shellPolicy.guidance ? `${shellPolicy.guidance}\n\n` : '';
+
     return `---
 name: ${escapeYamlValue(content.name)}
 description: ${escapeYamlValue(content.description)}
-allowed-tools: ${OPENSPEC_CLI_ALLOWED_TOOLS}
+allowed-tools: ${shellPolicy.allowedTools}
 category: ${escapeYamlValue(content.category)}
 tags: ${formatTagsArray(content.tags)}
 ---
 
-${content.body}
+${shellGuidance}${content.body}
 `;
   },
 };

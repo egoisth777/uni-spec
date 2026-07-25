@@ -5,6 +5,7 @@
  * These types separate "what to generate" from "how to format it".
  */
 
+import type { ShellPolicyContext } from '../shared/allowed-tools.js';
 /**
  * Tool-agnostic command data.
  * Represents the content of a command without any tool-specific formatting.
@@ -44,7 +45,7 @@ export interface ToolCommandAdapter {
    * @param content - The tool-agnostic command content
    * @returns Complete file content ready to write
    */
-  formatFile(content: CommandContent): string;
+  formatFile(content: CommandContent, shellContext?: ShellPolicyContext): string;
 }
 
 /**

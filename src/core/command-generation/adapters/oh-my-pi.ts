@@ -10,6 +10,7 @@ import path from 'path';
 import type { CommandContent, ToolCommandAdapter } from '../types.js';
 import { transformToHyphenCommands } from '../../../utils/command-references.js';
 import { escapeYamlValue } from '../yaml.js';
+import { resolveShellPolicy, type ShellPolicyContext } from '../../shared/allowed-tools.js';
 
 const OMP_INPUT_HEADING = /^\*\*Input\*\*:[^\n]*$/m;
 
@@ -42,14 +43,16 @@ export const ohMyPiAdapter: ToolCommandAdapter = {
     return path.join('.omp', 'commands', `opsx-${commandId}.md`);
   },
 
-  formatFile(content: CommandContent): string {
+  formatFile(content: CommandContent, shellContext?: ShellPolicyContext): string {
     const transformedBody = transformToHyphenCommands(content.body);
+    const shellPolicy = resolveShellPolicy(shellContext);
+    const shellGuidance = shellPolicy.guidance ? `${shellPolicy.guidance}\n\n` : '';
 
     return `---
 description: ${escapeYamlValue(content.description)}
 ---
 
-${injectOmpArgs(transformedBody)}
+${shellGuidance}${injectOmpArgs(transformedBody)}
 `;
   },
 };

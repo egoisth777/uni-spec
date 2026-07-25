@@ -6,19 +6,48 @@
  */
 import type { SkillTemplate, CommandTemplate } from '../types.js';
 import { STORE_SELECTION_GUIDANCE } from './store-selection.js';
+import { resolveShellPolicy, type ShellPolicyContext } from '../../shared/allowed-tools.js';
 
-export function getOnboardSkillTemplate(): SkillTemplate {
+export function getOnboardSkillTemplate(shellContext?: ShellPolicyContext): SkillTemplate {
   return {
     name: 'openspec-onboard',
     description: 'Guided onboarding for OpenSpec - walk through a complete workflow cycle with narration and real codebase work.',
-    instructions: getOnboardInstructions(),
+    instructions: getOnboardInstructions(shellContext),
     license: 'MIT',
     compatibility: 'Requires openspec CLI.',
     metadata: { author: 'openspec', version: '1.0' },
   };
 }
 
-function getOnboardInstructions(): string {
+function getOnboardInstructions(shellContext?: ShellPolicyContext): string {
+  const shellPolicy = resolveShellPolicy(shellContext);
+  const shellFence = shellPolicy.shell === 'pwsh' ? 'powershell' : 'bash';
+  const preflightCommands = shellPolicy.shell === 'pwsh'
+    ? `\`\`\`powershell
+if (Get-Command openspec -ErrorAction SilentlyContinue) {
+  openspec --version
+} else {
+  Write-Output "CLI_NOT_INSTALLED"
+}
+\`\`\``
+    : `\`\`\`bash
+# Unix/macOS
+openspec --version 2>&1 || echo "CLI_NOT_INSTALLED"
+# Windows (PowerShell)
+# if (Get-Command openspec -ErrorAction SilentlyContinue) { openspec --version } else { echo "CLI_NOT_INSTALLED" }
+\`\`\``;
+  const gitActivityCommands = shellPolicy.shell === 'pwsh'
+    ? `\`\`\`powershell
+git log --oneline -10 2>$null
+if ($LASTEXITCODE -ne 0) { Write-Output "No git history" }
+\`\`\``
+    : `\`\`\`bash
+# Unix/macOS
+git log --oneline -10 2>/dev/null || echo "No git history"
+# Windows (PowerShell)
+# git log --oneline -10 2>$null; if ($LASTEXITCODE -ne 0) { echo "No git history" }
+\`\`\``;
+
   return `Guide the user through their first complete OpenSpec workflow cycle. This is a teaching experience—you'll do real work in their codebase while explaining each step.
 
 ${STORE_SELECTION_GUIDANCE}
@@ -29,12 +58,7 @@ ${STORE_SELECTION_GUIDANCE}
 
 Before starting, check if the OpenSpec CLI is installed:
 
-\`\`\`bash
-# Unix/macOS
-openspec --version 2>&1 || echo "CLI_NOT_INSTALLED"
-# Windows (PowerShell)
-# if (Get-Command openspec -ErrorAction SilentlyContinue) { openspec --version } else { echo "CLI_NOT_INSTALLED" }
-\`\`\`
+${preflightCommands}
 
 **If CLI not installed:**
 > OpenSpec CLI is not installed. Install it first, then come back to \`/opsx:onboard\`.
@@ -81,12 +105,7 @@ Scan the codebase for small improvement opportunities. Look for:
 6. **Missing validation** - User input handlers without validation
 
 Also check recent git activity:
-\`\`\`bash
-# Unix/macOS
-git log --oneline -10 2>/dev/null || echo "No git history"
-# Windows (PowerShell)
-# git log --oneline -10 2>$null; if ($LASTEXITCODE -ne 0) { echo "No git history" }
-\`\`\`
+${gitActivityCommands}
 
 ### Present Suggestions
 
@@ -185,7 +204,7 @@ Let me create one for our task.
 \`\`\`
 
 **DO:** Create the change with a derived kebab-case name:
-\`\`\`bash
+\`\`\`${shellFence}
 openspec new change "<derived-name>"
 \`\`\`
 
@@ -254,7 +273,7 @@ Does this capture the intent? I can adjust before we save it.
 **PAUSE** - Wait for user approval/feedback.
 
 After approval, save the proposal:
-\`\`\`bash
+\`\`\`${shellFence}
 openspec instructions proposal --change "<name>" --json
 \`\`\`
 Then write the content to the \`resolvedOutputPath\` from \`openspec instructions proposal --change "<name>" --json\`.
@@ -279,7 +298,7 @@ For a small task like this, we might only need one spec file.
 \`\`\`
 
 **DO:** Resolve where the spec file should be created:
-\`\`\`bash
+\`\`\`${shellFence}
 openspec instructions specs --change "<name>" --json
 # Use resolvedOutputPath from the JSON. If it is a glob, choose the concrete file path using the schema instruction and the change's context.
 \`\`\`
@@ -441,7 +460,7 @@ Archived changes become your project's decision history—you can always find th
 \`\`\`
 
 **DO:**
-\`\`\`bash
+\`\`\`${shellFence}
 openspec archive "<name>"
 \`\`\`
 
@@ -564,12 +583,12 @@ Exit gracefully.
 - **Adjust scope gently**—guide toward smaller tasks but respect user choice`;
 }
 
-export function getOpsxOnboardCommandTemplate(): CommandTemplate {
+export function getOpsxOnboardCommandTemplate(shellContext?: ShellPolicyContext): CommandTemplate {
   return {
     name: 'OPSX: Onboard',
     description: 'Guided onboarding - walk through a complete OpenSpec workflow cycle with narration',
     category: 'Workflow',
     tags: ['workflow', 'onboarding', 'tutorial', 'learning'],
-    content: getOnboardInstructions(),
+    content: getOnboardInstructions(shellContext),
   };
 }
