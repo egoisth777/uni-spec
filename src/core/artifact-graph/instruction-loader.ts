@@ -162,6 +162,29 @@ export interface ArtifactPathSummary {
 }
 
 /**
+ * Resolves the directory a schema's templates are read from.
+ *
+ * Defaults to `<schemaDir>/templates`. A schema may set `templateRoot` to a path
+ * relative to its own directory to delegate to an external template authority,
+ * which keeps one copy of a template rather than a copy that can drift.
+ */
+export function resolveTemplateRoot(
+  schemaName: string,
+  schemaDir: string,
+  projectRoot?: string
+): string {
+  let templateRoot: string | undefined;
+  try {
+    templateRoot = resolveSchema(schemaName, projectRoot).templateRoot;
+  } catch {
+    // An unreadable schema is reported by the caller that loads it; fall back to
+    // the default location rather than masking that error with a template error.
+    templateRoot = undefined;
+  }
+  return path.resolve(schemaDir, templateRoot ?? 'templates');
+}
+
+/**
  * Loads a template from a schema's templates directory.
  *
  * @param schemaName - Schema name (e.g., "spec-driven")
@@ -183,7 +206,10 @@ export function loadTemplate(
     );
   }
 
-  const templatePathOnDisk = path.join(schemaDir, 'templates', templatePath);
+  const templatePathOnDisk = path.join(
+    resolveTemplateRoot(schemaName, schemaDir, projectRoot),
+    templatePath
+  );
 
   if (!fs.existsSync(templatePathOnDisk)) {
     throw new TemplateLoadError(

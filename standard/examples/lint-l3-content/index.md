@@ -1,5 +1,5 @@
 ---
-issue-id: "i-010-content"
+issue-id: "i-010-content-gaps"
 origin: "source/request-010"
 status: "pending"
 ---

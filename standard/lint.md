@@ -65,7 +65,7 @@ These folders and finding records are documentary observations, not executable l
 
 ### L5 — docs-only scope
 
-[`lint-l5-scope`](./examples/lint-l5-scope/) uses the conforming issue target `issue-target/i-012-scope` for LINT-01 through LINT-06 and the separate five-file `goal-root` for LINT-07. Its trace identifies both roots; LINT-07 reports one goal-relative requirement and ignores inherited workspace implementation while all other rules continue. Expected trace: [`l5.json`](./examples/lint-findings/l5.json).
+[`lint-l5-scope`](./examples/lint-l5-scope/) uses the conforming issue target `issue-target/i-012-scope-guard` for LINT-01 through LINT-06 and the separate five-file `goal-root` for LINT-07. Its trace identifies both roots; LINT-07 reports one goal-relative requirement and ignores inherited workspace implementation while all other rules continue. Expected trace: [`l5.json`](./examples/lint-findings/l5.json).
 
 ## Boundary
 

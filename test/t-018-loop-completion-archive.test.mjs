@@ -19,8 +19,8 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const goalFiles = ['index.md', 'ubi-lang.md', 'spec.md', 'design.md', 'test-list.md'];
-const frozenHead = 'badbfd65c1452dd7f71d2415ac4e4e7ce4ca2d68';
-const frozenBundle = '53110161fb9cabf775f9d5706a28b6987e58f3a5a738f572476c820bc64170c7';
+const frozenHead = '36ba95b68823fcfb34b7c54e091e246aeff04504';
+const frozenBundle = '25f314c369993de023e820b531542a47a8c6d4293e6f1af53f88fe5b660cc312';
 const transients = ['dist', 'node_modules', 'coverage', 'temp', 'tmp', '.tmp'];
 const recordPlan = [
   { kind: 'issue', id: 'i-101-terminal', source: '.arca/issue/i-101-terminal', destination: '.arca/issue/archive/i-101-terminal' },

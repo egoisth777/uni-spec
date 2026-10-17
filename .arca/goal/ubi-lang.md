@@ -37,3 +37,9 @@
 | legacy terminal record | A terminal record created by an earlier completed loop and still live because loop-scoped relocation never selected it. |
 | live collection remainder | What `.arca/issue/`, `.arca/residual/`, and `.arca/ticket/` directly hold after a sweep: nonterminal records and the reserved `archive/` only. |
 | location-independent preservation | A retention, preservation, or census check that resolves a record at its live or archived location and counts both, so archival never reads as deletion. |
+
+| applier | A person, agent, or external tool that carries out the standard's written procedure. The `uni-spec` tool is one applier; an applier never becomes part of the standard. |
+| applier surface | The operations the `uni-spec` binary exposes. It holds only what the standard defines — issue scaffold and lint — and excludes the inherited OpenSpec command set. |
+| identity allocation | Choosing an unused issue-folder name for a new folder by the [naming](./design.md#naming) algorithm, then freezing the number and slug in both the directory name and the `index.md` `issue-id` at creation. |
+| sidecar metadata | Operational state an applier keeps about an issue folder, such as the inherited `.openspec.yaml`. Inside the folder it is a forbidden sixth entry, so it lives beside the collection or is derived from `index.md` frontmatter instead. |
+| template authority | The single location a generated aspect file originates from: the shipped `standard/templates/issue/`. Any second editable copy can drift from the standard it claims to apply. |

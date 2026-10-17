@@ -1,6 +1,6 @@
 {
   "state": "L5",
-  "target": {"issueRoot":"lint-l5-scope/issue-target/i-012-scope","goalRoot":"lint-l5-scope/goal-root"},
+  "target": {"issueRoot":"lint-l5-scope/issue-target/i-012-scope-guard","goalRoot":"lint-l5-scope/goal-root"},
   "entryKinds": {"index.md":"regular-file","ubi-lang.md":"regular-file","spec.md":"regular-file","design.md":"regular-file","test-plan.md":"regular-file"},
   "evaluatedRules": ["LINT-01","LINT-02","LINT-03","LINT-04","LINT-05","LINT-06","LINT-07"],
   "findings": [

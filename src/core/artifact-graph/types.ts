@@ -25,6 +25,10 @@ export const SchemaYamlSchema = z.object({
   name: z.string().min(1, { error: 'Schema name is required' }),
   version: z.number().int().positive({ error: 'Version must be a positive integer' }),
   description: z.string().optional(),
+  // Directory holding this schema's templates, relative to the schema directory.
+  // Defaults to "templates". A schema may point this at an external authority
+  // (for example the uni-spec standard) so no second copy of a template exists.
+  templateRoot: z.string().min(1).optional(),
   artifacts: z.array(ArtifactSchema).min(1, { error: 'At least one artifact required' }),
   // Optional apply phase configuration (for schema-aware apply instructions)
   apply: ApplyPhaseSchema.optional(),

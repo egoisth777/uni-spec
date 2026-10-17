@@ -1,7 +1,7 @@
 phase: "Idle"
 status: "idle"
-goal_revision: "HEAD badbfd65c1452dd7f71d2415ac4e4e7ce4ca2d68; ordered goal index.md, ubi-lang.md, spec.md, design.md, test-list.md filename-NUL-content SHA-256 53110161fb9cabf775f9d5706a28b6987e58f3a5a738f572476c820bc64170c7"
-input_revision: "Final gap recheck found no missing or partial requirement: all twenty requirement records are satisfied and all nineteen tickets are done."
-output_revision: "US-20 completion lifecycle: 35 legacy plus 3 loop-owned terminal records swept into .arca/issue/archive/, .arca/residual/archive/, and .arca/ticket/archive/, leaving every live collection empty apart from its reserved archive; final link-normalized ordered goal filename-NUL-content SHA-256 bb6c2a0ec786bcebe425fdba7f4071c7669f1a34e9e7a06145f7f85021a66875 (semantic frozen revision remains goal_revision)"
+goal_revision: "HEAD 36ba95b68823fcfb34b7c54e091e246aeff04504; ordered goal index.md, ubi-lang.md, spec.md, design.md, test-list.md filename-NUL-content SHA-256 25f314c369993de023e820b531542a47a8c6d4293e6f1af53f88fe5b660cc312"
+input_revision: "Final gap recheck found no missing or partial requirement: all six US-21..US-26 records are satisfied and all four tickets are done. Root node --test 52/52, cli/ vitest 91/91, both packages typecheck clean and the root build is clean."
+output_revision: "US-21..US-26 loop closed: 1 integrated issue, 6 satisfied residuals, and 4 done tickets swept into .arca/issue/archive/, .arca/residual/archive/, and .arca/ticket/archive/, leaving every live collection empty apart from its reserved archive; final link-normalized ordered goal filename-NUL-content SHA-256 96b9af928cde1542ff40f1a9aed94756ed3c7e0429885256d11aa249a7510cd2 (semantic frozen revision remains goal_revision)"
 active_refs: []
 waiting_on: ""

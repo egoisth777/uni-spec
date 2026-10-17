@@ -1,0 +1,114 @@
+name: uni-spec
+version: 1
+description: uni-spec issue package - index -> ubi-lang/spec -> design/test-plan
+
+# Templates remain owned by the shipped standard. This path is relative to this
+# CLI-owned schema, so the package does not carry a second editable copy.
+templateRoot: ../../../standard/templates/issue
+
+artifacts:
+  - id: index
+    generates: index.md
+    description: Identity, source reference, lifecycle status, summary, and routes
+    template: index.md
+    requires: []
+    instruction: |
+      Write the front door of the issue package.
+
+      Frontmatter MUST begin at byte 1 with an exact `---` line and close with a
+      later line containing exactly `---`. It contains exactly three scalar keys:
+
+      - `issue-id` - equals the containing directory name, frozen at creation
+      - `origin` - the actual source reference, non-empty, the sole canonical one
+      - `status` - exactly `pending`, `integrated`, or `rejected`
+
+      After the frontmatter write `## Summary` with source-grounded content, or
+      the exact sentence `No source-grounded summary available.` when the source
+      supports none.
+
+      Then write the `## Routes` table with exactly the `Need` and `File`
+      columns and exactly four data rows, carrying one relative link each to
+      `ubi-lang.md`, `spec.md`, `design.md`, and `test-plan.md`.
+
+      Do not copy terms, requests, proposals, or checks into this file. Route to
+      the owning aspect instead.
+
+  - id: ubi-lang
+    generates: ubi-lang.md
+    description: Issue-specific terms
+    template: ubi-lang.md
+    requires:
+      - index
+    instruction: |
+      Record only terminology this issue introduces or narrows, under `## Terms`,
+      in a table with exactly the `Term` and `Meaning` columns and at least one
+      row whose cells are both non-empty.
+
+      When the issue introduces no term of its own, the only content under that
+      heading MUST be the exact sentence `No issue-specific terms.`
+
+  - id: spec
+    generates: spec.md
+    description: Stable source requests with dispositions
+    template: spec.md
+    requires:
+      - index
+    instruction: |
+      Record what the source asked for, under `## Source requests`, in a table
+      with exactly the `Request ID`, `Source ask`, `Disposition`, and
+      `Rationale` columns.
+
+      Request IDs are assigned in source encounter order and match `R-[0-9]{3,}`
+      with no upper bound, so `R-001` and `R-1000` are both valid. Once assigned,
+      an ID is stable for the life of the issue.
+
+      Each disposition is exactly one of `accepted`, `rejected`, `duplicate`,
+      `deferred`, or `undecided`. Every cell is non-empty; when the source
+      supplied no disposition or reasoning, set the disposition to `undecided`
+      and write exactly `No source disposition or rationale provided.` rather
+      than inventing one.
+
+      When no source ask can be supported, the only content under that heading
+      MUST be the exact sentence `No issue-specific requests.`
+
+  - id: design
+    generates: design.md
+    description: Proposed design mapped to source requests
+    template: design.md
+    requires:
+      - spec
+    instruction: |
+      Write the proposal under exactly one `## Proposed design` heading, in a
+      table with exactly the `Request IDs` and `Proposal` columns. Every row
+      names one or more request IDs that already exist in `spec.md`, and every
+      proposal cell is non-empty.
+
+      When the source proposes no design, the only content under that heading
+      MUST be the exact sentence `No issue-specific design proposed.`
+
+  - id: test-plan
+    generates: test-plan.md
+    description: Source-provided verification
+    template: test-plan.md
+    requires:
+      - spec
+    instruction: |
+      Record verification the source provided, under `## Verification`, in a
+      table with exactly the `Check ID`, `Request Refs`, `Procedure`, and
+      `Expected Evidence` columns. All cells are non-empty.
+
+      Check IDs run `T-001`, `T-002`, and so on in source verification-proposal
+      encounter order, with at least three decimal digits and no upper bound.
+
+      Every check row names at least one `accepted` or `undecided` request from
+      `spec.md`. Rejected, duplicate, and deferred requests are not eligible.
+
+      If eligible requests are left uncovered, append exactly
+      `No source verification provided for request IDs: <ID_LIST>; source
+      provides none.` on one line, with the uncovered IDs in spec encounter
+      order joined by the exact delimiter `, `.
+
+      When no eligible request exists at all, the body under that heading MUST
+      consist solely of the exact sentence `No verification required: source
+      contains no accepted or undecided request IDs.` That declaration is
+      invalid beside a checks table.

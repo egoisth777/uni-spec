@@ -1,2 +1,6 @@
 # Local/private workspace artifacts
 .arca-private/
+
+# Installed dependencies and build output
+node_modules/
+dist/

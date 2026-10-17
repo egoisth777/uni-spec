@@ -1,5 +1,5 @@
 ---
-issue-id: "i-012-scope"
+issue-id: "i-012-scope-guard"
 origin: "source/request-012"
 status: "pending"
 ---

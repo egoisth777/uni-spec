@@ -1,5 +1,5 @@
 ---
-issue-id: "i-009-metadata"
+issue-id: "i-009-metadata-scalar"
 origin: "source/request-009"
 status:
   value: pending

@@ -1,5 +1,5 @@
 ---
-issue-id: "i-008-shape"
+issue-id: "i-008-shape-extras"
 origin: "source/request-008"
 status: "pending"
 ---

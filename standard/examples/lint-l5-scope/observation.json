@@ -1,5 +1,5 @@
 {
-  "issueTarget": "issue-target/i-012-scope",
+  "issueTarget": "issue-target/i-012-scope-guard",
   "goalRoot": "goal-root",
   "inspected": ["goal-root/index.md", "goal-root/ubi-lang.md", "goal-root/spec.md", "goal-root/design.md", "goal-root/test-list.md"],
   "forbiddenRequirement": {"path": "design.md", "line": 3, "text": "The goal requires an executable converter command and implementation plan."},

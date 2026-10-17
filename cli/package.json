@@ -1,0 +1,31 @@
+{
+  "name": "uni-spec",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "uni-spec CLI: scaffold and lint issue packages against the standard",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "bin": {
+    "uni-spec": "./bin/uni-spec.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "schemas"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && vitest run"
+  },
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.6"
+  }
+}
