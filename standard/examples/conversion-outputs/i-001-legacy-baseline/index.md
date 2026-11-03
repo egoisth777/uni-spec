@@ -16,7 +16,7 @@ Repair the cache lookup; open question: Who owns cache invalidation?
 
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/conversion-outputs/i-001-legacy-baseline/ubi-lang.md) |
 | Source requests | [Source requests](spec.md) |
 | Proposed design | [Proposed design](design.md) |
 | Verification | [Verification](test-plan.md) |

@@ -11,7 +11,7 @@ Metadata parser fixture.
 ## Routes
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/lint-l2-metadata/ubi-lang.md) |
 | Requests | [Requests](spec.md) |
 | Design | [Design](design.md) |
 | Verification | [Verification](test-plan.md) |

@@ -12,7 +12,7 @@ No source-grounded summary available.
 
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/conversion-outputs/i-007-untitled-issue/ubi-lang.md) |
 | Source requests | [Source requests](spec.md) |
 | Proposed design | [Proposed design](design.md) |
 | Verification | [Verification](test-plan.md) |

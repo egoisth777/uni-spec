@@ -45,27 +45,27 @@ These folders and finding records are documentary observations, not executable l
 
 ### L0 — clean PASS
 
-[`lint-l0-pass/i-007-nucleus-only`](./examples/lint-l0-pass/i-007-nucleus-only/) is an actual issue directory whose basename is `i-007-nucleus-only`; it has exactly five regular files, valid metadata, conforming aspect content, and valid local routes. All seven rules evaluate with zero findings; the result is `PASS`. Expected trace: [`l0.json`](./examples/lint-findings/l0.json).
+[`lint-l0-pass/i-007-nucleus-only`](./examples/lint-l0-pass/i-007-nucleus-only/) is an actual issue directory whose basename is `i-007-nucleus-only`; it has exactly five regular files, valid metadata, conforming aspect content, and valid local routes. All seven rules evaluate with zero findings; the result is `PASS`. Expected trace: [`l0.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l0.json).
 
 ### L1 — shape continuation
 
-[`lint-l1-shape`](./examples/lint-l1-shape/) documents the five expected regular files plus an extra regular file and a symlink entry. The symlink is represented in `entries.json` as an observed `entry.kind: symlink` record because creating symlinks is non-portable on Windows; this does not weaken LINT-01, which requires no symlinks. LINT-01 records separate findings for the extra and symlink and LINT-02 through LINT-07 continue. Expected trace: [`l1.json`](./examples/lint-findings/l1.json).
+[`lint-l1-shape`](./examples/lint-l1-shape/) documents the five expected regular files plus an extra regular file and a symlink entry. The symlink is represented in `entries.json` as an observed `entry.kind: symlink` record because creating symlinks is non-portable on Windows; this does not weaken LINT-01, which requires no symlinks. LINT-01 records separate findings for the extra and symlink and LINT-02 through LINT-07 continue. Expected trace: [`l1.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l1.json).
 
 ### L2 — metadata continuation
 
-[`lint-l2-metadata`](./examples/lint-l2-metadata/) documents an `index.md` with duplicate YAML `status` and a non-scalar `status` value while other observations remain conforming. LINT-03 records both metadata findings, then independent LINT-01, LINT-02, and LINT-04 through LINT-07 continue. Expected trace: [`l2.json`](./examples/lint-findings/l2.json).
+[`lint-l2-metadata`](./examples/lint-l2-metadata/) documents an `index.md` with duplicate YAML `status` and a non-scalar `status` value while other observations remain conforming. LINT-03 records both metadata findings, then independent LINT-01, LINT-02, and LINT-04 through LINT-07 continue. Expected trace: [`l2.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l2.json).
 
 ### L3 — content and query
 
-[`lint-l3-content`](./examples/lint-l3-content/) documents a missing `Proposal` column in `design.md`, an empty `Rationale` cell in `spec.md`, and a local `test-plan.md` link with a query. LINT-04 records both content findings and LINT-06 records the query finding; all rules still evaluate. Expected trace: [`l3.json`](./examples/lint-findings/l3.json).
+[`lint-l3-content`](./examples/lint-l3-content/) documents a missing `Proposal` column in `design.md`, an empty `Rationale` cell in `spec.md`, and a local `test-plan.md` link with a query. LINT-04 records both content findings and LINT-06 records the query finding; all rules still evaluate. Expected trace: [`l3.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l3.json).
 
 ### L4 — token and invalid links
 
-[`lint-l4-links-token`](./examples/lint-l4-links-token/) documents a canonical `<term>` angle-bracket marker and a double-brace blank token in `ubi-lang.md`, a `..` traversal in `index.md`, and an unresolved local anchor/path. LINT-05 records both tokens, LINT-06 records both invalid destinations, all seven rules run, and no repair is fabricated. Expected trace: [`l4.json`](./examples/lint-findings/l4.json).
+[`lint-l4-links-token`](./examples/lint-l4-links-token/) documents a canonical `<term>` angle-bracket marker and a double-brace blank token in `ubi-lang.md`, a `..` traversal in `index.md`, and an unresolved local anchor/path. LINT-05 records both tokens, LINT-06 records both invalid destinations, all seven rules run, and no repair is fabricated. Expected trace: [`l4.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l4.json).
 
 ### L5 — docs-only scope
 
-[`lint-l5-scope`](./examples/lint-l5-scope/) uses the conforming issue target `issue-target/i-012-scope-guard` for LINT-01 through LINT-06 and the separate five-file `goal-root` for LINT-07. Its trace identifies both roots; LINT-07 reports one goal-relative requirement and ignores inherited workspace implementation while all other rules continue. Expected trace: [`l5.json`](./examples/lint-findings/l5.json).
+[`lint-l5-scope`](./examples/lint-l5-scope/) uses the conforming issue target `issue-target/i-012-scope-guard` for LINT-01 through LINT-06 and the separate five-file `goal-root` for LINT-07. Its trace identifies both roots; LINT-07 reports one goal-relative requirement and ignores inherited workspace implementation while all other rules continue. Expected trace: [`l5.json`](packs/skill-dev/uni-spec/standard/examples/lint-findings/l5.json).
 
 ## Boundary
 

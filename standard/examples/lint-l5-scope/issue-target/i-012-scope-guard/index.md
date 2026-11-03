@@ -10,7 +10,7 @@ A conforming issue target used alongside the documentary goal scope.
 ## Routes
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/lint-l5-scope/issue-target/i-012-scope-guard/ubi-lang.md) |
 | Requests | [Requests](spec.md) |
 | Design | [Design](design.md) |
 | Verification | [Verification](test-plan.md) |

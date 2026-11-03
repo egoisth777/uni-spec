@@ -16,7 +16,7 @@ Coordinate the cache lookup across every supplied source; open question: Which t
 
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/conversion-outputs/i-006-multi-source/ubi-lang.md) |
 | Source requests | [Source requests](spec.md) |
 | Proposed design | [Proposed design](design.md) |
 | Verification | [Verification](test-plan.md) |

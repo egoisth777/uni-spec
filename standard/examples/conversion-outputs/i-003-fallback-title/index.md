@@ -16,7 +16,7 @@ Fallback title. The recovery owner is not identified.
 
 | Need | File |
 | --- | --- |
-| Terms | [Terms](ubi-lang.md) |
+| Terms | [Terms](packs/projs/skills/uni-spec/standard/examples/conversion-outputs/i-003-fallback-title/ubi-lang.md) |
 | Source requests | [Source requests](spec.md) |
 | Proposed design | [Proposed design](design.md) |
 | Verification | [Verification](test-plan.md) |
